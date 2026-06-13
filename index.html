@@ -337,9 +337,13 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   gap: 28px;
   flex-wrap: wrap;
 }
-.site-footer-logo-orzel { height: 38px; width: auto; }
-.site-footer-logo-cove  { height: 30px; width: auto; }
-.site-footer-logo-eu    { height: 26px; width: auto; }
+.site-footer-logo-orzel    { height: 38px; width: auto; }
+.site-footer-logo-cove     { height: 30px; width: auto; }
+.site-footer-logo-eu       { height: 26px; width: auto; }
+.site-footer-logo-win4smes { height: 32px; width: auto; }
+.about-logo-bar { display:flex; align-items:center; gap:32px; flex-wrap:wrap; padding:28px 0 8px; }
+.about-logo-bar img { max-height:48px; width:auto; object-fit:contain; }
+.about-wp-badge { display:inline-block; background:#1e3a5f; color:#fff; font-size:11px; font-weight:700; letter-spacing:.05em; padding:4px 10px; border-radius:4px; margin-bottom:10px; }
 .site-footer-disclaimer {
   font-size: 10px;
   color: var(--text-light);
@@ -385,7 +389,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   <div class="sb-head">
     <div class="sb-logo">Samoszkolenie</div>
     <div class="sb-title">Nauczyciel wobec ucznia o niskiej motywacji</div>
-    <div class="sb-meta">Szkoły zawodowe i technika</div>
+    <div class="sb-meta">Szkoły średnie</div>
   </div>
   <div class="sb-progress-wrap">
     <div class="sb-progress-label">
@@ -474,6 +478,14 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       </div>
       <span class="sb-check">✓</span>
     </a>
+    <div style="border-top:1px solid var(--border);margin:8px 16px"></div>
+    <a class="sb-item" id="nav-about" onclick="showPage('about')">
+      <div class="sb-num">ℹ</div>
+      <div class="sb-item-text">
+        <div class="sb-item-name">O projekcie WIN4SMEs</div>
+        <div class="sb-item-time">Erasmus+ · WP4.1</div>
+      </div>
+    </a>
   </nav>
   <div class="sb-footer">
     Łączny czas: ok. 2,5–3 h<br>
@@ -500,7 +512,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     </div>
     <div class="module-card" onclick="showPage('m1')">
       <div class="num">Moduł 1</div>
-      <div class="name">Współczesny uczeń szkoły zawodowej</div>
+      <div class="name">Współczesny uczeń szkoły średniej</div>
       <div class="time">≈ 15 min</div>
     </div>
     <div class="module-card" onclick="showPage('m2')">
@@ -848,7 +860,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 <div class="page" id="page-m1">
   <div class="mod-header">
     <div class="mod-badge">Moduł 1 z 6</div>
-    <h1 class="mod-title">Współczesny uczeń szkoły zawodowej — fakty zamiast mitów</h1>
+    <h1 class="mod-title">Współczesny uczeń szkoły średniej — fakty zamiast mitów</h1>
     <div class="mod-meta">
       <span>⏱ ok. 15 minut</span>
       <span>📖 Lektura + ćwiczenie</span>
@@ -1978,7 +1990,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     <h1 class="mod-title">Wiedza jako przepustka — po co nam kultura ogólna?</h1>
     <div class="mod-meta">
       <span>⏱ ok. 20 min</span>
-      <span>🎓 BS1 i technikum</span>
+      <span>🎓 Szkoły średnie</span>
       <span>🔑 Motywacja przez przynależność</span>
     </div>
   </div>
@@ -3601,14 +3613,87 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   <button class="btn btn-primary" onclick="completeAndNext('m7','m8')">Dalej: Moduł 8 →</button>
 </div>
 </div>
+<!-- PAGE: O PROJEKCIE -->
+<div class="page" id="page-about">
+  <div class="mod-header" style="background:linear-gradient(135deg,#1e3a5f 0%,#1d4ed8 100%);color:#fff">
+    <div class="mod-badge" style="background:rgba(255,255,255,0.18);color:#fff">O projekcie</div>
+    <h1 class="mod-title" style="color:#fff">WIN4SMEs</h1>
+    <div class="mod-meta" style="color:rgba(255,255,255,0.85)">
+      <span>🇪🇺 Projekt Erasmus+</span>
+      <span>🤝 20 partnerów z 9 krajów</span>
+    </div>
+  </div>
+
+  <div class="about-logo-bar">
+    <img src="assets/logos/win4smes-logo.png" alt="WIN4SMEs" style="max-height:44px">
+    <img src="assets/logos/cove-polska.png" alt="COVE Polska" style="max-height:34px">
+    <img src="assets/logos/eu-cofunded.png" alt="Współfinansowane przez UE" style="max-height:30px">
+  </div>
+
+  <div class="mod-section">
+    <h2>O projekcie WIN4SMEs</h2>
+    <p><strong>WIN4SMEs</strong> (<em>Workplace Innovation for SMEs</em>) to europejski projekt Erasmus+, który łączy instytucje szkolnictwa zawodowego, uczelnie wyższe oraz organizacje wspierające biznes — po to, by wzmacniać innowacje w miejscu pracy w małych i średnich przedsiębiorstwach (MŚP) w całej Europie.</p>
+    <p>MŚP stanowią <strong>99% wszystkich firm w Unii Europejskiej</strong> i zapewniają około <strong>70% wszystkich miejsc pracy</strong>. W ramach projektu tworzone są Centra Doskonałości Zawodowej (CoVE) łączące badania, umiejętności praktyczne i wiedzę z zakresu rozwoju biznesu.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-num">20</div>
+      <div class="stat-label">organizacji partnerskich z całej Europy</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">9</div>
+      <div class="stat-label">krajów uczestniczących w projekcie</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">99%</div>
+      <div class="stat-label">firm w UE to MŚP — główna grupa docelowa projektu</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">CoVE</div>
+      <div class="stat-label">Centra Doskonałości Zawodowej tworzone w całej Europie</div>
+    </div>
+  </div>
+
+  <div class="mod-section">
+    <h2>Niniejszy program szkoleniowy</h2>
+    <div class="about-wp-badge">WP4.1 · A3.1–A3.2</div>
+    <div class="keyfact">
+      <div class="keyfact-label">Zadanie projektowe</div>
+      <div class="keyfact-text">Opracowanie i testowanie programu szkoleniowego dla młodych osób z trudnościami w uczeniu się i trudnościami społecznymi</div>
+    </div>
+    <p>Program adresowany jest do <strong>nauczycieli szkół średnich</strong>, którzy pracują z uczniami o niskiej motywacji, z trudnościami w uczeniu się lub wykluczonymi społecznie. Celem jest wyposażenie nauczycieli w konkretne narzędzia i wiedzę badawczą pozwalające skutecznie angażować tę grupę uczniów.</p>
+    <p>Szkolenie obejmuje 8 modułów tematycznych — od neurobiologicznych podstaw motywacji, przez techniki pedagogiczne, po Bank Praktyk z ponad 50 przykładami lekcji skalibrowanych pod szkoły średnie.</p>
+  </div>
+
+  <div class="mod-section">
+    <h2>Partnerzy projektu</h2>
+    <p>W projekcie uczestniczy 20 organizacji z 9 krajów europejskich: Danii, Finlandii, Francji, Niemiec, Węgier, Litwy, Holandii, Polski i innych. Projekt koordynowany jest przez konsorcjum instytucji szkolenia zawodowego działających w ramach sieci CoVE.</p>
+    <div class="callout blue" style="margin-top:16px">
+      <div class="callout-icon">🌐</div>
+      <div class="callout-body">
+        <div class="callout-title">Więcej o projekcie</div>
+        <p>Pełna dokumentacja projektowa, dobre praktyki z 9 krajów oraz raporty badawcze dostępne są na stronie: <a href="https://win4smes.eu" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600">win4smes.eu</a> oraz <a href="https://innowacje.covepolska.pl" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600">innowacje.covepolska.pl</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mod-nav">
+    <button class="btn btn-outline" onclick="showPage('home')">← Powrót do startu</button>
+    <a class="btn btn-primary" href="https://win4smes.eu" target="_blank" rel="noopener">Strona projektu WIN4SMEs ↗</a>
+  </div>
+</div>
+<!-- /PAGE: O PROJEKCIE -->
+
 </div><!-- .app -->
 <footer class="site-footer">
   <div class="site-footer-logos">
+    <img class="site-footer-logo-win4smes" src="assets/logos/win4smes-logo.png" alt="WIN4SMEs" loading="lazy">
     <img class="site-footer-logo-orzel" src="assets/logos/orzel.png" alt="Godło" loading="lazy">
     <img class="site-footer-logo-cove" src="assets/logos/cove-polska.png" alt="Logo COVE Polska" loading="lazy">
     <img class="site-footer-logo-eu" src="assets/logos/eu-cofunded.png" alt="Współfinansowane przez Unię Europejską" loading="lazy">
   </div>
-  <p class="site-footer-disclaimer">Sfinansowane ze środków Unii Europejskiej. Wyrażone poglądy i opinie są jedynie poglądami autorów i nie odzwierciedlają oficjalnego stanowiska Unii Europejskiej ani Europejskiej Agencji Wykonawczej ds. Edukacji i Kultury (EACEA).</p>
+  <p class="site-footer-disclaimer">Element projektu WIN4SMEs · <strong>WP4.1 A3.1–A3.2:</strong> Opracowanie i testowanie programu szkoleniowego dla młodych osób z trudnościami w uczeniu się i trudnościami społecznymi.<br>Sfinansowane ze środków Unii Europejskiej. Wyrażone poglądy i opinie są jedynie poglądami autorów i nie odzwierciedlają oficjalnego stanowiska Unii Europejskiej ani Europejskiej Agencji Wykonawczej ds. Edukacji i Kultury (EACEA).</p>
 </footer>
 
 
