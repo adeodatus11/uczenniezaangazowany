@@ -36,22 +36,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica N
 .inner{max-width:780px;margin:0 auto}
 
 /* SIDEBAR */
-.sb-head{padding:12px 20px 14px 56px;border-bottom:1px solid var(--border)}
-.sb-logo{margin-bottom:6px}.sb-logo img{max-width:150px;height:auto;display:block}
-.sb-footer-logos{display:flex;flex-direction:column;gap:10px;margin-top:10px;padding-top:0;border-top:none}
-.sb-footer-logos-row{display:flex;align-items:center;gap:16px}
-.sb-footer-logos-row img{height:auto;width:auto;opacity:.9}
-.sb-footer-logos-row:first-child img{height:42px}
-.sb-footer-logos-row:last-child img{height:30px}
-.sb-title{font-size:15px;font-weight:700;line-height:1.4;color:var(--text)}
-.sb-meta{font-size:12px;color:var(--text-light);margin-top:4px}
-.sb-progress-wrap{padding:16px 20px;border-bottom:1px solid var(--border)}
+.sb-head{padding:18px 20px 20px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#fff 0%,#fbfcfe 100%)}
+.sb-logo{min-height:64px;padding-left:56px;margin:6px 0 20px;display:flex;align-items:center;justify-content:flex-start}
+.sb-logo img{width:190px;max-width:none;height:auto;display:block}
+.sb-footer-logos{display:flex;flex-direction:column;gap:12px;width:100%;padding:14px 0 0;border-top:1px solid #edf1f6}
+.sb-footer-logos-row{display:flex;width:100%;align-items:center}
+.sb-footer-logos-row:first-child{justify-content:space-between;gap:20px;padding:0 6px}
+.sb-footer-logos-row:last-child{justify-content:center;padding:0 8px}
+.sb-logo-win{width:58px;height:58px;object-fit:contain;object-position:center;opacity:.95}
+.sb-logo-cove{width:136px;height:52px;object-fit:contain;object-position:center;opacity:.95}
+.sb-logo-eu{width:184px;max-width:100%;height:auto;object-fit:contain;object-position:center;opacity:.95}
+.sb-title{font-size:14px;font-weight:750;line-height:1.35;color:var(--text);margin-top:18px;max-width:220px}
+.sb-meta{font-size:12px;color:var(--text-light);margin-top:6px}
+.sb-progress-wrap{padding:16px 20px 18px;border-bottom:1px solid var(--border);background:#fff}
 .sb-progress-label{font-size:12px;color:var(--text-light);margin-bottom:6px;display:flex;justify-content:space-between}
 .progress-bar-bg{height:6px;background:var(--border);border-radius:99px;overflow:hidden}
 .progress-bar-fill{height:100%;background:var(--green);border-radius:99px;transition:width .4s ease}
 .sb-nav{padding:12px 0;flex:1}
 .sb-item{display:flex;align-items:center;gap:12px;padding:12px 20px;cursor:pointer;border-left:3px solid transparent;transition:background .15s,border-color .15s;text-decoration:none;color:inherit}
-.sb-item:hover{background:#f1f5f9}
+.sb-item:hover,.sb-item:focus-visible{background:#f1f5f9;outline:none}
 .sb-item.active{border-left-color:var(--accent);background:var(--accent-light)}
 .sb-item.done{border-left-color:var(--green)}
 .sb-num{width:28px;height:28px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;transition:background .2s,color .2s}
@@ -69,9 +72,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica N
 .welcome-badge{display:inline-block;background:var(--accent-light);color:var(--accent-dark);padding:6px 16px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px}
 .welcome h1{font-size:clamp(24px,4vw,36px);font-weight:800;line-height:1.25;margin-bottom:16px;color:var(--text)}
 .welcome-lead{font-size:18px;line-height:1.6;color:var(--text-light);max-width:560px;margin:0 auto 36px}
+.lead{font-size:17px;line-height:1.65;color:var(--text-light);margin:-18px 0 28px;max-width:720px}
 .module-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:40px;text-align:left}
 .module-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;cursor:pointer;transition:border-color .2s,box-shadow .2s}
-.module-card:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.module-card:hover,.module-card:focus-visible{border-color:var(--accent);box-shadow:var(--shadow);outline:none}
 .module-card .num{font-size:11px;font-weight:700;color:var(--text-light);margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}
 .module-card .name{font-size:14px;font-weight:600;line-height:1.4;margin-bottom:6px}
 .module-card .time{font-size:11px;color:var(--text-light)}
@@ -198,7 +202,9 @@ tr:last-child td{border-bottom:none}
 tr:nth-child(even){background:#fafbfc}
 
 /* HAMBURGER */
-.hamburger{display:flex;position:fixed;top:12px;left:12px;z-index:200;background:var(--text);color:#fff;border:none;border-radius:8px;width:40px;height:40px;font-size:20px;cursor:pointer;align-items:center;justify-content:center}
+.hamburger{display:flex;position:fixed;top:44px;left:12px;z-index:200;background:var(--text);color:#fff;border:none;border-radius:8px;width:40px;height:40px;font-size:20px;cursor:pointer;align-items:center;justify-content:center}
+.hamburger:focus{outline:none}
+.hamburger:focus-visible{box-shadow:0 0 0 3px rgba(37,99,235,.28)}
 .sidebar.collapsed{transform:translateX(-100%)}
 .content{transition:margin-left .25s ease}
 .site-footer{transition:margin-left .25s ease;margin-left:280px}
@@ -327,44 +333,56 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 
 /* ── STOPKA PROJEKTU (pełna szerokość) ── */
 .site-footer {
-  background: #f8f9fa;
+  background: #fff;
   border-top: 1px solid var(--border);
-  padding: 20px 40px;
-  display: flex;
+  padding: 28px clamp(24px,4vw,56px);
+  display: grid;
+  grid-template-columns: minmax(320px, .95fr) minmax(360px, 1.25fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
+  gap: 32px;
 }
 .site-footer-logos {
-  display: flex;
+  display: grid;
+  grid-template-columns: 82px 82px minmax(150px, 1fr) minmax(180px, 1.25fr);
   align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
+  gap: 24px;
 }
-.site-footer-logo-orzel    { height: 38px; width: auto; }
-.site-footer-logo-cove     { height: 30px; width: auto; }
-.site-footer-logo-eu       { height: 26px; width: auto; }
-.site-footer-logo-win4smes { height: 32px; width: auto; }
-.about-logo-bar { display:flex; align-items:center; gap:28px; flex-wrap:wrap; padding:20px 0 28px; border-bottom:2px solid var(--border); margin-bottom:32px; }
-.about-logo-bar img { max-height:36px; width:auto; object-fit:contain; opacity:.9; }
+.site-footer-logos img { max-width:100%; object-fit:contain; object-position:left center; }
+.site-footer-logo-orzel    { height: 58px; width: auto; }
+.site-footer-logo-cove     { height: 50px; width: auto; }
+.site-footer-logo-eu       { height: 42px; width: auto; }
+.site-footer-logo-win4smes { height: 58px; width: auto; }
+.about-logo-bar { display:grid; grid-template-columns:110px minmax(180px,1fr) minmax(220px,1.3fr); align-items:center; gap:28px; padding:24px 0 34px; border-bottom:2px solid var(--border); margin-bottom:32px; }
+.about-logo-bar img { max-width:100%; width:auto; object-fit:contain; object-position:left center; opacity:.95; }
+.about-logo-win4smes { height:82px; }
+.about-logo-cove { height:62px; }
+.about-logo-eu { height:50px; }
 .about-wp-badge { display:inline-block; background:var(--accent-light); color:var(--accent-dark); font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:4px 12px; border-radius:99px; margin-bottom:10px; }
 .site-footer-disclaimer {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--text-light);
-  line-height: 1.5;
-  max-width: 520px;
-  flex: 1;
-  min-width: 200px;
+  line-height: 1.55;
+  max-width: 760px;
 }
 @media(max-width:768px) {
   .site-footer {
-    flex-direction: column;
-    align-items: flex-start;
+    grid-template-columns: 1fr;
     padding: 16px 20px;
     gap: 14px;
   }
+  .site-footer-logos {
+    grid-template-columns: 54px 54px 1fr;
+    gap: 16px;
+  }
+  .site-footer-logo-eu { grid-column: 1 / -1; height: 34px; }
+  .site-footer-logo-orzel,
+  .site-footer-logo-win4smes { height: 46px; }
+  .site-footer-logo-cove { height: 40px; }
   .site-footer-disclaimer { max-width: 100%; }
+  .about-logo-bar { grid-template-columns: 76px 1fr; gap:18px; padding-top:12px; }
+  .about-logo-eu { grid-column:1 / -1; height:42px; }
+  .about-logo-win4smes { height:62px; }
+  .about-logo-cove { height:52px; }
 }
 
 /* ── EMBED BLOCKED FALLBACK ── */
@@ -385,7 +403,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 </head>
 <body>
 
-<button class="hamburger" onclick="toggleSidebar()">☰</button>
+<button class="hamburger" onclick="toggleSidebar()" aria-label="Otwórz lub zamknij menu">☰</button>
 
 <div class="app">
 
@@ -393,16 +411,16 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 <aside class="sidebar" id="sidebar">
   <div class="sb-head">
     <div class="sb-logo"><img src="assets/logos/uruchom%20zaangazowanie.png" alt="Uruchom zaangażowanie"></div>
-    <div class="sb-footer-logos" style="margin-top:8px;padding-top:0;border-top:none">
+    <div class="sb-footer-logos">
       <div class="sb-footer-logos-row">
-        <img src="assets/logos/win4smes-logo.png" alt="WIN4SMEs">
-        <img src="assets/logos/cove-polska.png" alt="COVE Polska">
+        <img class="sb-logo-win" src="assets/logos/win4smes-logo.png" alt="WIN4SMEs">
+        <img class="sb-logo-cove" src="assets/logos/cove-polska.png" alt="COVE Polska">
       </div>
       <div class="sb-footer-logos-row">
-        <img src="assets/logos/eu-cofunded.png" alt="Co-funded by EU">
+        <img class="sb-logo-eu" src="assets/logos/eu-cofunded.png" alt="Co-funded by EU">
       </div>
     </div>
-    <div class="sb-title" style="margin-top:10px">Program szkoleniowy dla nauczycieli</div>
+    <div class="sb-title">Szkolenie dla nauczycieli w ramach projektu WIN4SMEs</div>
     <div class="sb-meta">Szkoły branżowe i technika · VET</div>
   </div>
   <div class="sb-progress-wrap">
@@ -480,7 +498,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <div class="sb-num" id="num-m7">7</div>
       <div class="sb-item-text">
         <div class="sb-item-name">Bank praktyk</div>
-        <div class="sb-item-time">≈ do wglądu</div>
+        <div class="sb-item-time">do wykorzystania</div>
       </div>
       <span class="sb-check">✓</span>
     </a>
@@ -515,8 +533,8 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 <div class="page active" id="page-home">
   <div class="welcome">
     <div class="welcome-badge">Kurs dla nauczycieli</div>
-    <h1>Uczeń, który nie chce się uczyć.<br>Co naprawdę możesz zrobić?</h1>
-    <p class="welcome-lead">Nie ideologia. Nie kolejna reforma. Konkretne narzędzia oparte na badaniach — możliwe do wdrożenia od następnej lekcji.</p>
+    <h1>Uczeń, który nie chce się uczyć.<br>Co możesz zrobić na najbliższej lekcji?</h1>
+    <p class="welcome-lead">Konkretne narzędzia oparte na badaniach — możliwe do wypróbowania od następnej lekcji.</p>
   </div>
   <div class="module-grid">
     <div class="module-card" onclick="showPage('m0')" style="border-color:#7c3aed">
@@ -553,6 +571,11 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <div class="num">Moduł 6</div>
       <div class="name">Relacja i metody aktywizujące</div>
       <div class="time">≈ 20 min</div>
+    </div>
+    <div class="module-card" onclick="showPage('m7')">
+      <div class="num">Moduł 7</div>
+      <div class="name">Bank praktyk</div>
+      <div class="time">do wykorzystania</div>
     </div>
     <div class="module-card" onclick="showPage('m8')">
       <div class="num">Moduł 8</div>
@@ -864,7 +887,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   </div>
 
   <div class="mod-nav">
-    <button class="btn btn-outline" onclick="showPage('home')">← Strona główna</button>
+    <button class="btn btn-outline" onclick="showPage('home')">← Wróć na stronę startową</button>
     <button class="btn btn-complete" onclick="completeAndNext('m0','m1')">Ukończ i przejdź do Modułu 1 →</button>
   </div>
 </div>
@@ -873,7 +896,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 <!-- MODULE 1 -->
 <div class="page" id="page-m1">
   <div class="mod-header">
-    <div class="mod-badge">Moduł 1 z 6</div>
+    <div class="mod-badge">Moduł 1</div>
     <h1 class="mod-title">Współczesny uczeń szkoły średniej — fakty zamiast mitów</h1>
     <div class="mod-meta">
       <span>⏱ ok. 15 minut</span>
@@ -1084,7 +1107,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 <!-- MODULE 2 -->
 <div class="page" id="page-m2">
   <div class="mod-header">
-    <div class="mod-badge">Moduł 2 z 6</div>
+    <div class="mod-badge">Moduł 2</div>
     <h1 class="mod-title">Jak naprawdę działa motywacja</h1>
     <div class="mod-meta">
       <span>⏱ ok. 20 minut</span>
@@ -1273,7 +1296,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 <!-- MODULE 3 -->
 <div class="page" id="page-m3">
   <div class="mod-header">
-    <div class="mod-badge">Moduł 3 z 6</div>
+    <div class="mod-badge">Moduł 3</div>
     <h1 class="mod-title">Poczucie skuteczności — „wierzę, że potrafię"</h1>
     <div class="mod-meta">
       <span>⏱ ok. 20 minut</span>
@@ -1461,7 +1484,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 <!-- MODULE 4 -->
 <div class="page" id="page-m4">
   <div class="mod-header">
-    <div class="mod-badge">Moduł 4 z 6</div>
+    <div class="mod-badge">Moduł 4</div>
     <h1 class="mod-title">Mikrocele i efekt małego kroku</h1>
     <div class="mod-meta">
       <span>⏱ ok. 15 minut</span>
@@ -1636,7 +1659,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 <!-- MODULE 5 -->
 <div class="page" id="page-m5">
   <div class="mod-header">
-    <div class="mod-badge">Moduł 5 z 6</div>
+    <div class="mod-badge">Moduł 5</div>
     <h1 class="mod-title">Pokazywanie sensu nauki — pomost do zawodu</h1>
     <div class="mod-meta">
       <span>⏱ ok. 15 minut</span>
@@ -1811,7 +1834,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 <!-- MODULE 6 -->
 <div class="page" id="page-m6">
   <div class="mod-header">
-    <div class="mod-badge">Moduł 6 z 6</div>
+    <div class="mod-badge">Moduł 6</div>
     <h1 class="mod-title">Relacja i metody aktywizujące</h1>
     <div class="mod-meta">
       <span>⏱ ok. 20 minut</span>
@@ -1992,7 +2015,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 
   <div class="mod-nav">
     <button class="btn btn-outline" onclick="showPage('m5')">← Moduł 5</button>
-    <button class="btn btn-complete" onclick="completeAndNext('m6','m7')">Ukończ kurs →</button>
+    <button class="btn btn-complete" onclick="completeAndNext('m6','m7')">Przejdź do Banku praktyk →</button>
   </div>
 </div>
 
@@ -2211,7 +2234,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   </div>
 
   <div class="mod-nav">
-    <button class="btn btn-outline" onclick="showPage('m7')">← Powrót do Banku Praktyk</button>
+    <button class="btn btn-outline" onclick="showPage('m7')">← Wróć do Banku praktyk</button>
     <button class="btn btn-complete" onclick="completeAndNext('m8','finish')">Zakończ szkolenie ✓</button>
   </div>
 </div>
@@ -2223,9 +2246,9 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     <h2>Gratulacje! Ukończyłeś/aś kurs.</h2>
     <p>Masz teraz konkretne narzędzia oparte na badaniach — możliwe do wdrożenia od następnej lekcji. Najważniejsze: nie musisz zmieniać wszystkiego naraz.</p>
     <div class="finish-stats">
-      <div class="finish-stat"><div class="n">6</div><div class="l">modułów</div></div>
-      <div class="finish-stat"><div class="n">6</div><div class="l">ćwiczeń refleksyjnych</div></div>
-      <div class="finish-stat"><div class="n">18</div><div class="l">pytań quiz</div></div>
+      <div class="finish-stat"><div class="n">9</div><div class="l">części kursu</div></div>
+      <div class="finish-stat"><div class="n">52</div><div class="l">przykłady praktyk</div></div>
+      <div class="finish-stat"><div class="n">25</div><div class="l">pytań quiz</div></div>
     </div>
     <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:28px;text-align:left;max-width:500px;margin:0 auto 32px">
       <h3 style="font-size:17px;font-weight:700;margin-bottom:16px">Twoje 6 narzędzi na jutro</h3>
@@ -2238,15 +2261,21 @@ body.sidebar-collapsed .site-footer{margin-left:0}
         <li>Wybierz 3 mikropraktyki relacyjne i wypróbuj je w tym tygodniu</li>
       </ol>
     </div>
-    <button class="btn btn-outline" onclick="showPage('home')">← Wróć do strony głównej</button>
+    <button class="btn btn-outline" onclick="showPage('home')">← Wróć na stronę startową</button>
   </div>
 </div>
 
-</div><!-- .inner -->
-</main><!-- .content -->
 <div class="page" id="page-m7">
-<h1>📚 Bank praktyk — lekcje, które działają</h1>
-<p class="lead">Gotowe przykłady wdrożenia czterech technik (mikrocele, poczucie skuteczności, sens uczenia się, aktywizacja) na konkretnych lekcjach. Łącznie <strong>46 przykładów</strong> z różnych przedmiotów — od matematyki po przedmioty zawodowe.</p>
+<div class="mod-header">
+  <div class="mod-badge">Moduł 7</div>
+  <h1 class="mod-title">Bank praktyk — przykłady lekcji do adaptacji</h1>
+  <div class="mod-meta">
+    <span>📚 52 przykłady</span>
+    <span>🧰 4 techniki pracy</span>
+    <span>🎓 Przedmioty ogólne i zawodowe</span>
+  </div>
+</div>
+<p class="lead">Przykłady zastosowania czterech technik: mikrocelów, poczucia skuteczności, sensu uczenia się i aktywizacji. Łącznie <strong>52 przykłady</strong> z różnych przedmiotów — od matematyki po przedmioty zawodowe.</p>
 
 <div class="bp-filters">
   <div class="bp-filter-row">
@@ -2257,7 +2286,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     <span class="bp-filter-label">Technika:</span>
     <button class="bp-filter-btn active" data-filter-tech="wszystkie">Wszystkie techniki</button><button class="bp-filter-btn" data-filter-tech="sens">Sens uczenia się</button><button class="bp-filter-btn" data-filter-tech="mikrocele">Mikrocele</button><button class="bp-filter-btn" data-filter-tech="skutecznosc">Poczucie skuteczności</button><button class="bp-filter-btn" data-filter-tech="aktywizacja">Aktywizacja</button>
   </div>
-  <div class="bp-filter-count" id="bp-count">Pokazuję <strong id="bp-count-num">28</strong> z 46 przykładów</div>
+  <div class="bp-filter-count" id="bp-count">Pokazuję <strong id="bp-count-num">52</strong> z 52 przykładów</div>
 </div>
 
 <div class="bp-grid" id="bp-grid">
@@ -2382,7 +2411,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
         <strong>Krok po kroku:</strong>
         <ol class="bp-steps"><li>Nauczyciel ogłasza: &#39;Jesteśmy w 1791 roku. Każdy z was odgrywa jedną z czterech grup: szlachta bogata, szlachta biedna, mieszczanin, chłop.&#39; Rozdaje kartki — 4 zdania opisu postaci.</li><li>Każdy zapisuje: &#39;Ja, [imię fikcyjne], chcę żeby nowe prawo zapewniło mi [co].&#39; Zmusza do myślenia z perspektywy historycznej, nie encyklopedycznej.</li><li>Symulacja sejmu: nauczyciel wciela się w marszałka. Ogłasza kolejne artykuły Konstytucji (uproszczone do jednego zdania). Po każdym — głosowanie kciukiem (za/przeciw/wstrzymuję się) i jedno zdanie uzasadnienia.</li><li>Nauczyciel zatrzymuje symulację: &#39;Wychodzimy z 1791 roku. Co zaobserwowaliście? Które grupy były za, które przeciw?&#39; Uczniowie sami rekonstruują polityczną logikę.</li><li>Konfrontacja z faktami: &#39;Teraz sprawdzamy, czy mieliście rację.&#39; Porównanie z wynikami symulacji — zazwyczaj uczniowie mają rację w kilku punktach.</li><li>Notatka: uczniowie wpisują tabelę — Grupa społeczna / Zyski / Straty — nie listę punktów.</li></ol>
       </div>
-      <blockquote class="bp-quote">&#8222;Zanim powiem wam co jest w Konstytucji 3 maja, chcę żebyście sami spróbowali przewidzieć kto będzie za, a kto przeciw. Nie dlatego, że to test. Bo jak sami to wymyślicie, zapamiętacie dziesięć razy lepiej.&#8221;</blockquote>
+      <blockquote class="bp-quote">&#8222;Zanim powiem wam co jest w Konstytucji 3 maja, chcę żebyście sami spróbowali przewidzieć kto będzie za, a kto przeciw. Nie dlatego, że to test. Kiedy sami spróbujecie to rozstrzygnąć, łatwiej zapamiętacie układ sił.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie, którzy normalnie nie uczestniczą, uczestniczą w głosowaniu, bo mają konkretną rolę. Lekcja generuje żywą dyskusję bez zewnętrznego nacisku.</p>
       <div class="bp-traps-wrap">
         <strong>Pułapki i jak ich unikać:</strong>
@@ -2406,7 +2435,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
       <div class="bp-steps-wrap">
         <strong>Krok po kroku:</strong>
-        <ol class="bp-steps"><li>Nauczyciel nie wyjaśnia czym jest demokracja. Pisze na tablicy: &#39;Demokracja nie działa.&#39; Pyta: &#39;Zgadzacie się?&#39; Zazwyczaj większość kiwa głowami. &#39;Dzisiaj sprawdzimy, czy macie rację.&#39;</li><li>Trzy grupy: Grupa 1 broni tezy &#39;Demokracja działa — oto dowody&#39;. Grupa 2: &#39;Demokracja nie działa&#39;. Grupa 3: sędziowie — oceniają argumenty według kryteriów (konkretność, wiarygodność, powiązanie z Polską/Europą). Nauczyciel przydziela role — nie pyta kto chce.</li><li>Praca w grupach: każda strona dostaje zestaw 6–8 faktów (dane o korupcji, wyniki wyborów, wskaźniki wolności prasy). Zadanie: wybierzcie 3 fakty najlepiej wspierające waszą tezę. Sędziowie tworzą formularz oceny.</li><li>Debata: każda strona ma 3 minuty, potem minuta repliki. Nauczyciel moderuje, pilnuje czasu.</li><li>Sędziowie ogłaszają wynik i uzasadniają każdą ocenę.</li><li>Podsumowanie: &#39;Właśnie użyliście metody, którą politolodzy nazywają analizą systemową. Jeśli chcecie rozmawiać o polityce i nie dać się wciskać bzdur, musicie to umieć: oddzielać argument od emocji.&#39;</li></ol>
+        <ol class="bp-steps"><li>Nauczyciel nie wyjaśnia czym jest demokracja. Pisze na tablicy: &#39;Demokracja nie działa.&#39; Pyta: &#39;Zgadzacie się?&#39; Zazwyczaj większość kiwa głowami. &#39;Dzisiaj sprawdzimy, czy macie rację.&#39;</li><li>Trzy grupy: Grupa 1 broni tezy &#39;Demokracja działa — oto dowody&#39;. Grupa 2: &#39;Demokracja nie działa&#39;. Grupa 3: sędziowie — oceniają argumenty według kryteriów (konkretność, wiarygodność, powiązanie z Polską/Europą). Nauczyciel przydziela role — nie pyta kto chce.</li><li>Praca w grupach: każda strona dostaje zestaw 6–8 faktów (dane o korupcji, wyniki wyborów, wskaźniki wolności prasy). Zadanie: wybierzcie 3 fakty najlepiej wspierające waszą tezę. Sędziowie tworzą formularz oceny.</li><li>Debata: każda strona ma 3 minuty, potem minuta repliki. Nauczyciel moderuje, pilnuje czasu.</li><li>Sędziowie ogłaszają wynik i uzasadniają każdą ocenę.</li><li>Podsumowanie: &#39;Właśnie użyliście metody, którą politolodzy nazywają analizą systemową. Jeśli chcecie rozmawiać o polityce i nie dać się wciskać bzdur, trzeba umieć oddzielać argument od emocji.&#39;</li></ol>
       </div>
       <blockquote class="bp-quote">&#8222;Co mnie irytuje w rozmowach o polityce? Że wszyscy mają zdanie, ale prawie nikt nie ma argumentu. &#39;Politycy to złodzieje&#39; — to jest emocja. &#39;Korupcja w Polsce wynosi X% PKB według raportu Y&#39; — to jest argument. Dzisiaj ćwiczymy argumentowanie, bo to umiejętność na całe życie.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie z deklarowanym brakiem zainteresowania polityką aktywnie uczestniczą, bo mają rolę i konkretne narzędzia. Element rywalizacji między grupami naturalnie angażuje.</p>
@@ -2434,7 +2463,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
         <strong>Krok po kroku:</strong>
         <ol class="bp-steps"><li>Nauczyciel rysuje pięciostopniową drabinkę: 1) Wiem, kiedy mam prawo głosować. 2) Wiem jak wygląda karta. 3) Wiem gdzie jest mój lokal. 4) Umiem ocenić program kandydata. 5) Potrafię wytłumaczyć komuś bliskiemu. &#39;Dzisiaj wejdziemy na wszystkie pięć szczebli — jeden po drugim.&#39;</li><li>Szczebel 1: 4 fikcyjne sytuacje (np. &#39;Marta ma 17 lat i 11 miesięcy — czy może głosować?&#39;). TAK/NIE/NIE WIEM. Sprawdzają w parach. &#39;Szczebel 1 zaliczony.&#39;</li><li>Szczebel 2–3: wydrukowana przykładowa karta do głosowania z fikcyjnymi kandydatami. Uczniowie ją wypełniają — prawidłowo i nieprawidłowo. Potem sprawdzają na telefonie: &#39;pkw.gov.pl — mój lokal wyborczy.&#39;</li><li>Szczebel 4: profile trzech fikcyjnych kandydatów na radnego. Ocena: Co obiecuje? Czy to realne? Skąd wiadomo, czy to prawda?</li><li>Szczebel 5: w parach — jeden uczeń wciela się w starszego krewnego (&#39;Mam 60 lat, nie wiem po co głosować&#39;), drugi tłumaczy. Potem zamiana.</li><li>Podsumowanie: &#39;Weszliście na pięć szczebli w jednej lekcji. Jeśli za rok będziecie na liście wyborców — wiecie co robić.&#39;</li></ol>
       </div>
-      <blockquote class="bp-quote">&#8222;Za rok część z was skończy 18 lat. Żeby móc świadomie zdecydować, że nie chcecie głosować, musicie najpierw wiedzieć jak i na co. Dzisiaj zrobimy to krok po kroku. Po każdym kroku powiemy sobie: zaliczone.&#8221;</blockquote>
+      <blockquote class="bp-quote">&#8222;Za rok część z was skończy 18 lat. Żeby móc świadomie zdecydować, czy głosujecie, warto najpierw wiedzieć jak i na co. Dzisiaj zrobimy to krok po kroku. Po każdym kroku powiemy sobie: zaliczone.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie wychodzą z konkretną wiedzą proceduralną i poczuciem, że temat ich dotyczy. Mikrocele sprawiają, że nawet słabo zmotywowani przechodzą przez wszystkie etapy.</p>
       <div class="bp-traps-wrap">
         <strong>Pułapki i jak ich unikać:</strong>
@@ -2666,7 +2695,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
       <div class="bp-steps-wrap">
         <strong>Krok po kroku:</strong>
-        <ol class="bp-steps"><li>Nauczyciel wyświetla ogłoszenie o pracę w dowolnym zawodzie z klasy — prawie każde zawiera &#39;obsługa MS Office / Excel&#39;. Pyta: &#39;Kto z was umie naprawdę pracować w Excelu, a nie tylko otwierać pliki?&#39;</li><li>Zadanie na całą lekcję: stwórzcie fakturę dla fikcyjnego klienta waszego przyszłego warsztatu/salonu/sklepu. Faktura musi: automatycznie obliczać VAT (23%), sumować pozycje, obliczać łączną kwotę brutto.</li><li>Mikrocel 1 (10 min): nagłówek faktury i tabela pozycji. Nauczyciel pokazuje strukturę, uczniowie tworzą. Checkpoint: każdy ma tabelę z kolumnami (Lp., Nazwa, Ilość, Cena netto, VAT%, VAT kwota, Brutto).</li><li>Mikrocel 2 (10 min): formuły. Nauczyciel przy tablicy pokazuje =C3*D3, =E3*F3/100, =D3+G3. Uczniowie wpisują dla pierwszej pozycji. Checkpoint: pierwsza pozycja oblicza się automatycznie.</li><li>Mikrocel 3 (10 min): skopiuj formuły w dół, dodaj SUMA na dole, sformatuj jako złotówki (Format komórek → Waluta). Checkpoint: faktura automatycznie sumuje wszystkie pozycje.</li><li>Finał: nauczyciel losowo zmienia jedną cenę — cała faktura przelicza się automatycznie. &#39;To właśnie po to jest Excel. Nie musicie przeliczać ręcznie — raz zrobiona formuła pracuje za was przez lata.&#39;</li></ol>
+        <ol class="bp-steps"><li>Nauczyciel wyświetla ogłoszenie o pracę w dowolnym zawodzie z klasy — prawie każde zawiera &#39;obsługa MS Office / Excel&#39;. Pyta: &#39;Kto z was umie naprawdę pracować w Excelu, a nie tylko otwierać pliki?&#39;</li><li>Zadanie na całą lekcję: stwórzcie fakturę dla fikcyjnego klienta waszego przyszłego warsztatu/salonu/sklepu. Faktura musi: automatycznie obliczać VAT (23%), sumować pozycje, obliczać łączną kwotę brutto.</li><li>Mikrocel 1 (10 min): nagłówek faktury i tabela pozycji. Nauczyciel pokazuje strukturę, uczniowie tworzą. Checkpoint: każdy ma tabelę z kolumnami (Lp., Nazwa, Ilość, Cena netto, VAT%, VAT kwota, Brutto).</li><li>Mikrocel 2 (10 min): formuły. Nauczyciel przy tablicy pokazuje =C3*D3, =E3*F3/100, =D3+G3. Uczniowie wpisują dla pierwszej pozycji. Checkpoint: pierwsza pozycja oblicza się automatycznie.</li><li>Mikrocel 3 (10 min): skopiuj formuły w dół, dodaj SUMA na dole, sformatuj jako złotówki (Format komórek → Waluta). Checkpoint: faktura automatycznie sumuje wszystkie pozycje.</li><li>Finał: nauczyciel losowo zmienia jedną cenę — cała faktura przelicza się automatycznie. &#39;To właśnie po to jest Excel. Nie trzeba przeliczać ręcznie — raz zrobiona formuła pracuje za was przez lata.&#39;</li></ol>
       </div>
       <blockquote class="bp-quote">&#8222;Widzę, że część z was myśli, że Excel to starocie. Ale powiem wam co: każda firma w Polsce, każdy salon, każdy sklep, każdy zakład usługowy używa Excela do faktur, budżetów i raportów. Osoba, która umie naprawdę pracować w Excelu, dostaje awans szybciej niż ta, która tylko klika. Sprawdźmy ile z was to umie.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie tworzą działający produkt (fakturę), który mogliby faktycznie użyć. Poczucie osiągnięcia jest silne — widzą wynik swojej pracy w czasie rzeczywistym.</p>
@@ -2694,7 +2723,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
         <strong>Krok po kroku:</strong>
         <ol class="bp-steps"><li>Nauczyciel nie wyjaśnia stref klimatycznych. Zamiast tego ogłasza: &#39;Jesteście reporterami radiowymi. Właśnie wylądowaliście w nieznanym miejscu — nie wiecie gdzie jesteście. Musicie rozpoznać strefę klimatyczną i nagrać 60-sekundową relację dla słuchaczy.&#39;</li><li>Każda trójka uczniów dostaje &#39;pakiet terenowy&#39; — zestaw 5 fotografii (roślinność, gleba, typowe zwierzęta, lokalne ubrania, typowy dom) i tabela temperatur/opadów przez rok. Bez nazwy strefy.</li><li>15 minut: grupy analizują pakiet i przygotowują 60-sekundowy skrypt relacji. Musi zawierać: gdzie są (jaką strefę rozpoznali), po czym to poznali (3 argumenty), co by czuł reporter stojący w tym miejscu.</li><li>Każda grupa nagrywa &#39;relację&#39; (recytuje skrypt dla klasy). Klasa głosuje czy rozpoznanie strefy jest poprawne.</li><li>Nauczyciel odkrywa odpowiedź i omawia ewentualne błędy. Klasa porównuje swoje opisy z encyklopedyczną definicją strefy.</li><li>Notatka: uczniowie rysują mapę stref klimatycznych i przy każdej strefie wpisują trzy swoje skojarzenia z ćwiczenia — nie definicję z podręcznika.</li></ol>
       </div>
-      <blockquote class="bp-quote">&#8222;Za chwilę będziecie rozmawiać o klimacie i nie będziecie recytować definicji. Będziecie opowiadać co widzicie, co czujecie, jak wygląda otoczenie. A po tej lekcji będziecie pamiętać różnicę między klimatem równikowym a monsunowym lepiej, niż gdybyście przepisali ją dziesięć razy.&#8221;</blockquote>
+      <blockquote class="bp-quote">&#8222;Za chwilę będziecie rozmawiać o klimacie i nie będziecie recytować definicji. Będziecie opowiadać co widzicie, co czujecie, jak wygląda otoczenie. Po tej lekcji różnica między klimatem równikowym a monsunowym będzie łatwiejsza do zapamiętania niż po samym przepisaniu definicji.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie aktywnie analizują źródła zamiast przepisywać. Narracja (relacja radiowa) angażuje emocjonalnie i ułatwia zapamiętywanie przez skojarzenia.</p>
       <div class="bp-traps-wrap">
         <strong>Pułapki i jak ich unikać:</strong>
@@ -2713,7 +2742,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     <div class="bp-level">Poziom: klasa 1-2 technikum &bull; Temat: <em>Gęstość zaludnienia — obliczenia i interpretacja przestrzenna</em></div>
   </div>
   <div class="bp-body">
-    <p class="bp-problem"><strong>Problem:</strong> Obliczanie gęstości zaludnienia wydaje się uczniom bez sensu. &#39;Dzielę liczbę ludzi przez kilometrach — i co z tego?&#39; Brakuje zrozumienia, co te liczby oznaczają dla życia ludzi.</p>
+    <p class="bp-problem"><strong>Problem:</strong> Obliczanie gęstości zaludnienia wydaje się uczniom bez sensu. &#39;Dzielę liczbę ludzi przez kilometry kwadratowe — i co z tego?&#39; Brakuje zrozumienia, co te liczby oznaczają dla życia ludzi.</p>
     <details class="bp-details">
       <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
       <div class="bp-steps-wrap">
@@ -2772,7 +2801,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
         <strong>Krok po kroku:</strong>
         <ol class="bp-steps"><li>Nauczyciel wyświetla emaila reklamacyjnego pisanego stylem SM (emotikony, skróty, brak zwrotów grzecznościowych). Pyta: &#39;Co powiecie, jak wasz szef zobaczy taki email wysłany do klienta?&#39;</li><li>Cel 1: struktura emaila zawodowego. Nauczyciel pisze na tablicy 5 elementów: Temat (konkretny, nie &#39;zapytanie&#39;), Zwrot otwierający, Opis problemu (co, kiedy, numer zamówienia), Oczekiwane rozwiązanie, Zwrot zamykający. Uczniowie wpisują do zeszytu.</li><li>Cel 2: uczniowie dostają scenariusz reklamacji (np. &#39;Zamówiłeś 50 kg materiału do spawania. Dostałeś 35 kg, a faktura jest na 50 kg. Minęły 3 dni.&#39;) Piszą temat emaila i pierwszy akapit — tylko tyle.</li><li>Cel 3: nauczyciel pokazuje przykładowy akapit z opisem problemu. Uczniowie piszą swój opis problemu — jedno zdanie na numer zamówienia, jedno na niezgodność, jedno na termin.</li><li>Cel 4: oczekiwane rozwiązanie. Piszą jedno zdanie. Cel 5: zwrot zamykający — trzy opcje na tablicy, wybierają.</li><li>Gotowe emaile czyta kilka osób. Klasa ocenia: Czy jest jasne, o co chodzi? Czy jest profesjonalny? Co można poprawić? Porównanie z emailem SM z początku lekcji.</li></ol>
       </div>
-      <blockquote class="bp-quote">&#8222;Wiem, że możecie pomyśleć: &#39;Napiszę na telefon, szybciej.&#39; Ale jeden źle napisany email do klienta może kosztować firmę kontrakt. Jeden dobrze napisany może uratować relację. Dzisiaj nauczycie się pisać email, który robi robię robotę — jasny, profesjonalny, konkretny.&#8221;</blockquote>
+      <blockquote class="bp-quote">&#8222;Wiem, że możecie pomyśleć: &#39;Napiszę na telefon, szybciej.&#39; Ale jeden źle napisany email do klienta może kosztować firmę kontrakt. Jeden dobrze napisany może uratować relację. Dzisiaj nauczycie się pisać email, który jest jasny, profesjonalny i konkretny.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie tworzą gotowy, użyteczny email. Struktura w 5 krokach sprawia, że zadanie nie jest przytłaczające.</p>
       <div class="bp-traps-wrap">
         <strong>Pułapki i jak ich unikać:</strong>
@@ -2798,7 +2827,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
         <strong>Krok po kroku:</strong>
         <ol class="bp-steps"><li>Nauczyciel przynosi kartę recepturową prawdziwego dania (np. żurek dla 10 osób: 0.5 kg kiełbasy, 300 ml śmietany, 1 l zakwasu...). Pyta: &#39;Jak zrobić ten żurek dla 47 osób? Impreza firmowa, 47 gości. Macie 15 minut.&#39;</li><li>Uczniowie próbują sami. Zazwyczaj trudność sprawia liczba 47 (nieokrągła). Kilka osób liczy dobrze, kilka źle. Nauczyciel zbiera wyniki.</li><li>Krok 1: przelicz wszystko na jedną porcję (dziel przez 10). Krok 2: przemnóż przez 47. Nauczyciel pokazuje na tablicy.</li><li>Problem surowca netto/brutto: &#39;Przepis mówi 0.5 kg kiełbasy netto — czyli gotowej, obranej. Ile kupujesz? Kiełbasa ma 3% opakowaniowych strat.&#39; Uczniowie obliczają.</li><li>Ćwiczenie z rzeczywistą kartą dania: uczniowie dostają przepis dla 4 porcji i obliczają dla 65 gości, uwzględniając straty surowca brutto.</li><li>Podsumowanie: &#39;Wiecie, ile razy dziennie szef kuchni robi te obliczenia? Przy każdym zamówieniu surowców. Błąd oznacza za mało jedzenia dla gości — i kryzys podczas usługi.&#39;</li></ol>
       </div>
-      <blockquote class="bp-quote">&#8222;Macie imprezę dla 47 gości — jutro, godz. 13. Karta recepturowa jest dla 10 osób. Ile kupujecie? I nie, nie możecie kupić &#39;trochę więcej na oko&#39; — bo to jest restaurant biznes, nie domowe gotowanie. Macie 15 minut.&#8221;</blockquote>
+      <blockquote class="bp-quote">&#8222;Macie imprezę dla 47 gości — jutro, godz. 13. Karta recepturowa jest dla 10 osób. Ile kupujecie? I nie, nie możecie kupić &#39;trochę więcej na oko&#39; — bo to jest biznes restauracyjny, nie domowe gotowanie. Macie 15 minut.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie wykonują obliczenia w kontekście zadania, które może im się przytrafić za rok na praktykach. Realna sytuacja (impreza dla 47 gości) nadaje ćwiczeniu emocjonalny wymiar.</p>
       <div class="bp-traps-wrap">
         <strong>Pułapki i jak ich unikać:</strong>
@@ -2822,7 +2851,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
       <div class="bp-steps-wrap">
         <strong>Krok po kroku:</strong>
-        <ol class="bp-steps"><li>Nauczyciel przynosi zdjęcie błędu OBD-II z diagnostyki: &#39;P0335 — Crankshaft Position Sensor Circuit&#39;. Pyta: &#39;Kto wie jak to naprawić?&#39;</li><li>Wyjaśnienie: większość błędów elektrycznych w samochodzie to albo przerwa w obwodzie (za duży opór) albo zwarcie (za mały opór). Czytnik błędów mówi co jest nie tak — ale mechanikat musi wiedzieć dlaczego.</li><li>Ćwiczenie z multimetrem (lub symulacją): mierzenie oporności sensora przepływu powietrza (MAF). Specyfikacja: 2.2–2.8 kΩ w temperaturze 20°C. Jeśli zmierzone to 4.1 kΩ — co to oznacza?</li><li>Uczniowie obliczają: &#39;Napięcie zasilania sensora to 5V. Przy poprawnym oporze 2.5 kΩ — ile wynosi natężenie? Przy wadliwym 4.1 kΩ — ile? Jak zmieni się sygnał do sterownika?&#39;</li><li>Symulacja diagnostyki: uczniowie dostają kartę z 5 błędami OBD i wynikami pomiarów. Dla każdego: zidentyfikuj czy to przerwa czy zwarcie, oceń czy wymienić czy sprawdzić złącze.</li><li>Podsumowanie: &#39;Prawo Ohma to nie jest fizyka z podręcznika. Każda diagnostyka multimetrem, każda decyzja: wymienić sensor czy sprawdzić wiązkę — to jest prawo Ohma w praktyce.&#39;</li></ol>
+        <ol class="bp-steps"><li>Nauczyciel przynosi zdjęcie błędu OBD-II z diagnostyki: &#39;P0335 — Crankshaft Position Sensor Circuit&#39;. Pyta: &#39;Kto wie jak to naprawić?&#39;</li><li>Wyjaśnienie: większość błędów elektrycznych w samochodzie to albo przerwa w obwodzie (za duży opór) albo zwarcie (za mały opór). Czytnik błędów mówi co jest nie tak — ale mechanik musi wiedzieć dlaczego.</li><li>Ćwiczenie z multimetrem (lub symulacją): mierzenie oporności sensora przepływu powietrza (MAF). Specyfikacja: 2.2–2.8 kΩ w temperaturze 20°C. Jeśli zmierzone to 4.1 kΩ — co to oznacza?</li><li>Uczniowie obliczają: &#39;Napięcie zasilania sensora to 5V. Przy poprawnym oporze 2.5 kΩ — ile wynosi natężenie? Przy wadliwym 4.1 kΩ — ile? Jak zmieni się sygnał do sterownika?&#39;</li><li>Symulacja diagnostyki: uczniowie dostają kartę z 5 błędami OBD i wynikami pomiarów. Dla każdego: zidentyfikuj czy to przerwa czy zwarcie, oceń czy wymienić czy sprawdzić złącze.</li><li>Podsumowanie: &#39;Prawo Ohma to nie jest fizyka z podręcznika. Każda diagnostyka multimetrem, każda decyzja: wymienić sensor czy sprawdzić wiązkę — to jest prawo Ohma w praktyce.&#39;</li></ol>
       </div>
       <blockquote class="bp-quote">&#8222;Wiecie, ile czasu traci mechanik, który wymienia sensor, bo &#39;tak wygląda&#39;? Zanim wymienisz cokolwiek — zmierz. Multimetr i prawo Ohma powiedzą ci, czy to sensor, czy wiązka przewodów. To jest różnica między diagnostyką a zgadywaniem.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie rozumieją fizyczne podstawy diagnostyki samochodowej. Most między teorią (Ohm) a zawodem (diagnostyka OBD) jest bezpośredni i doświadczony.</p>
@@ -3004,7 +3033,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
       <div class="bp-steps-wrap">
         <strong>Krok po kroku:</strong>
-        <ol class="bp-steps"><li>Nauczyciel przynosi zdjęcie z wypadku przy naprawie pojazdu hybrydowego (dostępne w komunikatach PIP — Państwowa Inspekcja Pracy). Nie straszenie, ale fakty: ile wypadków śmiertelnych przy instalacjach elektrycznych rocznie w Polsce? (GUS: ok. 20–30 wypadków śmiertelnych rocznie przy urządzeniach elektrycznych). Pytanie: &#39;Jakie napięcie jest bezpieczne dla człowieka?&#39;</li><li>Uczniowie zgadują — zazwyczaj padają różne liczby. Nauczyciel zapisuje na tablicy trzy wartości: 12V (akumulator samochodowy), 230V (gniazdko), 400V (instalacja napędowa hybrydy Toyota Prius). Pyta: &#39;Na których trzeba uważać, a które są bezpieczne?&#39;</li><li>Wyjaśnienie: próg niebezpieczny dla człowieka to ok. 25–50V AC lub 60–75V DC. Akumulator 12V jest bezpieczny dotykowo, 48V to już strefa ostrzeżenia, 400V zabija. Uczniowie wpisują do zeszytu: tabela z napięciem i kategorią ryzyka.</li><li>Ćwiczenie praktyczne: nauczyciel pokazuje schemat elektryczny prostego obwodu oświetlenia w samochodzie (dostępne w podręcznikach lub portalach autodoc.pl). Pytanie: &#39;Gdzie jest bezpiecznik? Dlaczego jest tam, a nie gdzie indziej?&#39;</li><li>Uczniowie dostają kartę z 3 scenariuszami: a) wymiana żarówki w samochodzie benzynowym 12V, b) wymiana akumulatora, c) naprawa pompy ciepła w hybrydzie. Dla każdego: jakie środki ochrony osobistej są wymagane?</li><li>Podsumowanie: &#39;Za rok na praktykach możecie trafić do serwisu, który naprawia hybrydy i elektryki. Kto nie rozumie napięcia — ryzykuje życiem. To jest po co macie fizykę na mechaniku.&#39;</li></ol>
+        <ol class="bp-steps"><li>Nauczyciel przynosi zdjęcie z wypadku przy naprawie pojazdu hybrydowego (dostępne w komunikatach PIP — Państwowa Inspekcja Pracy). Nie straszenie, ale fakty: ile wypadków śmiertelnych przy instalacjach elektrycznych rocznie w Polsce? (GUS: ok. 20–30 wypadków śmiertelnych rocznie przy urządzeniach elektrycznych). Pytanie: &#39;Jakie napięcie jest bezpieczne dla człowieka?&#39;</li><li>Uczniowie zgadują — zazwyczaj padają różne liczby. Nauczyciel zapisuje na tablicy trzy wartości: 12V (akumulator samochodowy), 230V (gniazdko), 400V (instalacja napędowa hybrydy Toyota Prius). Pyta: &#39;Na których trzeba uważać, a które są bezpieczne?&#39;</li><li>Wyjaśnienie: próg niebezpieczny dla człowieka to ok. 25–50V AC lub 60–75V DC. Akumulator 12V jest bezpieczny dotykowo, 48V to już strefa ostrzeżenia, 400V wymaga procedur wysokiego napięcia. Uczniowie wpisują do zeszytu: tabela z napięciem i kategorią ryzyka.</li><li>Ćwiczenie praktyczne: nauczyciel pokazuje schemat elektryczny prostego obwodu oświetlenia w samochodzie (dostępne w podręcznikach lub portalach autodoc.pl). Pytanie: &#39;Gdzie jest bezpiecznik? Dlaczego jest tam, a nie gdzie indziej?&#39;</li><li>Uczniowie dostają kartę z 3 scenariuszami: a) wymiana żarówki w samochodzie benzynowym 12V, b) wymiana akumulatora, c) naprawa pompy ciepła w hybrydzie. Dla każdego: jakie środki ochrony osobistej są wymagane?</li><li>Podsumowanie: &#39;Za rok na praktykach możecie trafić do serwisu, który naprawia hybrydy i elektryki. Kto nie rozumie napięcia — ryzykuje życiem. To jest po co macie fizykę na mechaniku.&#39;</li></ol>
       </div>
       <blockquote class="bp-quote">&#8222;Mam do was pytanie: jakie napięcie was zabije? Nie po to żeby was straszyć — po to, żebyście wiedzieli co wolno wziąć gołą ręką, a czego nie wolno w ogóle dotykać bez środków ochronnych. W Polsce co roku kilkanaście osób ginie przy naprawach elektrycznych. Większość z nich myślała, że to bezpieczne.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie rozumieją, że fizyka elektryczna to ich bezpieczeństwo na przyszłym miejscu pracy. Temat nie jest abstrakcyjny — dotyczy ich konkretnej pracy za rok.</p>
@@ -3162,7 +3191,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
         <strong>Krok po kroku:</strong>
         <ol class="bp-steps"><li>Nauczyciel przynosi 5–6 produktów spożywczych ze sklepu (lub uczniowie przynoszą coś z plecaka). Czyta skład pierwszego: np. chipsy — &#39;ziemniaki, olej palmowy, E621, E631, E627, E160c, E330&#39;. Pyta: &#39;Kto wie co to E621?&#39;</li><li>Uczniowie sprawdzają na telefonie. E621 = glutaminian sodu (MSG) = wzmacniacz smaku. Nauczyciel opowiada skrótowo: MSG wzmacnia smak umami — jest w chipsach, zupkach instant, kuchni azjatyckiej. Nie jest szkodliwy w normalnych ilościach, ale zwiększa apetyt.</li><li>Praca w grupach: każda grupa dostaje inny produkt. Zadanie: 1) wypisz wszystkie numery E. 2) sprawdź w tabeli (nauczyciel daje wydruk lub link do tabeli e-numerów) co każdy robi. 3) oceń: czy ten produkt jest &#39;czysty etykietowo&#39; (mniej niż 3 dodatki) czy mocno przetworzony?</li><li>Prezentacja grup. Nauczyciel zadaje pytania: &#39;Dlaczego producent dodał akurat ten konserwant? Czy zamiast E300 można użyć czegoś naturalnego?&#39; (E300 = kwas askorbinowy = witamina C — tak, jest naturalny).</li><li>Ćwiczenie zawodowe: &#39;Klient w restauracji pyta: Czy to danie zawiera glutaminian sodu? Jesteś kucharzem — skąd wiesz? Jak sprawdzasz?&#39; Uczniowie dyskutują: receptura, lista składników od dostawcy, certyfikat.</li><li>Podsumowanie: &#39;Każdy technik żywienia musi umieć czytać etykietę i odpowiedzieć klientowi co jest w potrawie. To wymaga znajomości chemii żywności. Bez tej wiedzy — domyślasz się, a nie wiesz.&#39;</li></ol>
       </div>
-      <blockquote class="bp-quote">&#8222;Macie tu chipsy. Czytam skład. E621, E631, E627. Kto mi powie co to jest? Nikt nie wie? A za rok, dwa lata będziecie pracować w kuchni i klient zapyta: &#39;Czy to zawiera wzmacniacze smaku?&#39; Wtedy musicie wiedzieć. Dzisiaj się tego uczymy — i mamy to na stole.&#8221;</blockquote>
+      <blockquote class="bp-quote">&#8222;Macie tu chipsy. Czytam skład. E621, E631, E627. Kto mi powie co to jest? Nikt nie wie? A za rok, dwa lata możecie pracować w kuchni i klient zapyta: &#39;Czy to zawiera wzmacniacze smaku?&#39; Wtedy ta wiedza będzie potrzebna. Dzisiaj się tego uczymy — i mamy to na stole.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie analizują skład produktu, który kupili lub jedli — co sprawia, że temat jest natychmiastowo osobisty. Zadanie jest konkretne i sprawdzalne przez telefon.</p>
       <div class="bp-traps-wrap">
         <strong>Pułapki i jak ich unikać:</strong>
@@ -3264,7 +3293,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
       <div class="bp-steps-wrap">
         <strong>Krok po kroku:</strong>
-        <ol class="bp-steps"><li>Nauczyciel wyświetla statystykę zdawalności egzaminu EE.08: &#39;W ostatniej sesji egzaminacyjnej część praktyczna z konfiguracji sieci zdało w Polsce tylko 34% uczniów. Wiecie dlaczego?&#39; Uczniowie zgadują. Nauczyciel: &#39;Bo teoria i praktyka są oddzielone. Dzisiaj robimy je razem.&#39;</li><li>Cel 1 (5 min): narysuj schemat sieci, którą będziemy konfigurować: router domowy, 3 komputery, dostęp do internetu. Uczniowie rysują schemat z podpisami — router, switch, PC1/PC2/PC3, WAN, LAN.</li><li>Cel 2 (7 min): plan adresowania. Nauczyciel daje siatkę adresów: sieć 192.168.1.0/24. Uczniowie przydzielają: router .1, PC1 .10, PC2 .11, PC3 .12. Wpisują do tabeli: urządzenie / adres IP / maska / brama.</li><li>Cel 3 (10 min): konfiguracja routera w symulatorze (Cisco Packet Tracer — darmowy, dostępny online). Uczniowie wchodzą do interfejsu routera, ustawiają adres IP portu LAN. Sprawdzamy: czy router odpowiada na ping?</li><li>Cel 4 (10 min): konfiguracja DHCP — router automatycznie przydziela adresy komputerom. Uczniowie włączają DHCP, ustawiają zakres (od .100 do .150). Sprawdzamy: czy PC1 dostał adres z zakresu?</li><li>Cel 5 (8 min): test conectywności — ping PC1→PC2, PC1→router, PC1→internet. Uczniowie dokumentują wyniki w tabeli. Nauczyciel: &#39;To jest dokładnie sekwencja, którą sprawdza egzaminator na EE.08.&#39;</li></ol>
+        <ol class="bp-steps"><li>Nauczyciel wyświetla statystykę zdawalności egzaminu EE.08: &#39;W ostatniej sesji egzaminacyjnej część praktyczna z konfiguracji sieci zdało w Polsce tylko 34% uczniów. Wiecie dlaczego?&#39; Uczniowie zgadują. Nauczyciel: &#39;Bo teoria i praktyka są oddzielone. Dzisiaj robimy je razem.&#39;</li><li>Cel 1 (5 min): narysuj schemat sieci, którą będziemy konfigurować: router domowy, 3 komputery, dostęp do internetu. Uczniowie rysują schemat z podpisami — router, switch, PC1/PC2/PC3, WAN, LAN.</li><li>Cel 2 (7 min): plan adresowania. Nauczyciel daje siatkę adresów: sieć 192.168.1.0/24. Uczniowie przydzielają: router .1, PC1 .10, PC2 .11, PC3 .12. Wpisują do tabeli: urządzenie / adres IP / maska / brama.</li><li>Cel 3 (10 min): konfiguracja routera w symulatorze (Cisco Packet Tracer — darmowy, dostępny online). Uczniowie wchodzą do interfejsu routera, ustawiają adres IP portu LAN. Sprawdzamy: czy router odpowiada na ping?</li><li>Cel 4 (10 min): konfiguracja DHCP — router automatycznie przydziela adresy komputerom. Uczniowie włączają DHCP, ustawiają zakres (od .100 do .150). Sprawdzamy: czy PC1 dostał adres z zakresu?</li><li>Cel 5 (8 min): test łączności — ping PC1→PC2, PC1→router, PC1→internet. Uczniowie dokumentują wyniki w tabeli. Nauczyciel: &#39;To jest dokładnie sekwencja, którą sprawdza egzaminator na EE.08.&#39;</li></ol>
       </div>
       <blockquote class="bp-quote">&#8222;Pokażę wam statystykę, która mnie martwi jako nauczyciela: część praktyczna egzaminu EE.08 w Polsce — zdawalność 34%. Wiecie co to znaczy? Że 2 na 3 uczniów, którzy uczą się tego samego co wy, nie zdaje. Dzisiaj zrobimy to inaczej — krok po kroku, z checkpointem po każdym kroku. I zobaczymy co wychodzi.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie przechodzą przez pełną sekwencję konfiguracji sieci w pięciu sprawdzalnych krokach. Każdy checkpoint daje poczucie postępu i identyfikuje, gdzie dokładnie pojawia się trudność.</p>
@@ -3622,8 +3651,8 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 </div>
 </div><!-- /bp-grid -->
 
-<div class="section-nav">
-  <button class="btn btn-outline" onclick="showPage('m6')">← Powrót do Modułu 6</button>
+<div class="mod-nav">
+  <button class="btn btn-outline" onclick="showPage('m6')">← Wróć do modułu 6</button>
   <button class="btn btn-primary" onclick="completeAndNext('m7','m8')">Dalej: Moduł 8 →</button>
 </div>
 </div>
@@ -3640,9 +3669,9 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   </div>
 
   <div class="about-logo-bar">
-    <img src="assets/logos/win4smes-logo.png" alt="WIN4SMEs">
-    <img src="assets/logos/cove-polska.png" alt="COVE Polska">
-    <img src="assets/logos/eu-cofunded.png" alt="Współfinansowane przez UE">
+    <img class="about-logo-win4smes" src="assets/logos/win4smes-logo.png" alt="WIN4SMEs">
+    <img class="about-logo-cove" src="assets/logos/cove-polska.png" alt="COVE Polska">
+    <img class="about-logo-eu" src="assets/logos/eu-cofunded.png" alt="Współfinansowane przez Unię Europejską">
   </div>
 
   <div class="mod-section">
@@ -3675,10 +3704,10 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     <div class="about-wp-badge">WP4.1 · A3.1–A3.2</div>
     <div class="keyfact">
       <div class="keyfact-label">Zadanie projektowe</div>
-      <div class="keyfact-text">Opracowanie i testowanie programu szkoleniowego dla młodych osób z trudnościami w uczeniu się i trudnościami społecznymi</div>
+      <div class="keyfact-text">Opracowanie i testowanie programu szkoleniowego wspierającego nauczycieli w pracy z młodymi osobami z trudnościami w uczeniu się i trudnościami społecznymi</div>
     </div>
     <p>Program adresowany jest do <strong>nauczycieli szkół branżowych I i II stopnia oraz techników</strong> (sektor VET), którzy na co dzień pracują z uczniami o niskiej motywacji, z trudnościami w uczeniu się lub wykluczonymi społecznie. Celem jest wyposażenie nauczycieli w konkretne narzędzia i wiedzę badawczą pozwalające skutecznie angażować tę grupę uczniów.</p>
-    <p>Szkolenie obejmuje 8 modułów tematycznych — od neurobiologicznych podstaw motywacji, przez techniki pedagogiczne, po Bank Praktyk z ponad 50 przykładami lekcji skalibrowanych pod realia szkolnictwa branżowego.</p>
+    <p>Szkolenie obejmuje moduły tematyczne — od kontekstu pracy z młodzieżą po techniki pedagogiczne — oraz Bank praktyk z 52 przykładami lekcji dostosowanych do realiów szkół branżowych i techników.</p>
   </div>
 
   <div class="mod-section">
@@ -3688,18 +3717,19 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <div class="callout-icon">🌐</div>
       <div class="callout-body">
         <div class="callout-title">Więcej o projekcie</div>
-        <p>Pełna dokumentacja projektowa, dobre praktyki z 9 krajów oraz raporty badawcze: <a href="https://win4smes.eu" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600">win4smes.eu</a> oraz <a href="https://innowacje.covepolska.pl" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600">innowacje.covepolska.pl</a></p>
+        <p>Pełna dokumentacja projektowa, dobre praktyki z 9 krajów oraz raporty badawcze: <a href="https://win4smes.eu" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">win4smes.eu</a> oraz <a href="https://covepolska.pl" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">covepolska.pl</a></p>
       </div>
     </div>
   </div>
 
   <div class="mod-nav">
-    <button class="btn btn-outline" onclick="showPage('home')">← Powrót do startu</button>
-    <a class="btn btn-primary" href="https://win4smes.eu" target="_blank" rel="noopener">Strona projektu WIN4SMEs ↗</a>
+    <button class="btn btn-outline" onclick="showPage('home')">← Wróć na stronę startową</button>
   </div>
 </div>
 <!-- /PAGE: O PROJEKCIE -->
 
+</div><!-- .inner -->
+</main><!-- .content -->
 </div><!-- .app -->
 <footer class="site-footer">
   <div class="site-footer-logos">
@@ -3708,7 +3738,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     <img class="site-footer-logo-cove" src="assets/logos/cove-polska.png" alt="Logo COVE Polska" loading="lazy">
     <img class="site-footer-logo-eu" src="assets/logos/eu-cofunded.png" alt="Współfinansowane przez Unię Europejską" loading="lazy">
   </div>
-  <p class="site-footer-disclaimer">Element projektu WIN4SMEs · <strong>WP4.1 A3.1–A3.2:</strong> Opracowanie i testowanie programu szkoleniowego dla młodych osób z trudnościami w uczeniu się i trudnościami społecznymi.<br>Sfinansowane ze środków Unii Europejskiej. Wyrażone poglądy i opinie są jedynie poglądami autorów i nie odzwierciedlają oficjalnego stanowiska Unii Europejskiej ani Europejskiej Agencji Wykonawczej ds. Edukacji i Kultury (EACEA).</p>
+  <p class="site-footer-disclaimer">Element projektu WIN4SMEs · <strong>WP4.1 A3.1–A3.2:</strong> Opracowanie i testowanie programu szkoleniowego wspierającego nauczycieli w pracy z młodymi osobami z trudnościami w uczeniu się i trudnościami społecznymi.<br>Sfinansowane ze środków Unii Europejskiej. Wyrażone poglądy i opinie są jedynie poglądami autorów i nie odzwierciedlają oficjalnego stanowiska Unii Europejskiej ani Europejskiej Agencji Wykonawczej ds. Edukacji i Kultury (EACEA).</p>
 </footer>
 
 
@@ -3754,6 +3784,18 @@ function updateSidebar(){
   });
 }
 updateSidebar();
+
+// ── KEYBOARD ACCESS FOR CLICKABLE CARDS/NAV ──
+document.querySelectorAll('.sb-item, .module-card').forEach(el => {
+  el.setAttribute('role', 'button');
+  el.setAttribute('tabindex', '0');
+  el.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      el.click();
+    }
+  });
+});
 
 // ── QUIZ ──
 function checkQuiz(module, answers){
