@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samoszkolenie: Nauczyciel i uczeń o niskiej motywacji</title>
+<title>Uruchom zaangażowanie — program szkoleniowy dla nauczycieli</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -37,7 +37,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica N
 
 /* SIDEBAR */
 .sb-head{padding:24px 20px 16px 56px;border-bottom:1px solid var(--border)}
-.sb-logo{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.sb-logo{margin-bottom:8px}.sb-logo img{max-width:160px;height:auto;display:block}
 .sb-title{font-size:15px;font-weight:700;line-height:1.4;color:var(--text)}
 .sb-meta{font-size:12px;color:var(--text-light);margin-top:4px}
 .sb-progress-wrap{padding:16px 20px;border-bottom:1px solid var(--border)}
@@ -341,9 +341,9 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 .site-footer-logo-cove     { height: 30px; width: auto; }
 .site-footer-logo-eu       { height: 26px; width: auto; }
 .site-footer-logo-win4smes { height: 32px; width: auto; }
-.about-logo-bar { display:flex; align-items:center; gap:32px; flex-wrap:wrap; padding:28px 0 8px; }
-.about-logo-bar img { max-height:48px; width:auto; object-fit:contain; }
-.about-wp-badge { display:inline-block; background:#1e3a5f; color:#fff; font-size:11px; font-weight:700; letter-spacing:.05em; padding:4px 10px; border-radius:4px; margin-bottom:10px; }
+.about-logo-bar { display:flex; align-items:center; gap:28px; flex-wrap:wrap; padding:20px 0 28px; border-bottom:2px solid var(--border); margin-bottom:32px; }
+.about-logo-bar img { max-height:36px; width:auto; object-fit:contain; opacity:.9; }
+.about-wp-badge { display:inline-block; background:var(--accent-light); color:var(--accent-dark); font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:4px 12px; border-radius:99px; margin-bottom:10px; }
 .site-footer-disclaimer {
   font-size: 10px;
   color: var(--text-light);
@@ -387,9 +387,9 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 <!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
   <div class="sb-head">
-    <div class="sb-logo">Samoszkolenie</div>
-    <div class="sb-title">Nauczyciel wobec ucznia o niskiej motywacji</div>
-    <div class="sb-meta">Szkoły średnie</div>
+    <div class="sb-logo"><img src="assets/logos/uruchom%20zaangazowanie.png" alt="Uruchom zaangażowanie"></div>
+    <div class="sb-title">Program szkoleniowy dla nauczycieli</div>
+    <div class="sb-meta">Szkoły branżowe i technika · VET</div>
   </div>
   <div class="sb-progress-wrap">
     <div class="sb-progress-label">
@@ -3615,24 +3615,25 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 </div>
 <!-- PAGE: O PROJEKCIE -->
 <div class="page" id="page-about">
-  <div class="mod-header" style="background:linear-gradient(135deg,#1e3a5f 0%,#1d4ed8 100%);color:#fff">
-    <div class="mod-badge" style="background:rgba(255,255,255,0.18);color:#fff">O projekcie</div>
-    <h1 class="mod-title" style="color:#fff">WIN4SMEs</h1>
-    <div class="mod-meta" style="color:rgba(255,255,255,0.85)">
+  <div class="mod-header">
+    <div class="mod-badge">O projekcie</div>
+    <h1 class="mod-title">WIN4SMEs — Workplace Innovation for SMEs</h1>
+    <div class="mod-meta">
       <span>🇪🇺 Projekt Erasmus+</span>
       <span>🤝 20 partnerów z 9 krajów</span>
+      <span>🎓 Sektor VET</span>
     </div>
   </div>
 
   <div class="about-logo-bar">
-    <img src="assets/logos/win4smes-logo.png" alt="WIN4SMEs" style="max-height:44px">
-    <img src="assets/logos/cove-polska.png" alt="COVE Polska" style="max-height:34px">
-    <img src="assets/logos/eu-cofunded.png" alt="Współfinansowane przez UE" style="max-height:30px">
+    <img src="assets/logos/win4smes-logo.png" alt="WIN4SMEs">
+    <img src="assets/logos/cove-polska.png" alt="COVE Polska">
+    <img src="assets/logos/eu-cofunded.png" alt="Współfinansowane przez UE">
   </div>
 
   <div class="mod-section">
-    <h2>O projekcie WIN4SMEs</h2>
-    <p><strong>WIN4SMEs</strong> (<em>Workplace Innovation for SMEs</em>) to europejski projekt Erasmus+, który łączy instytucje szkolnictwa zawodowego, uczelnie wyższe oraz organizacje wspierające biznes — po to, by wzmacniać innowacje w miejscu pracy w małych i średnich przedsiębiorstwach (MŚP) w całej Europie.</p>
+    <h2>O projekcie</h2>
+    <p><strong>WIN4SMEs</strong> (<em>Workplace Innovation for SMEs</em>) to europejski projekt Erasmus+, który łączy instytucje kształcenia zawodowego (VET), uczelnie wyższe i organizacje wspierające biznes — po to, by wzmacniać innowacje w miejscu pracy w małych i średnich przedsiębiorstwach (MŚP) w całej Europie.</p>
     <p>MŚP stanowią <strong>99% wszystkich firm w Unii Europejskiej</strong> i zapewniają około <strong>70% wszystkich miejsc pracy</strong>. W ramach projektu tworzone są Centra Doskonałości Zawodowej (CoVE) łączące badania, umiejętności praktyczne i wiedzę z zakresu rozwoju biznesu.</p>
   </div>
 
@@ -3662,18 +3663,18 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <div class="keyfact-label">Zadanie projektowe</div>
       <div class="keyfact-text">Opracowanie i testowanie programu szkoleniowego dla młodych osób z trudnościami w uczeniu się i trudnościami społecznymi</div>
     </div>
-    <p>Program adresowany jest do <strong>nauczycieli szkół średnich</strong>, którzy pracują z uczniami o niskiej motywacji, z trudnościami w uczeniu się lub wykluczonymi społecznie. Celem jest wyposażenie nauczycieli w konkretne narzędzia i wiedzę badawczą pozwalające skutecznie angażować tę grupę uczniów.</p>
-    <p>Szkolenie obejmuje 8 modułów tematycznych — od neurobiologicznych podstaw motywacji, przez techniki pedagogiczne, po Bank Praktyk z ponad 50 przykładami lekcji skalibrowanych pod szkoły średnie.</p>
+    <p>Program adresowany jest do <strong>nauczycieli szkół branżowych I i II stopnia oraz techników</strong> (sektor VET), którzy na co dzień pracują z uczniami o niskiej motywacji, z trudnościami w uczeniu się lub wykluczonymi społecznie. Celem jest wyposażenie nauczycieli w konkretne narzędzia i wiedzę badawczą pozwalające skutecznie angażować tę grupę uczniów.</p>
+    <p>Szkolenie obejmuje 8 modułów tematycznych — od neurobiologicznych podstaw motywacji, przez techniki pedagogiczne, po Bank Praktyk z ponad 50 przykładami lekcji skalibrowanych pod realia szkolnictwa branżowego.</p>
   </div>
 
   <div class="mod-section">
     <h2>Partnerzy projektu</h2>
-    <p>W projekcie uczestniczy 20 organizacji z 9 krajów europejskich: Danii, Finlandii, Francji, Niemiec, Węgier, Litwy, Holandii, Polski i innych. Projekt koordynowany jest przez konsorcjum instytucji szkolenia zawodowego działających w ramach sieci CoVE.</p>
-    <div class="callout blue" style="margin-top:16px">
+    <p>W projekcie uczestniczy 20 organizacji z 9 krajów europejskich: Danii, Finlandii, Francji, Niemiec, Węgier, Litwy, Holandii, Polski i innych. Projekt koordynowany jest przez konsorcjum instytucji kształcenia zawodowego działających w ramach sieci CoVE.</p>
+    <div class="callout blue">
       <div class="callout-icon">🌐</div>
       <div class="callout-body">
         <div class="callout-title">Więcej o projekcie</div>
-        <p>Pełna dokumentacja projektowa, dobre praktyki z 9 krajów oraz raporty badawcze dostępne są na stronie: <a href="https://win4smes.eu" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600">win4smes.eu</a> oraz <a href="https://innowacje.covepolska.pl" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600">innowacje.covepolska.pl</a></p>
+        <p>Pełna dokumentacja projektowa, dobre praktyki z 9 krajów oraz raporty badawcze: <a href="https://win4smes.eu" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600">win4smes.eu</a> oraz <a href="https://innowacje.covepolska.pl" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600">innowacje.covepolska.pl</a></p>
       </div>
     </div>
   </div>
