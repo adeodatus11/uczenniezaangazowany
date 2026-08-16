@@ -371,6 +371,20 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   line-height: 1.55;
   max-width: 760px;
 }
+.site-footer-text { max-width: 760px; }
+.site-footer-link {
+  display: inline-flex;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.site-footer-link:hover,
+.site-footer-link:focus-visible {
+  color: var(--accent);
+}
 @media(max-width:768px) {
   .site-footer {
     grid-template-columns: 1fr;
@@ -385,6 +399,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   .site-footer-logo-orzel,
   .site-footer-logo-win4smes { height: 46px; }
   .site-footer-logo-cove { height: 40px; }
+  .site-footer-text,
   .site-footer-disclaimer { max-width: 100%; }
   .about-logo-bar { grid-template-columns: 76px 1fr; gap:18px; padding-top:12px; }
   .about-logo-eu { grid-column:1 / -1; height:42px; }
@@ -3745,7 +3760,10 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     <img class="site-footer-logo-cove" src="assets/logos/cove-polska.png" alt="Logo COVE Polska" loading="lazy">
     <img class="site-footer-logo-eu" src="assets/logos/eu-cofunded.png" alt="Współfinansowane przez Unię Europejską" loading="lazy">
   </div>
-  <p class="site-footer-disclaimer">Element projektu WIN4SMEs · <strong>WP4.1 A3.1–A3.2:</strong> Opracowanie i testowanie programu szkoleniowego wspierającego nauczycieli w pracy z młodymi osobami z trudnościami w uczeniu się i trudnościami społecznymi.<br>Sfinansowane ze środków Unii Europejskiej. Wyrażone poglądy i opinie są jedynie poglądami autorów i nie odzwierciedlają oficjalnego stanowiska Unii Europejskiej ani Europejskiej Agencji Wykonawczej ds. Edukacji i Kultury (EACEA).</p>
+  <div class="site-footer-text">
+    <p class="site-footer-disclaimer">Element projektu WIN4SMEs · <strong>WP4.1 A3.1–A3.2:</strong> Opracowanie i testowanie programu szkoleniowego wspierającego nauczycieli w pracy z młodymi osobami z trudnościami w uczeniu się i trudnościami społecznymi.<br>Sfinansowane ze środków Unii Europejskiej. Wyrażone poglądy i opinie są jedynie poglądami autorów i nie odzwierciedlają oficjalnego stanowiska Unii Europejskiej ani Europejskiej Agencji Wykonawczej ds. Edukacji i Kultury (EACEA).</p>
+    <a class="site-footer-link" href="https://covepolska.pl/deklaracja-dostepnosci/" target="_blank" rel="noopener">Deklaracja dostępności</a>
+  </div>
 </footer>
 
 
