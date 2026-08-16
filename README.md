@@ -2,6 +2,26 @@
 
 > Kompletny pakiet materiałów do wdrożenia programu szkoleniowego dla nauczycieli szkół zawodowych i techników.
 
+## Strona WWW
+
+Docelowy adres GitHub Pages:
+
+```text
+https://zaangazowanie.covepolska.pl/
+```
+
+Repo zawiera plik `CNAME` z domeną `zaangazowanie.covepolska.pl` oraz `.nojekyll`, żeby GitHub Pages serwował statyczne pliki bez przetwarzania Jekyll.
+
+W ustawieniach DNS dla subdomeny `zaangazowanie` ustaw rekord:
+
+```text
+Type: CNAME
+Name/Host: zaangazowanie
+Value/Target: adeodatus11.github.io
+```
+
+W GitHub Pages wybierz publikację z gałęzi i katalogu, w którym znajduje się `index.html`, a w polu Custom domain wpisz `zaangazowanie.covepolska.pl`.
+
 ## Struktura pakietu
 
 | Plik | Zawartość | Wiersze |
