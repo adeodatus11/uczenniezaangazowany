@@ -177,6 +177,36 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica N
 .takeaway p{font-size:14px;line-height:1.65;opacity:.9}
 .takeaway ul{padding-left:18px;margin-top:8px}
 .takeaway li{font-size:14px;line-height:1.7;opacity:.9;margin-bottom:4px}
+.practice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:22px 0}
+.practice-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+.practice-card strong{display:block;font-size:14px;color:var(--text);margin-bottom:6px}
+.practice-card p{font-size:13px;line-height:1.6;color:var(--text-light);margin:0}
+
+/* COURSE TOOLS + GLOSSARY */
+.course-tools{display:flex;justify-content:center;margin:0 0 28px}
+.course-tool{width:min(100%,520px);display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);color:var(--text);font:inherit;text-align:left;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.course-tool:hover,.course-tool:focus-visible{border-color:var(--accent);box-shadow:var(--shadow);outline:none}
+.course-tool-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex:0 0 40px;border-radius:8px;background:var(--accent-light);color:var(--accent-dark);font-size:14px;font-weight:800}
+.course-tool-copy{flex:1;min-width:0}
+.course-tool-copy strong{display:block;font-size:14px;line-height:1.35}
+.course-tool-copy small{display:block;margin-top:3px;color:var(--text-light);font-size:12px;line-height:1.4}
+.course-tool-arrow{color:var(--accent);font-size:20px;font-weight:700}
+.glossary-intro{max-width:690px;font-size:16px;line-height:1.7;color:var(--text-light);margin:-14px 0 24px}
+.glossary-search{display:flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;margin:0 0 12px;box-shadow:var(--shadow)}
+.glossary-search-mark{font-size:15px;font-weight:800;color:var(--accent-dark);flex:0 0 auto}
+.glossary-search input{width:100%;border:0;outline:0;background:transparent;color:var(--text);font:inherit;font-size:15px}
+.glossary-search input::placeholder{color:#8a94a6}
+.glossary-count{font-size:12px;color:var(--text-light);margin-bottom:30px}
+.glossary-group{margin:0 0 34px}
+.glossary-group h2{font-size:18px;font-weight:750;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+.glossary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.glossary-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:18px;min-width:0}
+.glossary-card dt{font-size:15px;font-weight:800;line-height:1.35;color:var(--text);margin-bottom:8px}
+.glossary-card dd{font-size:14px;line-height:1.65;color:#2d3748}
+.glossary-card .glossary-practice{display:block;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);color:var(--text-light);font-size:13px;line-height:1.55}
+.glossary-card .glossary-practice strong{color:var(--green);font-weight:750}
+.glossary-empty{display:none;padding:24px;border:1px dashed var(--border);border-radius:var(--r);text-align:center;color:var(--text-light);font-size:14px}
+.glossary-empty.show{display:block}
 
 /* NAV BUTTONS */
 .mod-nav{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);gap:12px;flex-wrap:wrap}
@@ -241,6 +271,8 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   .welcome{padding:40px 16px 24px}
   .welcome h1{font-size:24px}
   .welcome-lead{font-size:16px}
+  .page:not(#page-home){padding-top:44px}
+  .glossary-grid{grid-template-columns:1fr}
 }
 
 /* ── BANK PRAKTYK ── */
@@ -444,7 +476,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       </div>
     </div>
     <div class="sb-title">Szkolenie dla nauczycieli w ramach projektu WIN4SMEs</div>
-    <div class="sb-meta">Szkoły branżowe i technika · VET</div>
+    <div class="sb-meta">Szkoły branżowe i technika</div>
   </div>
   <div class="sb-progress-wrap">
     <div class="sb-progress-label">
@@ -473,7 +505,15 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <div class="sb-num" id="num-m1">1</div>
       <div class="sb-item-text">
         <div class="sb-item-name">Współczesny uczeń</div>
-        <div class="sb-item-time">≈ 15 min</div>
+        <div class="sb-item-time">≈ 10 min</div>
+      </div>
+      <span class="sb-check">✓</span>
+    </a>
+    <a class="sb-item" id="nav-m1a" onclick="showPage('m1a')">
+      <div class="sb-num" id="num-m1a">1A</div>
+      <div class="sb-item-text">
+        <div class="sb-item-name">Uwaga i koncentracja</div>
+        <div class="sb-item-time">≈ 20 min</div>
       </div>
       <span class="sb-check">✓</span>
     </a>
@@ -534,6 +574,13 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <span class="sb-check">✓</span>
     </a>
     <div style="border-top:1px solid var(--border);margin:8px 16px"></div>
+    <a class="sb-item" id="nav-glossary" onclick="showPage('glossary')">
+      <div class="sb-num">Aa</div>
+      <div class="sb-item-text">
+        <div class="sb-item-name">Słowniczek pojęć</div>
+        <div class="sb-item-time">15 krótkich objaśnień</div>
+      </div>
+    </a>
     <a class="sb-item" id="nav-about" onclick="showPage('about')">
       <div class="sb-num">ℹ</div>
       <div class="sb-item-text">
@@ -543,7 +590,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     </a>
   </nav>
   <div class="sb-footer">
-    Łączny czas: ok. 2,5–3 h<br>
+    Łączny czas: ok. 3–3,5 h<br>
     Postęp zapisywany w przeglądarce
   </div>
 </aside>
@@ -568,7 +615,12 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     <div class="module-card" onclick="showPage('m1')">
       <div class="num">Moduł 1</div>
       <div class="name">Współczesny uczeń szkoły średniej</div>
-      <div class="time">≈ 15 min</div>
+      <div class="time">≈ 10 min · Krótki kontekst</div>
+    </div>
+    <div class="module-card" onclick="showPage('m1a')" style="border-color:#16a34a">
+      <div class="num" style="color:#16a34a">Moduł 1A · Praktyka</div>
+      <div class="name">Uwaga i koncentracja na lekcji</div>
+      <div class="time">≈ 20 min · Ćwiczenia do wdrożenia</div>
     </div>
     <div class="module-card" onclick="showPage('m2')">
       <div class="num">Moduł 2</div>
@@ -605,6 +657,16 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <div class="name">Wiedza jako przepustka</div>
       <div class="time">≈ 20 min</div>
     </div>
+  </div>
+  <div class="course-tools">
+    <button class="course-tool" onclick="showPage('glossary')">
+      <span class="course-tool-icon" aria-hidden="true">Aa</span>
+      <span class="course-tool-copy">
+        <strong>Słowniczek pojęć</strong>
+        <small>Proste objaśnienia terminów pedagogicznych, badawczych i projektowych</small>
+      </span>
+      <span class="course-tool-arrow" aria-hidden="true">→</span>
+    </button>
   </div>
   <div style="text-align:center">
     <button class="start-btn" onclick="showPage('m0')">▶ Zacznij od tła — Moduł 0</button>
@@ -719,13 +781,13 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   <div class="mod-section">
     <h2>Obraz 3: Pandemia — straty, których czas sam nie naprawił</h2>
     <p>Uczeń klas I–II technikum w 2025 roku miał ok. 12–14 lat w czasie lockdownu. To kluczowy moment dla budowania nawyków uczenia się, więzi rówieśniczych i rytmu szkolnego. Pandemia przerwała ten proces.</p>
-    <p>Globalne dane są niepokojące: szkoły były zamknięte przeciętnie przez <strong>22 tygodnie</strong> — równowartość 2/3 roku szkolnego. Straty w wynikach z matematyki odpowiadają ok. <strong>7 miesiącom nauki</strong>. Co ważniejsze — straty te były nieproporcjonalnie większe dla uczniów z rodzin o niższym statusie socjoekonomicznym (Jakubowski, Gajderowicz, Patrinos, 2024 / Nature npj).</p>
+    <p>Globalne dane są niepokojące: szkoły były zamknięte przeciętnie przez <strong>22 tygodnie</strong> — równowartość 2/3 roku szkolnego. Straty w wynikach z matematyki odpowiadają ok. <strong>7 miesiącom nauki</strong>. Co ważniejsze — straty te były nieproporcjonalnie większe dla uczniów z rodzin o niższej sytuacji społeczno-ekonomicznej (Jakubowski, Gajderowicz, Patrinos, 2024 / Nature npj).</p>
 
     <div class="callout blue">
       <div class="callout-icon">🔬</div>
       <div class="callout-body">
         <div class="callout-title">Czas nie naprawia tych strat samoistnie</div>
-        <p>Badania holenderskie i inne (2025) pokazują wyraźnie: bez celowych interwencji dydaktycznych luki edukacyjne po pandemii nie zamknęły się po prostu wraz z upływem czasu. Nauczyciel, który widzi dzisiaj słabe podstawy ucznia, może patrzeć na skutki tamtego okresu — nie na lenistwo.</p>
+        <p>Badania holenderskie i inne (2025) pokazują wyraźnie: bez celowych działań dydaktycznych luki edukacyjne po pandemii nie zamknęły się po prostu wraz z upływem czasu. Nauczyciel, który widzi dzisiaj słabe podstawy ucznia, może patrzeć na skutki tamtego okresu — nie na lenistwo.</p>
       </div>
     </div>
   </div>
@@ -776,7 +838,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <div class="callout-icon">🚫</div>
       <div class="callout-body">
         <div class="callout-title">Czego to NIE oznacza</div>
-        <p>Nie oznacza obniżania wymagań. Nie oznacza, że „nic się nie da zrobić". Nie oznacza, że nauczyciel jest bezsilny. Oznacza, że trafna diagnoza prowadzi do skuteczniejszej interwencji — a skuteczna interwencja możliwa jest nawet bez rewolucji w warsztacie pracy.</p>
+        <p>Nie oznacza obniżania wymagań. Nie oznacza, że „nic się nie da zrobić". Nie oznacza, że nauczyciel jest bezsilny. Oznacza, że trafne rozpoznanie prowadzi do skuteczniejszego działania — a skuteczne działanie jest możliwe nawet bez rewolucji w warsztacie pracy.</p>
       </div>
     </div>
   </div>
@@ -920,9 +982,9 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 <div class="page" id="page-m1">
   <div class="mod-header">
     <div class="mod-badge">Moduł 1</div>
-    <h1 class="mod-title">Współczesny uczeń szkoły średniej — fakty zamiast mitów</h1>
+    <h1 class="mod-title">Współczesny uczeń szkoły średniej — kontekst bez etykiet</h1>
     <div class="mod-meta">
-      <span>⏱ ok. 15 minut</span>
+      <span>⏱ ok. 10 minut</span>
       <span>📖 Lektura + ćwiczenie</span>
     </div>
   </div>
@@ -934,26 +996,26 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 
   <div class="mod-section">
     <h2>Kto trafia do szkół zawodowych?</h2>
-    <p>W polskich technikach uczy się dziś ponad <strong>687 000 uczniów</strong>, a w branżowych szkołach I stopnia — ok. <strong>212 000</strong> (GUS, 2024/25). To duże liczby. I duże zróżnicowanie.</p>
-    <p>Badania IBE pokazują, że ok. <strong>43% uczniów techników</strong> pochodzi z rodzin, w których żaden z rodziców nie ma wykształcenia wyższego. W szkołach branżowych I stopnia ten odsetek jest jeszcze wyższy. Oznacza to, że wielu uczniów nie ma w domu modelów, które pokazują, jak wygląda droga przez edukację do satysfakcjonującej pracy.</p>
+    <p>Do techników i szkół branżowych trafiają uczniowie o bardzo różnych doświadczeniach szkolnych, rodzinnych i cyfrowych. Część ma za sobą dobre wyniki i jasny plan zawodowy. Część przychodzi po latach porażek, słabych podstaw, napięcia albo braku wiary, że szkoła może im jeszcze pomóc.</p>
+    <p>Dane są potrzebne, ale na początku kursu mają tylko ustawić kontekst. Najważniejsze pytanie dla nauczyciela brzmi: <strong>jak zaprojektować lekcję, żeby uczeń miał szansę wejść w zadanie, utrzymać uwagę i zobaczyć sens pierwszego kroku?</strong></p>
   </div>
 
   <div class="stats">
     <div class="stat-card">
-      <div class="stat-num">66%</div>
-      <div class="stat-label">uczniów branżowych ma bardzo niskie umiejętności matematyczne (PISA 2022)</div>
+      <div class="stat-num">900k</div>
+      <div class="stat-label">uczniów uczy się w technikach i szkołach branżowych; to nie jedna grupa, tylko wiele różnych punktów startu</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num">30%</div>
-      <div class="stat-label">uczniów branżowych I st. nie uzyska kwalifikacji zawodowych (NIK 2024)</div>
+      <div class="stat-num">1 lekcja</div>
+      <div class="stat-label">wystarczy, żeby uczeń dostał pierwszy mały dowód: „umiem zrobić krok do przodu”</div>
     </div>
     <div class="stat-card">
       <div class="stat-num">43%</div>
-      <div class="stat-label">uczniów techników — rodzice bez wykształcenia wyższego (IBE)</div>
+      <div class="stat-label">uczniów techników pochodzi z rodzin, w których żaden z rodziców nie ma wykształcenia wyższego; szkoła często musi pokazać reguły gry wprost</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num">18,7%</div>
-      <div class="stat-label">odsetek wczesnego porzucania edukacji w szkołach branżowych (dane GUS)</div>
+      <div class="stat-num">3 rzeczy</div>
+      <div class="stat-label">najbardziej pomagają na starcie: jasny cel, krótki pierwszy krok i szybka informacja, czy uczeń idzie dobrą drogą</div>
     </div>
   </div>
 
@@ -971,10 +1033,10 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   </div>
 
   <div class="mod-section">
-    <h2>Zmiany społeczne, które dotknęły tę grupę</h2>
+    <h2>Zmiany społeczne, które widać na lekcji</h2>
     <p>Uczniowie, którzy trafiają dziś do klas pierwszych technikum, urodzili się ok. 2009–2011 roku. Dorastali w środowisku mediów społecznościowych, pandemii COVID-19 (utrata rytmu szkolnego w kluczowym wieku), rosnącej niepewności ekonomicznej i zmian na rynku pracy.</p>
     <ul>
-      <li><strong>Krótszy próg frustracji</strong> — środowisko cyfrowe dostarcza natychmiastowych nagród. Nauka wymaga odroczenia gratyfikacji.</li>
+      <li><strong>Krótsza tolerancja frustracji</strong> — środowisko cyfrowe dostarcza szybkich bodźców. Nauka wymaga pozostania przy zadaniu mimo nudy i błędu.</li>
       <li><strong>Lęk o przyszłość</strong> — CBOS 2023: 52% młodych ludzi „boi się, że nie znajdzie dobrej pracy". Ten lęk blokuje, nie motywuje.</li>
       <li><strong>Rozerwany rytm szkolny</strong> — pandemia COVID-19 przerwała kluczowy etap budowania nawyków uczenia się (klasy 5–8).</li>
       <li><strong>Wyższy poziom objawów depresyjnych i lękowych</strong> — WHO (2022): 1 na 7 nastolatków ma zaburzenia psychiczne. Część „leniwych uczniów" to uczniowie cierpiący.</li>
@@ -1012,12 +1074,12 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       </div>
     </div>
     <div class="quiz-q" id="q-m1-1">
-      <div class="quiz-q-text">1. Ile procent uczniów branżowych szkół I stopnia NIE uzyska kwalifikacji zawodowych (według raportu NIK 2024)?</div>
+      <div class="quiz-q-text">1. Po co w tym module pojawiają się dane o uczniach szkół zawodowych?</div>
       <div class="quiz-options">
-        <label class="quiz-opt"><input type="radio" name="q-m1-1" value="a"> ok. 10%</label>
-        <label class="quiz-opt"><input type="radio" name="q-m1-1" value="b"> ok. 30%</label>
-        <label class="quiz-opt"><input type="radio" name="q-m1-1" value="c"> ok. 60%</label>
-        <label class="quiz-opt"><input type="radio" name="q-m1-1" value="d"> ok. 5%</label>
+        <label class="quiz-opt"><input type="radio" name="q-m1-1" value="a"> Żeby udowodnić, że problemem są konkretne typy szkół</label>
+        <label class="quiz-opt"><input type="radio" name="q-m1-1" value="b"> Żeby ustawić kontekst i dobrać trafniejsze metody pracy</label>
+        <label class="quiz-opt"><input type="radio" name="q-m1-1" value="c"> Żeby obniżyć wymagania wobec uczniów</label>
+        <label class="quiz-opt"><input type="radio" name="q-m1-1" value="d"> Żeby zastąpić obserwację klasy statystyką</label>
       </div>
     </div>
     <div class="quiz-q" id="q-m1-2">
@@ -1123,7 +1185,130 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 
   <div class="mod-nav">
     <button class="btn btn-outline" onclick="showPage('m0')">← Moduł 0</button>
-    <button class="btn btn-complete" onclick="completeAndNext('m1','m2')">Ukończ i przejdź dalej →</button>
+    <button class="btn btn-complete" onclick="completeAndNext('m1','m1a')">Dalej: koncentracja i uwaga →</button>
+  </div>
+</div>
+
+<!-- MODULE 1A -->
+<div class="page" id="page-m1a">
+  <div class="mod-header">
+    <div class="mod-badge" style="background:#dcfce7;color:#15803d">Moduł 1A · Praktyka</div>
+    <h1 class="mod-title">Uwaga i koncentracja na lekcji</h1>
+    <div class="mod-meta">
+      <span>⏱ ok. 20 minut</span>
+      <span>🛠 ćwiczenia + plan lekcji</span>
+    </div>
+  </div>
+
+  <div class="keyfact" style="background:linear-gradient(135deg,#14532d 0%,#16a34a 100%)">
+    <div class="keyfact-label">Punkt wyjścia</div>
+    <div class="keyfact-text">Koncentracja nie jest cechą charakteru, tylko warunkiem pracy. Uczeń może ją ćwiczyć, ale lekcja musi dawać mu jasny cel, krótki pierwszy krok i częste punkty powrotu do zadania.</div>
+  </div>
+
+  <div class="mod-section">
+    <h2>Dlaczego uczeń traci uwagę?</h2>
+    <p>Najczęściej nie dlatego, że „nie ma żadnej motywacji". Uwaga odpływa, gdy uczeń nie wie, od czego zacząć, nie widzi sensu zadania, czeka zbyt długo na działanie albo po pierwszym błędzie uznaje, że i tak mu się nie uda.</p>
+    <p>W praktyce nauczyciel nie musi wygrać z telefonem atrakcyjnością. Musi obniżyć próg wejścia w zadanie i częściej przywracać klasę do konkretu.</p>
+  </div>
+
+  <div class="practice-grid">
+    <div class="practice-card">
+      <strong>1. Cel w jednym zdaniu</strong>
+      <p>Zamiast długiego wstępu: „Dziś nauczysz się sprawdzić, czy ten błąd wynika z obliczeń, czy z błędnego założenia”.</p>
+    </div>
+    <div class="practice-card">
+      <strong>2. Pierwszy krok na 3 minuty</strong>
+      <p>Uczeń dostaje tylko najbliższy ruch. Dopiero po nim pojawia się kolejna część zadania.</p>
+    </div>
+    <div class="practice-card">
+      <strong>3. Punkt powrotu co kilka minut</strong>
+      <p>Krótkie pytanie: „Co już mamy?”, „Gdzie jesteśmy?”, „Jaki jest następny krok?”.</p>
+    </div>
+    <div class="practice-card">
+      <strong>4. Jedno źródło rozproszenia mniej</strong>
+      <p>Nie moralizuj o telefonach. Powiedz: „Przez sześć minut potrzebujemy tylko zeszytu i tego schematu”.</p>
+    </div>
+  </div>
+
+  <div class="mod-section">
+    <h2>Protokół 7-2-1</h2>
+    <p>To prosty rytm dla klasy, która szybko odpływa:</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Czas</th><th>Co robi klasa?</th><th>Po co?</th></tr>
+        <tr><td><strong>7 minut</strong></td><td>Praca nad jednym krótkim zadaniem</td><td>Uczeń wie, że wysiłek ma wyraźny koniec</td></tr>
+        <tr><td><strong>2 minuty</strong></td><td>Sprawdzenie: para, kartka, tablica albo szybka odpowiedź</td><td>Uwaga wraca do celu, zanim klasa się rozsypie</td></tr>
+        <tr><td><strong>1 minuta</strong></td><td>Decyzja: kontynuujemy, poprawiamy błąd albo przechodzimy dalej</td><td>Uczeń widzi postęp i następny krok</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout green">
+    <div class="callout-icon">✓</div>
+    <div class="callout-body">
+      <div class="callout-title">Zdanie do użycia jutro</div>
+      <p>„Przez najbliższe siedem minut robimy tylko pierwszy krok. Nie oceniam jeszcze wyniku. Sprawdzamy tylko, czy wszyscy wiedzą, od czego zacząć.”</p>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-header">
+      <div class="exercise-icon">✏️</div>
+      <div>
+        <div class="exercise-label">Ćwiczenie projektowe</div>
+        <div class="exercise-title">Przepisz początek jednej lekcji</div>
+      </div>
+    </div>
+    <p>Wybierz lekcję, na której uczniowie często odpływają po kilku minutach. Zapisz cel w jednym zdaniu, pierwszy krok na 3 minuty i punkt sprawdzenia po pierwszym bloku pracy.</p>
+    <textarea id="ex-m1a" placeholder="Cel lekcji, pierwszy krok, punkt sprawdzenia..." oninput="saveNote('m1a',this.value)"></textarea>
+    <div class="save-note">💾 Notatki zapisują się automatycznie w Twojej przeglądarce.</div>
+  </div>
+
+  <div class="quiz" id="quiz-m1a">
+    <div class="quiz-header">
+      <div class="quiz-icon">❓</div>
+      <div>
+        <div class="quiz-label">Sprawdź wiedzę</div>
+        <div class="quiz-title">3 pytania z modułu 1A</div>
+      </div>
+    </div>
+    <div class="quiz-q">
+      <div class="quiz-q-text">1. Co najczęściej pomaga uczniowi wejść w zadanie?</div>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="q-m1a-1" value="a"> Dłuższe wyjaśnienie całej teorii przed ćwiczeniem</label>
+        <label class="quiz-opt"><input type="radio" name="q-m1a-1" value="b"> Jasny cel i krótki pierwszy krok</label>
+        <label class="quiz-opt"><input type="radio" name="q-m1a-1" value="c"> Informacja, że materiał będzie na sprawdzianie</label>
+      </div>
+    </div>
+    <div class="quiz-q">
+      <div class="quiz-q-text">2. Po co w protokole 7-2-1 pojawia się krótki punkt sprawdzenia?</div>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="q-m1a-2" value="a"> Żeby przerwać lekcję luźną rozmową</label>
+        <label class="quiz-opt"><input type="radio" name="q-m1a-2" value="b"> Żeby przywrócić uwagę do celu, zanim klasa odpłynie</label>
+        <label class="quiz-opt"><input type="radio" name="q-m1a-2" value="c"> Żeby skrócić zakres materiału</label>
+      </div>
+    </div>
+    <div class="quiz-q">
+      <div class="quiz-q-text">3. Jak lepiej mówić o telefonach i rozproszeniach?</div>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="q-m1a-3" value="a"> „Telefony niszczą wam życie, więc macie je odłożyć”</label>
+        <label class="quiz-opt"><input type="radio" name="q-m1a-3" value="b"> „Przez sześć minut potrzebujemy tylko zeszytu i tego schematu”</label>
+        <label class="quiz-opt"><input type="radio" name="q-m1a-3" value="c"> „Kto spojrzy w telefon, dostaje uwagę”</label>
+      </div>
+    </div>
+    <button class="quiz-check-btn" onclick="checkQuiz('m1a',{1:'b',2:'b',3:'b'})">Sprawdź odpowiedzi</button>
+    <div class="quiz-score" id="score-m1a"></div>
+  </div>
+
+  <div class="takeaway">
+    <div class="takeaway-label">Narzędzie na jutro</div>
+    <h3>Nie zaczynaj od dyscypliny. Zacznij od wejścia w zadanie.</h3>
+    <p>Jeśli uczniowie tracą uwagę, najpierw skróć pierwszy krok, nazwij cel i zaplanuj szybki punkt sprawdzenia. Dopiero potem oceniaj, czy problemem jest opór, brak umiejętności czy rozproszenie.</p>
+  </div>
+
+  <div class="mod-nav">
+    <button class="btn btn-outline" onclick="showPage('m1')">← Moduł 1</button>
+    <button class="btn btn-complete" onclick="completeAndNext('m1a','m2')">Ukończ i przejdź dalej →</button>
   </div>
 </div>
 
@@ -1183,8 +1368,8 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     <h2>Nastawienie na rozwój — ostrożnie z pochwałą za zdolności</h2>
     <p>Carol Dweck (Stanford) przez 40 lat badała, jak przekonania na temat własnej inteligencji wpływają na zachowanie uczniów. Wyróżniła dwa nastawienia:</p>
     <ul>
-      <li><strong>Nastawienie stałe</strong> (ang. <em>fixed mindset</em>): „Jestem taki, jaki jestem. Albo się umie, albo nie." Uczeń z tym przekonaniem unika trudnych zadań — bo porażka byłaby dowodem na brak zdolności.</li>
-      <li><strong>Nastawienie na rozwój</strong> (ang. <em>growth mindset</em>): „Przez wysiłek mogę stać się lepszy." Uczeń podejmuje wyzwania i uczy się na błędach.</li>
+      <li><strong>Nastawienie stałe</strong>: „Jestem taki, jaki jestem. Albo się umie, albo nie." Uczeń z tym przekonaniem unika trudnych zadań — bo porażka byłaby dowodem na brak zdolności.</li>
+      <li><strong>Nastawienie na rozwój</strong>: „Przez wysiłek mogę stać się lepszy." Uczeń podejmuje wyzwania i uczy się na błędach.</li>
     </ul>
 
     <div class="keyfact" style="background:linear-gradient(135deg,#7c3aed 0%,#9333ea 100%)">
@@ -1245,7 +1430,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       </div>
     </div>
     <div class="quiz-q">
-      <div class="quiz-q-text">3. Co jest praktycznym celem nauczyciela wobec ucznia z amotywacją?</div>
+      <div class="quiz-q-text">3. Co jest praktycznym celem nauczyciela wobec ucznia, który nie widzi sensu zadania?</div>
       <div class="quiz-options">
         <label class="quiz-opt"><input type="radio" name="q-m2-3" value="a"> Osiągnięcie pełnej motywacji wewnętrznej w ciągu jednego semestru</label>
         <label class="quiz-opt"><input type="radio" name="q-m2-3" value="b"> Pomoc uczniowi w przejściu od „muszę" do „widzę, po co mi to"</label>
@@ -1311,7 +1496,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   </div>
 
   <div class="mod-nav">
-    <button class="btn btn-outline" onclick="showPage('m1')">← Moduł 1</button>
+    <button class="btn btn-outline" onclick="showPage('m1a')">← Moduł 1A</button>
     <button class="btn btn-complete" onclick="completeAndNext('m2','m3')">Ukończ i przejdź dalej →</button>
   </div>
 </div>
@@ -1329,13 +1514,13 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 
   <div class="keyfact">
     <div class="keyfact-label">Kluczowe odkrycie — Albert Bandura</div>
-    <div class="keyfact-text">Poczucie własnej skuteczności jest silniejszym predyktorem osiągnięć szkolnych niż iloraz inteligencji lub poprzednie oceny.</div>
+    <div class="keyfact-text">Poczucie własnej skuteczności lepiej pozwala przewidywać osiągnięcia szkolne niż iloraz inteligencji lub poprzednie oceny.</div>
     <div class="keyfact-source">Zimmerman, B.J. (1995) / Bandura, A. (1997) Self-efficacy: The exercise of control</div>
   </div>
 
   <div class="mod-section">
     <h2>Poczucie własnej skuteczności: uczeń wierzy, że da radę</h2>
-    <p>W badaniach Bandury to pojęcie występuje jako <em>self-efficacy</em>. W praktyce chodzi o proste przekonanie ucznia: <strong>jestem w stanie wykonać konkretne zadanie i osiągnąć cel</strong>. Nie chodzi o ogólną pewność siebie, tylko o bardzo konkretne: „dam radę z tym zadaniem matematycznym", „potrafię napisać ten e-mail do klienta".</p>
+    <p>W badaniach Bandury to pojęcie występuje jako <em>self-efficacy</em>, czyli poczucie własnej skuteczności. W praktyce chodzi o proste przekonanie ucznia: <strong>jestem w stanie wykonać konkretne zadanie i osiągnąć cel</strong>. Nie chodzi o ogólną pewność siebie, tylko o bardzo konkretne: „dam radę z tym zadaniem matematycznym", „potrafię napisać ten e-mail do klienta".</p>
     <p>Dlaczego to ważne? Uczniowie z niskim poczuciem skuteczności:</p>
     <ul>
       <li>unikają wysiłku (po co próbować, skoro i tak mi nie wyjdzie)</li>
@@ -1464,7 +1649,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
         <div class="resource-info">
           <div class="resource-info-meta">TED Talk • Carol Dweck • 10 min</div>
           <div class="resource-info-title">The power of believing that you can improve</div>
-          <div class="resource-info-desc">Dweck prezentuje 20 lat badań nad mindsetem: dlaczego słowo „jeszcze” jest ważniejsze niż stopień.</div>
+          <div class="resource-info-desc">Dweck prezentuje 20 lat badań nad nastawieniem na rozwój: dlaczego słowo „jeszcze” jest ważniejsze niż stopień.</div>
         </div>
       </div>
       <div class="resource-card">
@@ -1728,7 +1913,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <div class="callout-icon">🔄</div>
       <div class="callout-body">
         <div class="callout-title">Zamiast: „Dzisiaj omawiamy równania liniowe"</div>
-        <p><strong>Powiedz:</strong> „Wyobraź sobie: masz zamówić towar dla sklepu. Dostawca oferuje rabat 20% przy zakupie 50 sztuk lub 15% przy 30 sztukach. Który deal jest korzystniejszy? To właśnie policzysz za 20 minut."</p>
+        <p><strong>Powiedz:</strong> „Wyobraź sobie: masz zamówić towar dla sklepu. Dostawca oferuje rabat 20% przy zakupie 50 sztuk lub 15% przy 30 sztukach. Która oferta jest korzystniejsza? To właśnie policzysz za 20 minut."</p>
       </div>
     </div>
 
@@ -1767,7 +1952,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     <div class="quiz-q">
       <div class="quiz-q-text">1. Jak teoria SDT (Deci & Ryan) nazywa motywację opartą na dostrzeganiu przydatności działania dla siebie?</div>
       <div class="quiz-options">
-        <label class="quiz-opt"><input type="radio" name="q-m5-1" value="a"> Amotywacja</label>
+        <label class="quiz-opt"><input type="radio" name="q-m5-1" value="a"> Brak poczucia sensu działania</label>
         <label class="quiz-opt"><input type="radio" name="q-m5-1" value="b"> Regulacja zewnętrzna</label>
         <label class="quiz-opt"><input type="radio" name="q-m5-1" value="c"> Regulacja identyfikacyjna</label>
         <label class="quiz-opt"><input type="radio" name="q-m5-1" value="d"> Motywacja introjekcyjna</label>
@@ -1867,7 +2052,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 
   <div class="keyfact">
     <div class="keyfact-label">Visible Learning — John Hattie (2009)</div>
-    <div class="keyfact-text">Meta-analiza ponad 800 badań edukacyjnych. Relacja nauczyciel–uczeń osiągnęła effect size = 0,72 — dwukrotnie wyżej niż próg „skuteczna interwencja". Jest jednym z najsilniejszych czynników wpływających na wyniki uczniów.</div>
+    <div class="keyfact-text">Meta-analiza ponad 800 badań edukacyjnych. Relacja nauczyciel–uczeń osiągnęła siłę efektu 0,72 — prawie dwukrotnie wyżej niż próg uznawany za istotny w praktyce. Jest jednym z najsilniejszych czynników wpływających na wyniki uczniów.</div>
     <div class="keyfact-source">Hattie, J. (2009). Visible Learning. Routledge.</div>
   </div>
 
@@ -1953,7 +2138,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       </div>
     </div>
     <div class="quiz-q">
-      <div class="quiz-q-text">1. Jaki effect size (ES) uzyskała relacja nauczyciel–uczeń w meta-analizie Hattiego?</div>
+      <div class="quiz-q-text">1. Jaką siłę efektu uzyskała relacja nauczyciel–uczeń w meta-analizie Hattiego?</div>
       <div class="quiz-options">
         <label class="quiz-opt"><input type="radio" name="q-m6-1" value="a"> ES = 0,20 (mały efekt)</label>
         <label class="quiz-opt"><input type="radio" name="q-m6-1" value="b"> ES = 0,40 (próg skuteczności)</label>
@@ -2031,7 +2216,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
         </a>
         <a class="resource-article-link" href="https://link.springer.com/article/10.1007/s10648-019-09514-z" target="_blank" rel="noopener">
           <span class="resource-article-icon">📊</span>
-          <span class="resource-article-text"><strong>Relacja pedagog–uczeń jako predyktor osiągnięć (meta-analiza)</strong><span>Educational Psychology Review</span></span>
+          <span class="resource-article-text"><strong>Relacja pedagog–uczeń jako czynnik przewidujący osiągnięcia (meta-analiza)</strong><span>Educational Psychology Review</span></span>
         </a>
     </div>
   </div>
@@ -2293,12 +2478,12 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   <div class="mod-badge">Moduł 7</div>
   <h1 class="mod-title">Bank praktyk — przykłady lekcji do adaptacji</h1>
   <div class="mod-meta">
-    <span>📚 52 przykłady</span>
+    <span>📚 57 przykładów</span>
     <span>🧰 4 techniki pracy</span>
     <span>🎓 Przedmioty ogólne i zawodowe</span>
   </div>
 </div>
-<p class="lead">Przykłady zastosowania czterech technik: mikrocelów, poczucia skuteczności, sensu uczenia się i aktywizacji. Łącznie <strong>52 przykłady</strong> z różnych przedmiotów — od matematyki po przedmioty zawodowe.</p>
+<p class="lead">Przykłady zastosowania czterech technik: mikrocelów, poczucia skuteczności, sensu uczenia się i aktywizacji. Łącznie <strong>57 przykładów</strong> z różnych przedmiotów — od matematyki po przedmioty zawodowe.</p>
 
 <div class="bp-filters">
   <div class="bp-filter-row">
@@ -2309,7 +2494,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     <span class="bp-filter-label">Technika:</span>
     <button class="bp-filter-btn active" data-filter-tech="wszystkie">Wszystkie techniki</button><button class="bp-filter-btn" data-filter-tech="sens">Sens uczenia się</button><button class="bp-filter-btn" data-filter-tech="mikrocele">Mikrocele</button><button class="bp-filter-btn" data-filter-tech="skutecznosc">Poczucie skuteczności</button><button class="bp-filter-btn" data-filter-tech="aktywizacja">Aktywizacja</button>
   </div>
-  <div class="bp-filter-count" id="bp-count">Pokazuję <strong id="bp-count-num">52</strong> z 52 przykładów</div>
+  <div class="bp-filter-count" id="bp-count">Pokazuję <strong id="bp-count-num">57</strong> z 57 przykładów</div>
 </div>
 
 <div class="bp-grid" id="bp-grid">
@@ -2891,7 +3076,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <span class="bp-subject">Technika ponadprzedmiotowa</span>
       <span class="bp-technique" style="background:#16a34a">Mikrocele</span>
     </div>
-    <h3 class="bp-title">Exit Ticket — 2 minuty, które pokazują co zapamiętano</h3>
+    <h3 class="bp-title">Kartka na wyjście — 2 minuty, które pokazują co zapamiętano</h3>
     <div class="bp-level">Poziom: Wszystkie poziomy &bull; Temat: <em>Techniki kończenia lekcji — ocena i utrwalanie wiedzy</em></div>
   </div>
   <div class="bp-body">
@@ -2907,6 +3092,136 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <div class="bp-traps-wrap">
         <strong>Pułapki i jak ich unikać:</strong>
         <ul class="bp-traps"><li>Błąd: zbieranie kartek i nigdy do nich nie wracanie. Uczniowie szybko to wyczuwają i przestają pisać szczerze. Koniecznie wróć do wyników na początku następnej lekcji.</li><li>Błąd: pytanie zbyt ogólne (&#39;Napisz co pamiętasz z lekcji&#39;). Pytanie musi być konkretne i sformułowane tak, żeby można je było zamknąć jednym zdaniem.</li></ul>
+      </div>
+    </details>
+  </div>
+</div>
+<div class="bp-card" data-group="ponadprzedmiotowe" data-technique="aktywizacja">
+  <div class="bp-card-header">
+    <div class="bp-card-meta">
+      <span class="bp-subject">Technika ponadprzedmiotowa</span>
+      <span class="bp-technique" style="background:#9333ea">Aktywizacja</span>
+    </div>
+    <h3 class="bp-title">Reset 2-minutowy — szybki powrót do zadania</h3>
+    <div class="bp-level">Poziom: Wszystkie poziomy &bull; Temat: <em>Koncentracja — odzyskiwanie uwagi po odpłynięciu klasy</em></div>
+  </div>
+  <div class="bp-body">
+    <p class="bp-problem"><strong>Problem:</strong> Po kilku minutach część klasy przestaje śledzić lekcję. Nauczyciel tłumaczy dalej, ale uczniowie nie wiedzą już, gdzie są.</p>
+    <details class="bp-details">
+      <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
+      <div class="bp-steps-wrap">
+        <strong>Krok po kroku:</strong>
+        <ol class="bp-steps"><li>Nauczyciel zatrzymuje pracę i mówi: &#39;Robimy reset. Nie zaczynamy od nowa, tylko wracamy do punktu, w którym jesteśmy.&#39;</li><li>Uczniowie przez 60 sekund zapisują odpowiedź na pytanie: &#39;Co już wiemy?&#39;</li><li>Przez kolejne 60 sekund zapisują jedno pytanie: &#39;Czego jeszcze nie rozumiem?&#39;</li><li>Nauczyciel zbiera 2–3 odpowiedzi z klasy i wskazuje kolejny krok.</li><li>Klasa wraca do zadania, ale już z odtworzonym kontekstem.</li></ol>
+      </div>
+      <blockquote class="bp-quote">&#8222;Nie sprawdzam teraz wiedzy. Sprawdzamy tylko, gdzie jesteśmy i jaki jest następny krok.&#8221;</blockquote>
+      <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie, którzy się zgubili, dostają bezpieczny powrót do lekcji bez publicznego zawstydzania.</p>
+      <div class="bp-traps-wrap">
+        <strong>Pułapki i jak ich unikać:</strong>
+        <ul class="bp-traps"><li>Błąd: zamienianie resetu w odpytywanie. To ma być powrót do orientacji, nie test.</li><li>Błąd: za długie omawianie odpowiedzi. Dwie minuty mają przywrócić rytm, nie zastąpić lekcji.</li></ul>
+      </div>
+    </details>
+  </div>
+</div>
+<div class="bp-card" data-group="ponadprzedmiotowe" data-technique="mikrocele">
+  <div class="bp-card-header">
+    <div class="bp-card-meta">
+      <span class="bp-subject">Technika ponadprzedmiotowa</span>
+      <span class="bp-technique" style="background:#16a34a">Mikrocele</span>
+    </div>
+    <h3 class="bp-title">Pierwszy krok na 3 minuty</h3>
+    <div class="bp-level">Poziom: Wszystkie poziomy &bull; Temat: <em>Koncentracja — obniżanie progu wejścia w zadanie</em></div>
+  </div>
+  <div class="bp-body">
+    <p class="bp-problem"><strong>Problem:</strong> Polecenie jest poprawne, ale zbyt szerokie. Uczeń widzi całe zadanie i rezygnuje, zanim zacznie.</p>
+    <details class="bp-details">
+      <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
+      <div class="bp-steps-wrap">
+        <strong>Krok po kroku:</strong>
+        <ol class="bp-steps"><li>Nauczyciel wybiera pierwszy mikrokrok zadania: zaznacz dane, podpisz elementy, przepisz wzór, znajdź jedną informację, sprawdź jedną jednostkę.</li><li>Na tablicy widnieje tylko ten krok, bez całej listy wymagań.</li><li>Uczniowie pracują 3 minuty. Nauczyciel chodzi po klasie i sprawdza wyłącznie start.</li><li>Dopiero po pierwszym kroku pojawia się kolejna instrukcja.</li><li>Na końcu nauczyciel mówi, co ten pierwszy krok odblokował.</li></ol>
+      </div>
+      <blockquote class="bp-quote">&#8222;Nie robimy jeszcze całego zadania. Przez trzy minuty robimy tylko pierwszy ruch.&#8221;</blockquote>
+      <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczeń, który zwykle odkłada pracę, ma łatwiejszy start i szybciej doświadcza małego sukcesu.</p>
+      <div class="bp-traps-wrap">
+        <strong>Pułapki i jak ich unikać:</strong>
+        <ul class="bp-traps"><li>Błąd: ujawnianie całej długiej instrukcji od razu. Dla części uczniów to sygnał: &#39;nie dam rady&#39;.</li><li>Błąd: pierwszy krok jest nadal za duży. Ma być tak mały, żeby większość klasy mogła zacząć bez czekania na pomoc.</li></ul>
+      </div>
+    </details>
+  </div>
+</div>
+<div class="bp-card" data-group="ponadprzedmiotowe" data-technique="aktywizacja">
+  <div class="bp-card-header">
+    <div class="bp-card-meta">
+      <span class="bp-subject">Technika ponadprzedmiotowa</span>
+      <span class="bp-technique" style="background:#9333ea">Aktywizacja</span>
+    </div>
+    <h3 class="bp-title">Punkt powrotu co 7 minut</h3>
+    <div class="bp-level">Poziom: Wszystkie poziomy &bull; Temat: <em>Koncentracja — krótkie bloki pracy i sprawdzanie orientacji</em></div>
+  </div>
+  <div class="bp-body">
+    <p class="bp-problem"><strong>Problem:</strong> Lekcja jest prowadzona w jednym długim bloku. Uczeń odpływa, a nauczyciel zauważa to dopiero po kilkunastu minutach.</p>
+    <details class="bp-details">
+      <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
+      <div class="bp-steps-wrap">
+        <strong>Krok po kroku:</strong>
+        <ol class="bp-steps"><li>Nauczyciel dzieli zadanie na bloki około 7-minutowe.</li><li>Po każdym bloku zadaje jedno pytanie kontrolne: &#39;Co już mamy?&#39;, &#39;Jaki jest następny krok?&#39;, &#39;Gdzie najłatwiej o błąd?&#39;</li><li>Uczniowie odpowiadają na kartce, w parze albo gestem wyboru A/B.</li><li>Nauczyciel reaguje od razu: kontynuacja, krótka poprawka albo zmiana tempa.</li><li>Na tablicy zostaje ślad: krok 1, krok 2, krok 3.</li></ol>
+      </div>
+      <blockquote class="bp-quote">&#8222;Zatrzymujemy się na pół minuty. Co mamy już zrobione i co robimy teraz?&#8221;</blockquote>
+      <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uwaga wraca do celu, zanim klasa rozproszy się na dobre. Nauczyciel szybciej widzi, kto się zgubił.</p>
+      <div class="bp-traps-wrap">
+        <strong>Pułapki i jak ich unikać:</strong>
+        <ul class="bp-traps"><li>Błąd: punkt powrotu trwa pięć minut. Ma być krótki i rytmiczny.</li><li>Błąd: pytanie jest ogólne: &#39;Rozumiecie?&#39; Lepsze są pytania o konkretny następny krok.</li></ul>
+      </div>
+    </details>
+  </div>
+</div>
+<div class="bp-card" data-group="ponadprzedmiotowe" data-technique="aktywizacja">
+  <div class="bp-card-header">
+    <div class="bp-card-meta">
+      <span class="bp-subject">Technika ponadprzedmiotowa</span>
+      <span class="bp-technique" style="background:#9333ea">Aktywizacja</span>
+    </div>
+    <h3 class="bp-title">Jedno źródło rozproszenia mniej</h3>
+    <div class="bp-level">Poziom: Wszystkie poziomy &bull; Temat: <em>Koncentracja — ograniczanie bodźców bez moralizowania</em></div>
+  </div>
+  <div class="bp-body">
+    <p class="bp-problem"><strong>Problem:</strong> Nauczyciel walczy z telefonami przez komentarze ogólne, a klasa słyszy pouczenie zamiast konkretnej instrukcji do pracy.</p>
+    <details class="bp-details">
+      <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
+      <div class="bp-steps-wrap">
+        <strong>Krok po kroku:</strong>
+        <ol class="bp-steps"><li>Nauczyciel wybiera krótki fragment lekcji, w którym telefon nie jest potrzebny.</li><li>Zamiast mówić o uzależnieniu, podaje precyzyjną ramę: &#39;Przez sześć minut potrzebujemy tylko zeszytu i schematu.&#39;</li><li>Po sześciu minutach telefon może wrócić jako narzędzie albo zostaje odłożony na kolejny blok.</li><li>Nauczyciel konsekwentnie łączy ograniczenie bodźców z celem zadania, nie z oceną charakteru ucznia.</li></ol>
+      </div>
+      <blockquote class="bp-quote">&#8222;Telefon nie jest teraz karą ani nagrodą. Po prostu w tym kroku nie jest narzędziem, którego potrzebujemy.&#8221;</blockquote>
+      <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie łatwiej akceptują ograniczenie, bo dotyczy konkretnego zadania i krótkiego czasu.</p>
+      <div class="bp-traps-wrap">
+        <strong>Pułapki i jak ich unikać:</strong>
+        <ul class="bp-traps"><li>Błąd: zaczynanie od kazania o telefonach. To uruchamia opór.</li><li>Błąd: brak końca czasowego. Krótki blok jest łatwiejszy do przyjęcia niż ogólne &#39;odłóżcie telefony&#39;.</li></ul>
+      </div>
+    </details>
+  </div>
+</div>
+<div class="bp-card" data-group="ponadprzedmiotowe" data-technique="mikrocele">
+  <div class="bp-card-header">
+    <div class="bp-card-meta">
+      <span class="bp-subject">Technika ponadprzedmiotowa</span>
+      <span class="bp-technique" style="background:#16a34a">Mikrocele</span>
+    </div>
+    <h3 class="bp-title">Mapa rozproszeń klasy</h3>
+    <div class="bp-level">Poziom: Wszystkie poziomy &bull; Temat: <em>Koncentracja — rozpoznawanie, co odciąga uwagę</em></div>
+  </div>
+  <div class="bp-body">
+    <p class="bp-problem"><strong>Problem:</strong> Nauczyciel zakłada, że wie, co rozprasza klasę. Uczniowie często widzą inne przyczyny: tempo, hałas, zbyt długą instrukcję, lęk przed błędem.</p>
+    <details class="bp-details">
+      <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
+      <div class="bp-steps-wrap">
+        <strong>Krok po kroku:</strong>
+        <ol class="bp-steps"><li>Na koniec lekcji uczniowie anonimowo odpowiadają na dwa pytania: &#39;Kiedy najłatwiej tracę uwagę?&#39; oraz &#39;Co pomaga mi wrócić do zadania?&#39;</li><li>Nauczyciel grupuje odpowiedzi: instrukcja, tempo, telefon, hałas, trudność, brak sensu, zmęczenie.</li><li>Na następnej lekcji wybiera jedną zmianę, np. krótszą instrukcję albo punkt powrotu po 7 minutach.</li><li>Po tygodniu sprawdza, czy ta jedna zmiana pomogła.</li></ol>
+      </div>
+      <blockquote class="bp-quote">&#8222;Nie pytam, kto przeszkadza. Pytam, w którym momencie tracicie kontakt z zadaniem i co pomaga wam wrócić.&#8221;</blockquote>
+      <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Klasa zaczyna mówić o uwadze jako o warunku pracy, a nie o winie. Nauczyciel dostaje dane z własnej klasy.</p>
+      <div class="bp-traps-wrap">
+        <strong>Pułapki i jak ich unikać:</strong>
+        <ul class="bp-traps"><li>Błąd: zbieranie odpowiedzi i brak reakcji. Uczniowie muszą zobaczyć choć jedną zmianę.</li><li>Błąd: szukanie winnych. Mapa rozproszeń służy projektowaniu lekcji, nie dyscyplinowaniu.</li></ul>
       </div>
     </details>
   </div>
@@ -3062,7 +3377,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie rozumieją, że fizyka elektryczna to ich bezpieczeństwo na przyszłym miejscu pracy. Temat nie jest abstrakcyjny — dotyczy ich konkretnej pracy za rok.</p>
       <div class="bp-traps-wrap">
         <strong>Pułapki i jak ich unikać:</strong>
-        <ul class="bp-traps"><li>Błąd: straszenie zamiast informowania. Ton musi być spokojny i fakty-centryczny — &#39;tu jest ryzyko, tu nie ma&#39;. Nie &#39;to zabija&#39;, tylko &#39;to wymaga środków ochronnych klasy X&#39;.</li><li>Błąd: brak odniesienia do realnych pojazdów. Nauczyciel musi wiedzieć jakie napięcia mają instalacje w popularnych samochodach (Toyota Prius: 201.6V battery, do 500V chwilowo). Sprawdź przed lekcją.</li></ul>
+        <ul class="bp-traps"><li>Błąd: straszenie zamiast informowania. Ton musi być spokojny i oparty na faktach — &#39;tu jest ryzyko, tu nie ma&#39;. Nie &#39;to zabija&#39;, tylko &#39;to wymaga środków ochronnych klasy X&#39;.</li><li>Błąd: brak odniesienia do realnych pojazdów. Nauczyciel musi wiedzieć, jakie napięcia mają instalacje w popularnych samochodach (Toyota Prius: akumulator 201,6 V, chwilowo do 500 V). Sprawdź przed lekcją.</li></ul>
       </div>
     </details>
   </div>
@@ -3270,7 +3585,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie doświadczają negocjacji jako żywego procesu. Porównanie wyników między parami (od 440 do 485 zł/szt. za ten sam produkt) udowadnia, że umiejętność negocjacji ma wymierną wartość finansową.</p>
       <div class="bp-traps-wrap">
         <strong>Pułapki i jak ich unikać:</strong>
-        <ul class="bp-traps"><li>Błąd: nauczyciel wtrąca się i doradza w trakcie negocjacji. 10 minut musi być bez interwencji — autentyczność napięcia jest kluczowa dla efektu.</li><li>Błąd: debriefing jako ocena (&#39;wygrali/przegrali&#39;). Debriefing to analiza techniki: &#39;Co zadziałało? Dlaczego? Jak można było lepiej?&#39; Nie ma wygranych ani przegranych — są różne strategie.</li></ul>
+        <ul class="bp-traps"><li>Błąd: nauczyciel wtrąca się i doradza w trakcie negocjacji. 10 minut musi być bez podpowiedzi — autentyczność napięcia jest kluczowa dla efektu.</li><li>Błąd: omówienie jako ocena (&#39;wygrali/przegrali&#39;). Omówienie to analiza techniki: &#39;Co zadziałało? Dlaczego? Jak można było lepiej?&#39; Nie ma wygranych ani przegranych — są różne strategie.</li></ul>
       </div>
     </details>
   </div>
@@ -3423,7 +3738,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
         <ol class="bp-steps"><li>Nauczyciel przynosi uproszczony rysunek techniczny małego pomieszczenia (dostępne w podręcznikach lub przygotowane samodzielnie) — rzut z góry, skala 1:50. Pyta: &#39;Kto potrafi odczytać z tego rysunku długość ściany zewnętrznej?&#39;</li><li>Większość nie wie. Nauczyciel: &#39;Koniec tej lekcji — każdy będzie to umiał.&#39; Pokazuje legendę: skala 1:50 oznacza że 1 cm na rysunku = 50 cm w rzeczywistości = 0.5 m. &#39;To jest wszystko co musicie wiedzieć na początek.&#39;</li><li>Cel 1: uczniowie mierzą linijką trzy ściany na rysunku (w cm) i przeliczają na metry rzeczywiste. Sprawdzają z podaną odpowiedzią. Punkt sprawdzenia zaliczony.</li><li>Cel 2: symbolika materiałów. Nauczyciel pokazuje legendę z 4 symbolami: beton (kreskowanie poziome), cegła (cegły), izolacja (kreseczki), drewno (słoje). Uczniowie patrzą na rysunek i identyfikują: z czego są ściany? Co jest w ścianie między pomieszczeniami?</li><li>Cel 3: głębokość fundamentów. Na przekroju pionowym (inna strona rysunku) — uczniowie odczytują głębokość ław fundamentowych. Przeliczają ze skali 1:100.</li><li>Cel 4: obliczenie powierzchni pomieszczeń ze skali. Uczniowie obliczają pole pokoju z rysunku (mierzą i przeliczają). Porównują z podaną wartością na rysunku — zwykle jest podana w m². Sprawdzają, czy ich obliczenie się zgadza.</li></ol>
       </div>
       <blockquote class="bp-quote">&#8222;Kto mi powie, ile metrów ma ta ściana? Nie wiecie? Na praktykach majster pokaże wam taki rysunek i zapyta dokładnie to samo. Kto nie umie czytać rysunku — stoi i czeka aż ktoś mu powie. Kto umie — sam to sprawdza i jest o krok przed innymi. Zaczynamy od jednej zasady: skala. Potem idzie z górki.&#8221;</blockquote>
-      <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie, którzy nie wierzyli że &#39;poradzą sobie z rysunkiem&#39;, kończą lekcję z poprawnie odczytanymi wymiarami z projektu. Cztery mikrocel e dają poczucie postępu.</p>
+      <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie, którzy nie wierzyli, że &#39;poradzą sobie z rysunkiem&#39;, kończą lekcję z poprawnie odczytanymi wymiarami z projektu. Cztery mikrocele dają poczucie postępu.</p>
       <div class="bp-traps-wrap">
         <strong>Pułapki i jak ich unikać:</strong>
         <ul class="bp-traps"><li>Błąd: zaczynanie od symboli materiałowych zanim uczniowie rozumieją skalę. Skala to klucz do wszystkiego — bez niej rysunek nie mówi nic. Zaczynaj zawsze od skali.</li><li>Błąd: zbyt skomplikowany rysunek. Na pierwszej lekcji czytania projektu używaj najprostszego możliwego rysunku — 1–2 pomieszczenia, minimalnie oznaczeń.</li></ul>
@@ -3446,7 +3761,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
       <div class="bp-steps-wrap">
         <strong>Krok po kroku:</strong>
-        <ol class="bp-steps"><li>Nauczyciel wyświetla statystyki z ostatniego meczu reprezentacji Polski lub popularnego klubu (dostępne na 90min.pl, flashscore.pl, sofascore.com — aktualne dane). Pyta: &#39;Kto mi wyjaśni co oznacza te liczby? Co to jest posiadanie piłki 58%?&#39;</li><li>Wyjaśnienie posiadania piłki jako procentu — uczniowie obliczają samodzielnie: jeśli mecz trwa 90 minut, a Polska miała piłkę przez 52 minuty i 12 sekund, jaki to procent? Obliczają.</li><li>Nauczyciel daje uczniom kartę z danymi z meczu: liczba strzałów, strzały celne, podania, dokładność podań, kilometry przebiegane przez zawodników. Zadanie: oblicz wskaźniki celności i skuteczności dla obu drużyn.</li><li>Zadanie interpretacyjne: &#39;Drużyna A miała więcej strzałów i więcej posiadania, ale przegrała 0:1. Jak to możliwe? Co liczby mówią o strategii?&#39; Uczniowie próbują interpretować dane. Nauczyciel wprowadza pojęcie efektywności vs ilości.</li><li>Tworzenie prostego wykresu: uczniowie rysują wykres słupkowy porównujący dwie drużyny w 4 kategoriach. Potem nauczyciel pokazuje jak wygląda profesjonalny wykres statystyczny z Sofascore.</li><li>Kontekst zawodowy: &#39;Analiza danych sportowych to jeden z najszybciej rosnących segmentów data science. W każdym klubie Premier League pracuje sztab analityków, który robi dokładnie to co wy właśnie robiliście — tylko 10 razy bardziej szczegółowo.&#39;</li></ol>
+        <ol class="bp-steps"><li>Nauczyciel wyświetla statystyki z ostatniego meczu reprezentacji Polski lub popularnego klubu (dostępne na 90min.pl, flashscore.pl, sofascore.com — aktualne dane). Pyta: &#39;Kto mi wyjaśni co oznacza te liczby? Co to jest posiadanie piłki 58%?&#39;</li><li>Wyjaśnienie posiadania piłki jako procentu — uczniowie obliczają samodzielnie: jeśli mecz trwa 90 minut, a Polska miała piłkę przez 52 minuty i 12 sekund, jaki to procent? Obliczają.</li><li>Nauczyciel daje uczniom kartę z danymi z meczu: liczba strzałów, strzały celne, podania, dokładność podań, kilometry przebiegane przez zawodników. Zadanie: oblicz wskaźniki celności i skuteczności dla obu drużyn.</li><li>Zadanie interpretacyjne: &#39;Drużyna A miała więcej strzałów i więcej posiadania, ale przegrała 0:1. Jak to możliwe? Co liczby mówią o strategii?&#39; Uczniowie próbują interpretować dane. Nauczyciel wprowadza różnicę między skutecznością a liczbą prób.</li><li>Tworzenie prostego wykresu: uczniowie rysują wykres słupkowy porównujący dwie drużyny w 4 kategoriach. Potem nauczyciel pokazuje jak wygląda profesjonalny wykres statystyczny z Sofascore.</li><li>Kontekst zawodowy: &#39;Analiza danych sportowych to jedna z najszybciej rozwijających się dziedzin analizy danych. W każdym klubie Premier League pracuje sztab analityków, który robi dokładnie to co wy właśnie robiliście — tylko 10 razy bardziej szczegółowo.&#39;</li></ol>
       </div>
       <blockquote class="bp-quote">&#8222;Kto ogląda sport i nie myśli żeby być statystykiem? A kto używa statystyk żeby argumentować o piłce z kolegami? No właśnie — wszyscy wy robicie statystykę na co dzień, tylko nie nazywacie tego statystyką. Dzisiaj nadamy temu właściwą nazwę i pokażemy, że te obliczenia z podręcznika i te liczby z meczu to to samo.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Uczniowie zainteresowani sportem angażują się w statystykę przez materiał, który śledzą na własną rękę. Obliczenia są takie same jak w podręczniku, ale kontekst sprawia, że mają sens.</p>
@@ -3498,7 +3813,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <summary>Rozwiń: kroki, cytat, efekty i pułapki</summary>
       <div class="bp-steps-wrap">
         <strong>Krok po kroku:</strong>
-        <ol class="bp-steps"><li>Nauczyciel wyświetla dwa CV: jedno przygotowane amatorsko (ściana tekstu, brak struktury, stara fotografia), jedno profesjonalne (czysty layout, czytelna struktura, konkretne informacje). Pyta: &#39;Który kandydat dostanie zaproszenie na rozmowę?&#39; Uczniowie zgadują — niemal zawsze drugi. &#39;Dlaczego?&#39;</li><li>Cel 1 (5 min): dane osobowe. Nauczyciel dyktuje co MUSI być (imię, nazwisko, telefon, e-mail, miasto) i co NIE POWINNO być (PESEL, adres domowy, zdjęcie — opcjonalne w Polsce). Uczniowie tworzą nagłówek CV w edytorze tekstu lub na kartce.</li><li>Cel 2 (8 min): doświadczenie i praktyki. &#39;Nie piszecie, że nie macie doświadczenia. Piszecie: praktyki zawodowe w [miejsce], miesiąc–miesiąc rok, zakres obowiązków: [dwie rzeczy które tam robiłeś].&#39; Każdy uczeń wpisuje swoje praktyki.</li><li>Cel 3 (7 min): wykształcenie. Szkoła, kierunek, rok ukończenia (lub &#39;w trakcie&#39;). Kursy, certyfikaty, prawa jazdy. Każdy wpisuje.</li><li>Cel 4 (5 min): umiejętności. Lista: programy komputerowe (Excel, Word, branżowe oprogramowanie), języki (angielski B1, inne), umiejętności twarde (spawanie MIG/MAG, obsługa kas fiskalnych). Każdy wypełnia zgodnie z rzeczywistymi kompetencjami.</li><li>Cel 5 (5 min): klauzula RODO (obowiązkowa w polskich CV od RODO 2018). Nauczyciel daje gotową formułkę. Uczniowie kopiują. Finał: każdy ma gotowe CV. Wydrukuj lub zapisz jako PDF.</li></ol>
+        <ol class="bp-steps"><li>Nauczyciel wyświetla dwa CV: jedno przygotowane amatorsko (ściana tekstu, brak struktury, stara fotografia), jedno profesjonalne (czytelny układ, wyraźna struktura, konkretne informacje). Pyta: &#39;Który kandydat dostanie zaproszenie na rozmowę?&#39; Uczniowie zgadują — niemal zawsze drugi. &#39;Dlaczego?&#39;</li><li>Cel 1 (5 min): dane osobowe. Nauczyciel dyktuje co MUSI być (imię, nazwisko, telefon, e-mail, miasto) i co NIE POWINNO być (PESEL, adres domowy, zdjęcie — opcjonalne w Polsce). Uczniowie tworzą nagłówek CV w edytorze tekstu lub na kartce.</li><li>Cel 2 (8 min): doświadczenie i praktyki. &#39;Nie piszecie, że nie macie doświadczenia. Piszecie: praktyki zawodowe w [miejsce], miesiąc–miesiąc rok, zakres obowiązków: [dwie rzeczy które tam robiłeś].&#39; Każdy uczeń wpisuje swoje praktyki.</li><li>Cel 3 (7 min): wykształcenie. Szkoła, kierunek, rok ukończenia (lub &#39;w trakcie&#39;). Kursy, certyfikaty, prawa jazdy. Każdy wpisuje.</li><li>Cel 4 (5 min): umiejętności. Lista: programy komputerowe (Excel, Word, branżowe oprogramowanie), języki (angielski B1, inne), umiejętności twarde (spawanie MIG/MAG, obsługa kas fiskalnych). Każdy wypełnia zgodnie z rzeczywistymi kompetencjami.</li><li>Cel 5 (5 min): klauzula RODO (obowiązkowa w polskich CV od RODO 2018). Nauczyciel daje gotową formułkę. Uczniowie kopiują. Finał: każdy ma gotowe CV. Wydrukuj lub zapisz jako PDF.</li></ol>
       </div>
       <blockquote class="bp-quote">&#8222;Za rok część z was będzie szukać pracy. Pierwsze co zapyta pracodawca — wyślij CV. I co? Nie ma. Albo jest z 2019 roku bez praktyk. Dzisiaj zrobimy to razem — krok po kroku, 45 minut, i każdy wychodzi z gotowym dokumentem. Prawdziwym, który jutro możecie wysłać.&#8221;</blockquote>
       <p class="bp-effect"><strong>Oczekiwany efekt:</strong> Każdy uczeń wychodzi z gotowym, użytecznym CV. Poczucie skuteczności jest silne — wytworzono realny produkt w jednej lekcji.</p>
@@ -3679,6 +3994,127 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   <button class="btn btn-primary" onclick="completeAndNext('m7','m8')">Dalej: Moduł 8 →</button>
 </div>
 </div>
+
+<!-- PAGE: SŁOWNICZEK -->
+<div class="page" id="page-glossary">
+  <div class="mod-header">
+    <div class="mod-badge" style="background:var(--green-light);color:#15803d">Pomoc w kursie</div>
+    <h1 class="mod-title">Słowniczek pojęć</h1>
+  </div>
+
+  <p class="glossary-intro">Krótkie objaśnienia pojęć używanych w kursie. Każde hasło odpowiada na dwa pytania: co ono znaczy i co z tego wynika dla nauczyciela.</p>
+
+  <label class="glossary-search">
+    <span class="glossary-search-mark" aria-hidden="true">Aa</span>
+    <input type="search" placeholder="Szukaj pojęcia, np. mikrocel" aria-label="Szukaj w słowniczku" oninput="filterGlossary(this.value)">
+  </label>
+  <div class="glossary-count" id="glossary-count" aria-live="polite">15 haseł</div>
+  <div class="glossary-empty" id="glossary-empty">Nie znaleziono takiego pojęcia. Spróbuj krótszego hasła.</div>
+
+  <section class="glossary-group">
+    <h2>Praca z uczniem</h2>
+    <dl class="glossary-grid">
+      <div class="glossary-card">
+        <dt>Poczucie własnej skuteczności</dt>
+        <dd>Przekonanie ucznia, że potrafi wykonać konkretne zadanie. Nie jest tym samym co ogólna pewność siebie.
+          <span class="glossary-practice"><strong>Na lekcji:</strong> zaplanuj osiągalny pierwszy krok i nazwij dokładnie to, co uczeń zrobił dobrze.</span>
+        </dd>
+      </div>
+      <div class="glossary-card">
+        <dt>Nastawienie na rozwój i nastawienie stałe</dt>
+        <dd>Nastawienie na rozwój zakłada, że umiejętności można rozwijać przez ćwiczenie, dobrą strategię i wsparcie. Nastawienie stałe traktuje je jako coś z góry danego.
+          <span class="glossary-practice"><strong>Na lekcji:</strong> zamiast „nie umiesz” nazwij brakujący krok i pokaż, jak go przećwiczyć.</span>
+        </dd>
+      </div>
+      <div class="glossary-card">
+        <dt>Mikrocel</dt>
+        <dd>Mały, konkretny cel możliwy do osiągnięcia w krótkim czasie. Uczeń powinien sam rozpoznać, czy go wykonał.
+          <span class="glossary-practice"><strong>Na lekcji:</strong> zamień „naucz się działu” na pierwsze zadanie do zrobienia w 5–10 minut.</span>
+        </dd>
+      </div>
+      <div class="glossary-card">
+        <dt>Punkt sprawdzenia</dt>
+        <dd>Krótki moment w trakcie pracy, w którym uczeń sprawdza wynik, porównuje rozwiązanie albo pokazuje wykonany etap.
+          <span class="glossary-practice"><strong>Na lekcji:</strong> po pierwszym bloku pracy poproś o jeden widoczny rezultat, zanim klasa przejdzie dalej.</span>
+        </dd>
+      </div>
+      <div class="glossary-card">
+        <dt>Informacja zwrotna</dt>
+        <dd>Konkretna wiadomość o tym, co już działa i jaki powinien być następny krok. Sama ocena lub ogólna pochwała nie daje takiej wskazówki.
+          <span class="glossary-practice"><strong>Na lekcji:</strong> powiedz „dobrze dobrałeś wzór, teraz sprawdź jednostkę” zamiast samego „dobrze”.</span>
+        </dd>
+      </div>
+      <div class="glossary-card">
+        <dt>Regulacja emocji</dt>
+        <dd>Umiejętność zauważenia napięcia i poradzenia sobie z nim na tyle, by móc wrócić do zadania. Nie oznacza tłumienia emocji.
+          <span class="glossary-practice"><strong>Na lekcji:</strong> daj chwilę na uspokojenie, nazwij kolejny mały krok i przywróć ucznia do działania.</span>
+        </dd>
+      </div>
+      <div class="glossary-card">
+        <dt>Teoria autodeterminacji (SDT)</dt>
+        <dd>Teoria motywacji Edwarda Deciego i Richarda Ryana. Zakłada, że zaangażowaniu sprzyja zaspokojenie trzech potrzeb: autonomii, kompetencji i przynależności.
+          <span class="glossary-practice"><strong>Na lekcji:</strong> daj uczniowi ograniczony wybór, zadanie na jego poziomie i poczucie, że jest traktowany z szacunkiem.</span>
+        </dd>
+      </div>
+      <div class="glossary-card">
+        <dt>Autonomia, kompetencja i przynależność</dt>
+        <dd>Autonomia to poczucie wpływu, kompetencja to poczucie „potrafię zrobić postęp”, a przynależność oznacza bezpieczną więź z ludźmi i grupą.
+          <span class="glossary-practice"><strong>Na lekcji:</strong> sprawdź, czy uczeń ma choć niewielki wybór, osiągalne zadanie i kontakt z nauczycielem lub klasą.</span>
+        </dd>
+      </div>
+      <div class="glossary-card">
+        <dt>Kapitał kulturowy</dt>
+        <dd>Wiedza, język, nawyki i znajomość niepisanych zasad wyniesione ze środowiska. Szkoła często je nagradza, choć nie zawsze uczy ich wprost.
+          <span class="glossary-practice"><strong>Na lekcji:</strong> objaśniaj reguły, pojęcia i kontekst zamiast zakładać, że wszyscy już je znają.</span>
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="glossary-group">
+    <h2>Czytanie badań</h2>
+    <dl class="glossary-grid">
+      <div class="glossary-card">
+        <dt>Siła efektu</dt>
+        <dd>Liczba opisująca, jak duża była różnica lub zależność zaobserwowana w badaniu. Wyższa wartość zwykle oznacza silniejszy przeciętny efekt, ale nie gwarantuje takiego samego wyniku w każdej klasie.
+          <span class="glossary-practice"><strong>W kursie:</strong> traktuj ją jako wskazówkę o znaczeniu metody, nie jako obietnicę konkretnego rezultatu.</span>
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="glossary-group">
+    <h2>Projekt i kształcenie zawodowe</h2>
+    <dl class="glossary-grid">
+      <div class="glossary-card">
+        <dt>Kształcenie zawodowe (VET)</dt>
+        <dd>Edukacja przygotowująca do wykonywania zawodu. Skrót VET pochodzi od angielskiego określenia <em>Vocational Education and Training</em> i występuje w dokumentach europejskich.</dd>
+      </div>
+      <div class="glossary-card">
+        <dt>MŚP</dt>
+        <dd>Małe i średnie przedsiębiorstwa. To firmy, które mieszczą się w określonych limitach zatrudnienia i wielkości finansowej.</dd>
+      </div>
+      <div class="glossary-card">
+        <dt>CoVE</dt>
+        <dd>Centrum Doskonałości Zawodowej, które łączy szkoły, pracodawców, uczelnie i inne instytucje wokół rozwoju umiejętności potrzebnych na rynku pracy.</dd>
+      </div>
+      <div class="glossary-card">
+        <dt>WIN4SMEs</dt>
+        <dd>Europejski projekt dotyczący innowacji w miejscu pracy w małych i średnich przedsiębiorstwach. Ten kurs powstał w ramach jednego z jego działań.</dd>
+      </div>
+      <div class="glossary-card">
+        <dt>Erasmus+</dt>
+        <dd>Program Unii Europejskiej wspierający edukację, szkolenia, młodzież i sport. Finansuje między innymi międzynarodową współpracę szkół i instytucji kształcenia zawodowego.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <div class="mod-nav">
+    <button class="btn btn-outline" onclick="showPage('home')">← Wróć na start</button>
+    <button class="btn btn-primary" onclick="showPage('about')">O projekcie WIN4SMEs →</button>
+  </div>
+</div>
+
 <!-- PAGE: O PROJEKCIE -->
 <div class="page" id="page-about">
   <div class="mod-header">
@@ -3687,7 +4123,7 @@ body.sidebar-collapsed .site-footer{margin-left:0}
     <div class="mod-meta">
       <span>🇪🇺 Projekt Erasmus+</span>
       <span>🤝 20 partnerów z 9 krajów</span>
-      <span>🎓 Sektor VET</span>
+      <span>🎓 Kształcenie zawodowe</span>
     </div>
   </div>
 
@@ -3729,8 +4165,8 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <div class="keyfact-label">Zadanie projektowe</div>
       <div class="keyfact-text">Opracowanie i testowanie programu szkoleniowego wspierającego nauczycieli w pracy z młodymi osobami z trudnościami w uczeniu się i trudnościami społecznymi</div>
     </div>
-    <p>Program adresowany jest do <strong>nauczycieli szkół branżowych I i II stopnia oraz techników</strong> (sektor VET), którzy na co dzień pracują z uczniami o niskiej motywacji, z trudnościami w uczeniu się lub wykluczonymi społecznie. Celem jest wyposażenie nauczycieli w konkretne narzędzia i wiedzę badawczą pozwalające skutecznie angażować tę grupę uczniów.</p>
-    <p>Szkolenie obejmuje moduły tematyczne — od kontekstu pracy z młodzieżą po techniki pedagogiczne — oraz Bank praktyk z 52 przykładami lekcji dostosowanych do realiów szkół branżowych i techników.</p>
+    <p>Program adresowany jest do <strong>nauczycieli szkół branżowych I i II stopnia oraz techników</strong>, którzy na co dzień pracują z uczniami o niskiej motywacji, z trudnościami w uczeniu się lub wykluczonymi społecznie. Celem jest wyposażenie nauczycieli w konkretne narzędzia i wiedzę badawczą pozwalające skutecznie angażować tę grupę uczniów.</p>
+    <p>Szkolenie obejmuje moduły tematyczne — od kontekstu pracy z młodzieżą po techniki pedagogiczne — oraz Bank praktyk z 57 przykładami lekcji dostosowanych do realiów szkół branżowych i techników.</p>
   </div>
 
   <div class="mod-section">
@@ -3770,7 +4206,29 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 
 <script>
 // ── STATE ──
-const MODULES = ['m0','m1','m2','m3','m4','m5','m6','m7','m8'];
+const MODULES = ['m0','m1','m1a','m2','m3','m4','m5','m6','m7','m8'];
+
+function filterGlossary(value) {
+  const normalize = text => text.toLocaleLowerCase('pl-PL').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const query = normalize(value.trim());
+  let visible = 0;
+
+  document.querySelectorAll('.glossary-group').forEach(group => {
+    let visibleInGroup = 0;
+    group.querySelectorAll('.glossary-card').forEach(card => {
+      const matches = !query || normalize(card.textContent).includes(query);
+      card.classList.toggle('hidden', !matches);
+      if(matches) {
+        visible += 1;
+        visibleInGroup += 1;
+      }
+    });
+    group.classList.toggle('hidden', visibleInGroup === 0);
+  });
+
+  document.getElementById('glossary-count').textContent = visible === 1 ? '1 hasło' : visible + ' haseł';
+  document.getElementById('glossary-empty').classList.toggle('show', visible === 0);
+}
 let completed = JSON.parse(localStorage.getItem('completed') || '[]');
 
 // ── RESTORE NOTES ──
@@ -3869,7 +4327,7 @@ document.addEventListener('click', e => {
 (function() {
   var activeGroup = 'wszystkie';
   var activeTech  = 'wszystkie';
-  var total = 52;
+  var total = 57;
 
   function applyFilters() {
     var cards = document.querySelectorAll('.bp-card');
