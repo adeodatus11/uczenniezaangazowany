@@ -32,7 +32,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica N
 /* LAYOUT */
 .app{display:flex;min-height:100vh}
 .sidebar{width:280px;min-width:280px;background:var(--white);border-right:1px solid var(--border);position:fixed;top:0;left:0;bottom:0;overflow-y:auto;display:flex;flex-direction:column;z-index:50;transition:transform .25s ease}
-.content{margin-left:280px;flex:1;padding:40px clamp(20px,5vw,64px) 80px}
+.content{margin-left:280px;flex:1;min-width:0;padding:40px clamp(20px,5vw,64px) 80px}
 .inner{max-width:780px;margin:0 auto}
 
 /* SIDEBAR */
@@ -399,6 +399,52 @@ body.sidebar-collapsed .site-footer{margin-left:0}
   text-decoration: none; font-weight: 700; font-size: 13px; transition: background .15s;
 }
 .embed-blocked-link:hover { background: #cc0000; }
+/* PISA appendix: reuses course typography and components */
+.pisa-module{min-width:0}
+.pisa-module a:not(.btn){color:var(--accent-dark);text-underline-offset:3px}
+.pisa-module a:focus-visible,.pisa-module button:focus-visible,.pisa-module summary:focus-visible,.pisa-module .table-wrap:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.pisa-module .mod-section,.pisa-module [id="pisa-lek"]{scroll-margin-top:104px}
+.pisa-module .pisa-source{font-size:12px;line-height:1.65;color:var(--text-light);margin-top:12px}
+.pisa-source-box,.pisa-toc,.pisa-figure{padding:24px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin:24px 0 32px}
+.pisa-source-box{border-top:4px solid var(--accent)}
+.pisa-source-box h2,.pisa-toc h2{font-size:18px;margin-bottom:12px}
+.pisa-source-box p{font-size:15px;line-height:1.7;margin-bottom:14px}
+.pisa-actions,.pisa-course-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.pisa-module .btn{white-space:normal;text-align:center;text-decoration:none;line-height:1.5}
+.pisa-toc ol{padding-left:22px;columns:2;column-gap:32px}
+.pisa-toc li{font-size:14px;line-height:1.55;margin-bottom:12px;break-inside:avoid;padding-left:3px}
+.pisa-steps{padding-left:24px;margin:16px 0}
+.pisa-module table{width:100%;min-width:440px}
+.pisa-module .table-wrap::after{content:"Na małym ekranie przesuń tabelę w bok, aby zobaczyć wszystkie kolumny.";display:block;font-size:12px;color:var(--text-light);padding-top:8px}
+@media(min-width:601px){.pisa-module .table-wrap::after{display:none}}
+.pisa-module caption{text-align:left;font-size:13px;line-height:1.55;font-weight:650;padding:12px 0;color:var(--text-light)}
+.pisa-module tbody th{text-align:left;background:transparent;color:var(--text);font-size:14px;font-weight:600;padding:12px 14px;border-bottom:1px solid var(--border)}
+.pisa-details{border:1px solid var(--border);border-radius:var(--r);background:var(--white);padding:16px 20px;margin:20px 0}
+.pisa-details summary{cursor:pointer;font-weight:650;font-size:15px;line-height:1.5}
+.pisa-details[open] summary{margin-bottom:16px}
+.pisa-figure-title{font-weight:700}
+.pisa-bar-row{display:grid;grid-template-columns:145px minmax(0,1fr) 42px;gap:12px;align-items:center;margin:14px 0;font-size:13px}
+.pisa-bar-track{height:20px;background:#e2e8f0;border-radius:3px;overflow:hidden}
+.pisa-bar{height:100%;border-radius:3px}.pisa-bar-t{background:#2563eb}.pisa-bar-bs{background:#7c3aed}
+@media(max-width:600px){.pisa-toc ol{columns:1}.pisa-source-box,.pisa-toc,.pisa-figure{padding:18px}.pisa-bar-row{grid-template-columns:110px minmax(0,1fr) 36px;gap:8px;font-size:12px}.pisa-actions .btn{width:100%}}
+
+
+.practice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:22px 0}
+.practice-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+.practice-card strong{display:block;font-size:14px;color:var(--text);margin-bottom:6px}
+.practice-card p{font-size:13px;line-height:1.6;color:var(--text-light);margin:0}
+
+
+.course-tools{display:flex;justify-content:center;margin:0 0 28px}
+.course-tool{width:min(100%,520px);display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);color:var(--text);font:inherit;text-align:left;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.course-tool:hover,.course-tool:focus-visible{border-color:var(--accent);box-shadow:var(--shadow);outline:none}
+.course-tool-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex:0 0 40px;border-radius:8px;background:var(--accent-light);color:var(--accent-dark);font-size:14px;font-weight:800}
+.course-tool-copy{flex:1;min-width:0}
+.course-tool-copy strong{display:block;font-size:14px;line-height:1.35}
+.course-tool-copy small{display:block;margin-top:3px;color:var(--text-light);font-size:12px;line-height:1.4}
+.course-tool-arrow{color:var(--accent);font-size:20px;font-weight:700}
+
+@media(max-width:768px){#page-pisa2025{padding-top:44px}}
 </style>
 </head>
 <body>
@@ -511,6 +557,9 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <span class="sb-check">✓</span>
     </a>
     <div style="border-top:1px solid var(--border);margin:8px 16px"></div>
+    <a class="sb-item" id="nav-pisa2025" onclick="showPage('pisa2025')">
+      <div class="sb-num">P</div><div class="sb-item-text"><div class="sb-item-name">PISA 2025: technikum i BS I</div><div class="sb-item-time">Aneks · raport i omówienie</div></div>
+    </a>
     <a class="sb-item" id="nav-about" onclick="showPage('about')">
       <div class="sb-num">ℹ</div>
       <div class="sb-item-text">
@@ -582,6 +631,12 @@ body.sidebar-collapsed .site-footer{margin-left:0}
       <div class="name">Wiedza jako przepustka</div>
       <div class="time">≈ 20 min</div>
     </div>
+  </div>
+  <div class="course-tools">
+    <button class="course-tool" onclick="showPage('pisa2025')">
+      <span class="course-tool-icon" aria-hidden="true">PISA</span>
+      <span class="course-tool-copy"><strong>Aneks: co PISA 2025 mówi o technikach i szkołach branżowych?</strong><small>Badanie krok po kroku · wyniki · wnioski dla nauczycieli · raport IBE</small></span><span class="course-tool-arrow" aria-hidden="true">→</span>
+    </button>
   </div>
   <div style="text-align:center">
     <button class="start-btn" onclick="showPage('m0')">▶ Zacznij od tła — Moduł 0</button>
@@ -2240,6 +2295,233 @@ body.sidebar-collapsed .site-footer{margin-left:0}
 </div>
 
 <!-- FINISH -->
+<article class="page pisa-module" id="page-pisa2025" aria-labelledby="pisa-title">
+  <header class="mod-header">
+    <div class="mod-badge">Aneks · PISA 2025</div>
+    <h1 class="mod-title" id="pisa-title" tabindex="-1">Technikum i szkoła branżowa w świetle PISA 2025</h1>
+    <div class="mod-meta"><span>Opracowanie raportu IBE PIB</span><span>≈ 25 min czytania</span><span>Badanie: 2025 · raport: 2026</span></div>
+  </header>
+  <p class="lead">Co uczniowie potrafią zrobić z posiadaną wiedzą? Jak oceniają naukę i swoje miejsce w szkole? Ten aneks wyjaśnia wyniki badania i pomaga odnieść je do pracy w technikum oraz branżowej szkole I stopnia.</p>
+  <aside class="pisa-source-box" aria-label="Raport źródłowy">
+    <h2>Najpierw źródło</h2>
+    <p><strong>„Gotowi na przyszłość? Umiejętności piętnastolatków w zmieniającym się świecie. Wyniki badania PISA 2025”</strong>, red. Joanna Kaźmierczak, Instytut Badań Edukacyjnych – Państwowy Instytut Badawczy, 2026. Raport liczy 232 strony.</p>
+    <div class="pisa-actions"><a class="btn btn-primary" href="https://www.ibe.edu.pl/pl/biblioteka-ibe/pisa-biblioteka/3935-gotowi-na-przyszlosc-umiejetnosci-pietnastolatkow-w-zmieniajacym-sie-swiecie-wyniki-badania-pisa-2025" target="_blank" rel="noopener">Raport na stronie IBE ↗</a><a class="btn btn-outline" href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf" target="_blank" rel="noopener">Otwórz PDF w IBE ↗</a></div>
+    <p class="pisa-source">To autorskie opracowanie na potrzeby kursu. Dane PISA pochodzą z raportu IBE. Część o lęku matematycznym odwołuje się do metaanalizy Barroso i współpracowników; przykłady lekcyjne i propozycje wdrożenia są naszymi rekomendacjami. Linki do źródeł otwierają nową kartę.</p>
+  </aside>
+  <nav class="pisa-toc" aria-label="Spis treści aneksu">
+    <h2>W tym aneksie</h2>
+    <ol>
+      <li><a href="#pisa-badanie">Czym jest PISA i jak przebiega badanie</a></li>
+      <li><a href="#pisa-odczyt">Jak rozumieć punkty, poziomy i różnice</a></li>
+      <li><a href="#pisa-wyniki">Wyniki: technikum, BS I i liceum</a></li>
+      <li><a href="#pisa-branzowa">Co wyniki mówią o szkole branżowej</a></li>
+      <li><a href="#pisa-technikum">Co wyniki mówią o technikum</a></li>
+      <li><a href="#pisa-motywacja">Motywacja, lęk matematyczny i poczucie skuteczności</a></li>
+      <li><a href="#pisa-relacje">Relacje, wsparcie i bezpieczeństwo</a></li>
+      <li><a href="#pisa-cyfrowe">Rozwiązywanie problemów, technologie i AI</a></li>
+      <li><a href="#pisa-kontekst">Nierówności i porównania w czasie</a></li>
+      <li><a href="#pisa-praktyka">Jak przełożyć wyniki na lekcje i pracę szkoły</a></li>
+      <li><a href="#pisa-granice">Czego nie należy wyciągać z tych danych</a></li>
+      <li><a href="#pisa-zrodla">Mapa raportu i źródła</a></li>
+    </ol>
+  </nav>
+  <div class="keyfact"><div class="keyfact-label">Główna myśl opracowania</div><div class="keyfact-text">Pracę nad zaangażowaniem warto łączyć z rozwijaniem podstawowych umiejętności. Zanim uznamy, że uczeń nie chce pracować, sprawdźmy, czy rozumie zadanie i potrafi zrobić pierwszy krok.</div><div class="keyfact-source">Wniosek do praktyki szkolnej — PISA nie testuje skuteczności tego programu.</div></div>
+
+  <section class="mod-section" id="pisa-badanie" tabindex="-1">
+    <h2>1. Czym jest PISA i jak przebiega badanie</h2>
+    <p><strong>PISA to Program Międzynarodowej Oceny Umiejętności Uczniów</strong> (Programme for International Student Assessment), koordynowany przez OECD, czyli Organizację Współpracy Gospodarczej i Rozwoju. Polska uczestniczy w nim od 2000 roku. Za realizację polskiej edycji odpowiada IBE PIB.</p>
+    <p>Badanie sprawdza, jak młodzi ludzie wykorzystują wiedzę: rozumieją tekst, interpretują informacje, rozwiązują problem matematyczny i wyciągają wnioski z danych przyrodniczych. Nie jest sprawdzianem z jednego podręcznika ani egzaminem zawodowym. W 2025 roku główną dziedziną były nauki przyrodnicze; badano także matematykę, czytanie oraz uczenie się w cyfrowym świecie.</p>
+    <div class="stats"><div class="stat-card"><div class="stat-num">91</div><div class="stat-label">krajów i regionów w edycji 2025</div></div><div class="stat-card"><div class="stat-num">7103</div><div class="stat-label">uczestników badania w Polsce</div></div><div class="stat-card"><div class="stat-num">217</div><div class="stat-label">polskich szkół, w których przeprowadzono badanie</div></div></div>
+    <h3>Kogo badano?</h3>
+    <p>Uczniów urodzonych w 2009 roku, pozostających w systemie szkolnym. Określenie „piętnastolatkowie” oznacza tu rocznik, który ukończył 15 lat w roku poprzedzającym pomiar. Podczas badania część uczniów miała już 16 lat. Sesje w Polsce odbyły się w kwietniu i maju 2025 roku.</p>
+    <p>Wśród uczestników było <strong>2709 uczniów techników i 855 uczniów branżowych szkół I stopnia</strong>. Badanie nie opisuje wszystkich roczników tych szkół ani absolwentów. Nie dotyczy branżowych szkół II stopnia. Dalej używamy skrótów: <strong>T — technikum, BS I — branżowa szkoła I stopnia, LO — liceum ogólnokształcące.</strong></p>
+    <h3>Jak dobiera się uczestników i zbiera dane?</h3>
+    <ol class="pisa-steps">
+      <li><strong>Losowanie szkół.</strong> Próba uwzględnia strukturę systemu, między innymi typy szkół. Nie jest to zbiór placówek, które same zgłosiły chęć pokazania najlepszych wyników.</li>
+      <li><strong>Losowanie uczniów w szkołach.</strong> W wylosowanej placówce wybierano maksymalnie 46 osób spełniających kryterium wieku. W Polsce w badaniu uczestniczyło 85% próby po wyłączeniach.</li>
+      <li><strong>Zadania na komputerze.</strong> Uczniowie pracowali w szkole, w 2025 roku online. Część testowa trwała łącznie maksymalnie 120 minut. Nie każdy otrzymywał identyczny zestaw; test adaptatywny dobiera kolejne zadania do szacowanego poziomu umiejętności.</li>
+      <li><strong>Ankiety.</strong> Po zadaniach uczniowie przez około 55 minut odpowiadali na pytania o naukę, doświadczenia i warunki życia. Osobny kwestionariusz wypełniał dyrektor szkoły.</li>
+      <li><strong>Oszacowanie wyników.</strong> Badacze stosują modele statystyczne i wagi, aby wyniki próby opisywały populację objętą badaniem. Surowe liczby uczestników nie są tym samym co udział danego typu szkoły w populacji.</li>
+    </ol>
+    <p>Procedury przewidują wyłączenia, m.in. szkół specjalnych oraz uczniów, którym niepełnosprawność lub niewystarczająca znajomość języka uniemożliwia udział. Wyników nie należy więc bez zastrzeżeń odnosić do każdej grupy młodzieży.</p>
+    <p class="pisa-source">Źródło: raport, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=10" target="_blank" rel="noopener" aria-label="Raport IBE, strona 10, nowa karta">s. 10</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=22" target="_blank" rel="noopener" aria-label="Raport IBE, strona 22, nowa karta">s. 22</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=33" target="_blank" rel="noopener" aria-label="Raport IBE, strona 33, nowa karta">s. 33</a>; liczebności: tabela 2.2, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=30" target="_blank" rel="noopener" aria-label="Raport IBE, strona 30, nowa karta">s. 30</a>.</p>
+  </section>
+
+  <section class="mod-section" id="pisa-odczyt" tabindex="-1">
+    <h2>2. Jak rozumieć punkty, poziomy i różnice</h2>
+    <h3>Punkty nie są procentem opanowanego materiału</h3>
+    <p>Wynik 480 punktów nie oznacza 48% poprawnych odpowiedzi ani „48% podstawy programowej”. To miejsce na skali pozwalającej porównywać osiągnięcia. Dla podstawowych dziedzin punktem odniesienia była średnia OECD ustalona w początkowych edycjach na 500 punktów. Dzisiejsza średnia nie musi wynosić 500.</p>
+    <h3>Poziom 2 to podstawowy próg kompetencji</h3>
+    <p>Poziomy opisują rodzaje zadań, z którymi uczniowie potrafią sobie radzić. <strong>Wynik poniżej poziomu 2 wskazuje na niewystarczające opanowanie podstawowych kompetencji przyjętych w PISA.</strong> Uczeń może radzić sobie z prostszymi czynnościami, a potrzebować pomocy przy interpretacji, łączeniu informacji lub zastosowaniu wiedzy w nowej sytuacji.</p>
+    <p>Nie oznacza to całkowitej niezdolności do czytania, liczenia czy wykonywania pracy zawodowej. Z kolei poziomy 5–6 oznaczają wysokie umiejętności w danej dziedzinie. Skale różnych dziedzin nie są zamienne: nie odejmujemy punktów z czytania od punktów z zadań komputacyjnych, aby obliczyć „przewagę” jednej umiejętności.</p>
+    <h3>Nie każda różnica oznacza zmianę</h3>
+    <p>Badanie obejmuje próbę, dlatego każdy wynik ma margines niepewności. „Różnica istotna statystycznie” oznacza, że analiza pozwala odróżnić ją od wahań związanych z pomiarem i doborem próby. Nie mówi jeszcze, co tę różnicę spowodowało.</p>
+    <p>Także <strong>korelacja oznacza współwystępowanie</strong>. Jeśli ciekawsi uczniowie uzyskują lepsze wyniki, samo to nie rozstrzyga, czy ciekawość poprawia osiągnięcia, sukces zwiększa ciekawość, czy oba zjawiska zależą również od innych warunków.</p>
+    <p class="pisa-source">Źródło: <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=25" target="_blank" rel="noopener" aria-label="Raport IBE, strona 25, nowa karta">s. 25</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=26" target="_blank" rel="noopener" aria-label="Raport IBE, strona 26, nowa karta">s. 26</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=32" target="_blank" rel="noopener" aria-label="Raport IBE, strona 32, nowa karta">s. 32</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=33" target="_blank" rel="noopener" aria-label="Raport IBE, strona 33, nowa karta">s. 33</a>; ograniczenia korelacji: <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=154" target="_blank" rel="noopener" aria-label="Raport IBE, strona 154, nowa karta">s. 154</a>.</p>
+  </section>
+
+  <section class="mod-section" id="pisa-wyniki" tabindex="-1">
+    <h2>3. Wyniki: co kryje się za średnią dla Polski</h2>
+    <p>Średnie wyniki Polski w trzech podstawowych dziedzinach są wyższe od średnich OECD i UE. Jednocześnie sytuacja poszczególnych grup uczniów mocno się różni. Dla planowania pomocy szczególnie przydatny jest odsetek osób poniżej poziomu 2.</p>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Odsetki poniżej poziomu 2, tabela przewijana poziomo"><table>
+      <caption>Uczniowie poniżej poziomu 2 PISA — odsetek w danym typie szkoły</caption>
+      <thead><tr><th scope="col">Dziedzina</th><th scope="col">LO</th><th scope="col">Technikum</th><th scope="col">BS I</th></tr></thead>
+      <tbody><tr><th scope="row">Rozumienie tekstu</th><td>niemal 8%</td><td><strong>27%</strong></td><td><strong>68%</strong></td></tr><tr><th scope="row">Matematyka</th><td>10%</td><td><strong>27%</strong></td><td><strong>71%</strong></td></tr><tr><th scope="row">Nauki przyrodnicze</th><td>7%</td><td><strong>21%</strong></td><td><strong>59%</strong></td></tr><tr><th scope="row">Komputacyjne rozwiązywanie problemów</th><td>ok. 10%</td><td>ok. 23%</td><td>ok. 51%</td></tr></tbody>
+    </table></div>
+    <p class="pisa-source">Źródło: <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=49" target="_blank" rel="noopener" aria-label="Raport IBE, strona 49, nowa karta">s. 49</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=74" target="_blank" rel="noopener" aria-label="Raport IBE, strona 74, nowa karta">s. 74</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=75" target="_blank" rel="noopener" aria-label="Raport IBE, strona 75, nowa karta">s. 75</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=89" target="_blank" rel="noopener" aria-label="Raport IBE, strona 89, nowa karta">s. 89</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=90" target="_blank" rel="noopener" aria-label="Raport IBE, strona 90, nowa karta">s. 90</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=106" target="_blank" rel="noopener" aria-label="Raport IBE, strona 106, nowa karta">s. 106</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=107" target="_blank" rel="noopener" aria-label="Raport IBE, strona 107, nowa karta">s. 107</a>. W trzech podstawowych dziedzinach podano sumy z omówienia autorów; w dziedzinie komputacyjnej — przybliżone sumy kategorii wykresu 6.7. Segmenty wykresów są zaokrąglone, więc ich suma może różnić się od wartości w tekście.</p>
+    <div class="pisa-figure" role="img" aria-label="Poniżej poziomu 2 w czytaniu: technikum 27%, branżowa szkoła I stopnia 68%. W matematyce: technikum 27%, branżowa szkoła I stopnia 71%.">
+      <p class="pisa-figure-title">Czytanie i matematyka: skala potrzeb wsparcia</p>
+      <div class="pisa-bar-row"><span>Czytanie · T</span><div class="pisa-bar-track"><div class="pisa-bar pisa-bar-t" style="width:27%"></div></div><strong>27%</strong></div>
+      <div class="pisa-bar-row"><span>Czytanie · BS I</span><div class="pisa-bar-track"><div class="pisa-bar pisa-bar-bs" style="width:68%"></div></div><strong>68%</strong></div>
+      <div class="pisa-bar-row"><span>Matematyka · T</span><div class="pisa-bar-track"><div class="pisa-bar pisa-bar-t" style="width:27%"></div></div><strong>27%</strong></div>
+      <div class="pisa-bar-row"><span>Matematyka · BS I</span><div class="pisa-bar-track"><div class="pisa-bar pisa-bar-bs" style="width:71%"></div></div><strong>71%</strong></div>
+      <p class="pisa-source">Każdy pasek ma skalę od 0 do 100%. Dane jak w tabeli powyżej.</p>
+    </div>
+    <details class="pisa-details"><summary>Zobacz także średnie wyniki punktowe</summary>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Średnie wyniki punktowe"><table><caption>Średni wynik według typu szkoły</caption><thead><tr><th scope="col">Dziedzina</th><th scope="col">LO</th><th scope="col">T</th><th scope="col">BS I</th></tr></thead><tbody><tr><th scope="row">Czytanie</th><td>533</td><td>460</td><td>373</td></tr><tr><th scope="row">Matematyka</th><td>526</td><td>471</td><td>384</td></tr><tr><th scope="row">Nauki przyrodnicze</th><td>538</td><td>480</td><td>396</td></tr><tr><th scope="row">Problemy komputacyjne</th><td>539</td><td>499</td><td>421</td></tr></tbody></table></div>
+      <p class="pisa-source">Źródło: <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=48" target="_blank" rel="noopener" aria-label="Raport IBE, strona 48, nowa karta">s. 48</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=74" target="_blank" rel="noopener" aria-label="Raport IBE, strona 74, nowa karta">s. 74</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=89" target="_blank" rel="noopener" aria-label="Raport IBE, strona 89, nowa karta">s. 89</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=106" target="_blank" rel="noopener" aria-label="Raport IBE, strona 106, nowa karta">s. 106</a>. Są to średnie grup, a nie wynik każdego ich ucznia.</p>
+    </details>
+  </section>
+
+  <section class="mod-section" id="pisa-branzowa" tabindex="-1">
+    <h2>4. Szkoła branżowa: podstawy wymagają miejsca na lekcji</h2>
+    <p>W BS I poniżej poziomu 2 znajduje się większość badanych w czytaniu, matematyce i naukach przyrodniczych. To duża skala potrzeb, której nie należy sprowadzać do pojedynczych uczniów „niepasujących do klasy”. Jednocześnie średnia nie opisuje każdej osoby: są też uczniowie osiągający wyższe poziomy.</p>
+    <h3>Co może być trudne w codziennej nauce zawodu?</h3>
+    <p>Rozumienie poleceń, wybór potrzebnych informacji z instrukcji, przeliczenie ilości materiału lub uzasadnienie decyzji wymagają umiejętności ogólnych. Dlatego warto sprawdzać je w zadaniach zawodowych. Raport nie badał konkretnie receptur czy instrukcji warsztatowych — są to przykłady zastosowania wniosków.</p>
+    <p><strong>Propozycja dla nauczyciela:</strong> po przeczytaniu zadania poproś ucznia, aby powiedział własnymi słowami, co ma zrobić. Następnie sprawdź pierwszy krok. Dzięki temu łatwiej odróżnić niezrozumienie tekstu od braku umiejętności wykonania działania albo wycofania z pracy.</p>
+    <div class="callout blue"><div class="callout-body"><div class="callout-title">Wynik, który warto zauważyć</div><p>Uczniowie BS I częściej niż uczniowie techników i LO deklarowali, że na każdej lekcji przyrodniczej nauczyciel pokazuje codzienną użyteczność wiedzy. Praktyczne odniesienia już są obecne. Warto sprawdzać, czy po takim przykładzie uczeń potrafi sam zastosować wiedzę.</p></div></div>
+    <p>To nie dowód nieskuteczności praktycznych przykładów. Pokazywanie zastosowania i samodzielne opanowanie umiejętności są po prostu różnymi elementami uczenia się. Nasza rekomendacja: po przykładzie zaplanować próbę ze wsparciem, a potem analogiczną próbę samodzielną.</p>
+    <p class="pisa-source">Źródło: poziomy umiejętności — <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=49" target="_blank" rel="noopener" aria-label="Raport IBE, strona 49, nowa karta">s. 49</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=75" target="_blank" rel="noopener" aria-label="Raport IBE, strona 75, nowa karta">s. 75</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=90" target="_blank" rel="noopener" aria-label="Raport IBE, strona 90, nowa karta">s. 90</a>; deklarowane zastosowania wiedzy — <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=58" target="_blank" rel="noopener" aria-label="Raport IBE, strona 58, nowa karta">s. 58</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=59" target="_blank" rel="noopener" aria-label="Raport IBE, strona 59, nowa karta">s. 59</a>.</p>
+  </section>
+
+  <section class="mod-section" id="pisa-technikum" tabindex="-1">
+    <h2>5. Technikum: wsparcie podstaw i rozwijanie mocnych stron</h2>
+    <p>W technikach ponad jedna czwarta badanych nie osiąga podstawowego progu w czytaniu i matematyce. Potrzeby wyrównawcze są więc istotne również tutaj. Według raportu około 40% wszystkich polskich piętnastolatków poniżej poziomu 2 w matematyce uczy się w technikach; kolejne około 40% w BS I, a około 20% w liceach.</p>
+    <p>Jednocześnie w rozwiązywaniu problemów komputacyjnych około <strong>25% uczniów techników osiąga poziomy 5–6</strong>, a około 23% pozostaje poniżej poziomu 2. Wyniki pokazują szeroki zakres umiejętności w całej grupie techników; konkretna klasa wymaga własnej diagnozy.</p>
+    <h3>Co z tego wynika dla planowania zadań?</h3>
+    <p>Warto przygotować wspólny cel i różne zakresy pomocy. Jedna osoba może potrzebować objaśnienia polecenia i uporządkowanej tabeli, inna samodzielnie porówna kilka wariantów rozwiązania. Uczeń szybko kończący zadanie powinien mieć możliwość pogłębienia problemu, a uczeń potrzebujący wsparcia — drogę do wykonania celu.</p>
+    <p>Mocnym punktem jest też deklarowane poczucie przynależności do szkoły: w technikach jest istotnie wyższe niż w liceach. Warto lokalnie sprawdzić, co buduje tę więź i jak wykorzystać ją we wspólnej pracy.</p>
+    <p class="pisa-source">Źródło: <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=75" target="_blank" rel="noopener" aria-label="Raport IBE, strona 75, nowa karta">s. 75</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=106" target="_blank" rel="noopener" aria-label="Raport IBE, strona 106, nowa karta">s. 106</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=107" target="_blank" rel="noopener" aria-label="Raport IBE, strona 107, nowa karta">s. 107</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=160" target="_blank" rel="noopener" aria-label="Raport IBE, strona 160, nowa karta">s. 160</a>.</p>
+  </section>
+
+  <section class="mod-section" id="pisa-motywacja" tabindex="-1">
+    <h2>6. Motywacja, poczucie skuteczności i lęk matematyczny</h2>
+    <p>Uczniowie odpowiadali na pytania dotyczące ciekawości i wytrwałości. W obu skalach najwyższe wartości uzyskali licealiści, niższe uczniowie techników, a najniższe uczniowie BS I. Różnice między typami szkół są istotne statystycznie. <strong>Są to deklaracje, nie bezpośrednia obserwacja zachowania na lekcji.</strong></p>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Ciekawość, wytrwałość i skuteczność"><table><caption>Średnie wartości skal — wyższa wartość oznacza wyższy poziom danej cechy w samoopisie</caption><thead><tr><th scope="col">Skala</th><th scope="col">LO</th><th scope="col">T</th><th scope="col">BS I</th></tr></thead><tbody><tr><th scope="row">Ciekawość</th><td>0,01</td><td>−0,19</td><td>−0,48</td></tr><tr><th scope="row">Wytrwałość</th><td>−0,27</td><td>−0,38</td><td>−0,51</td></tr><tr><th scope="row">Poczucie skuteczności w zadaniach przyrodniczych</th><td>0,13</td><td>−0,24</td><td>−0,42</td></tr></tbody></table></div>
+    <p>To wystandaryzowane skale, a nie procenty. Wartość ujemna oznacza pozycję poniżej punktu odniesienia skali; nie oznacza „ujemnej motywacji”. Poczucie skuteczności dotyczyło konkretnych zadań przyrodniczych, np. oceny wiarygodności informacji naukowych. Nie jest oceną całej samooceny ucznia.</p>
+    <h3>Sama wytrwałość nie wyjaśnia wyników</h3>
+    <p>W Polsce ciekawość była silniej powiązana z osiągnięciami niż wytrwałość. Korelacje z wynikami czterech dziedzin wynosiły odpowiednio około 0,18–0,26 oraz 0,11–0,15. Są to ograniczone związki, które nie pozwalają obiecywać poprawy wyników przez samo „ćwiczenie wytrwałości”.</p>
+    <p><strong>Propozycja do kursu:</strong> łączyć pytanie budzące ciekawość z osiągalnym pierwszym krokiem. Po błędzie dawać wskazówkę i możliwość ponownej próby. Mikrocele powinny prowadzić do stopniowo dłuższej i bardziej samodzielnej pracy.</p>
+    <p class="pisa-source">Źródło: <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=54" target="_blank" rel="noopener" aria-label="Raport IBE, strona 54, nowa karta">s. 54</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=56" target="_blank" rel="noopener" aria-label="Raport IBE, strona 56, nowa karta">s. 56</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=152" target="_blank" rel="noopener" aria-label="Raport IBE, strona 152, nowa karta">s. 152</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=155" target="_blank" rel="noopener" aria-label="Raport IBE, strona 155, nowa karta">s. 155</a>.</p>
+
+    <h3 id="pisa-lek" tabindex="-1">Lęk matematyczny: co wnosi metaanaliza Barroso i współpracowników?</h3>
+    <p><strong>Metaanaliza łączy statystycznie wyniki wielu badań.</strong> Barroso i współpracownicy (2021) zestawili 223 badania, obejmujące 747 oszacowań związku lęku matematycznego z osiągnięciami. To osobne źródło psychologiczne, niezależne od PISA 2025.</p>
+    <p>Średnia korelacja wyniosła <strong>r = −0,28</strong>: wyższy lęk wiązał się przeciętnie ze słabszymi wynikami. Autorzy określają ten związek jako mały do umiarkowanego. Nie oznacza to spadku wyniku o 28% ani tego, że lęk wyjaśnia 28% trudności. Siła związku różniła się między grupami i sposobami pomiaru.</p>
+    <p>Analiza nie rozstrzyga kierunku zależności. Trudności mogą zwiększać lęk, a lęk może utrudniać wykonanie zadania; znaczenie mogą mieć też inne czynniki. Nie dowodzi, że samo pozytywne nastawienie wystarczy do rozwiązania zadania ani że zmiana nastawienia zawsze wywołuje duży efekt.</p>
+    <p class="pisa-source">Barroso, C. i in. (2021). <em>A meta-analysis of the relation between math anxiety and math achievement.</em> Psychological Bulletin, 147(2), 134–168. <a href="https://pubmed.ncbi.nlm.nih.gov/33119346/" target="_blank" rel="noopener">Opis badania ↗</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8300863/" target="_blank" rel="noopener">Pełny tekst ↗</a>. DOI: 10.1037/bul0000307.</p>
+    <div class="callout purple"><div class="callout-body"><div class="callout-title">Jak połączyć to z PISA?</div><p>PISA pokazuje skalę trudności z matematyką w technikach i BS I. Metaanaliza uzasadnia uwzględnienie lęku jako dodatkowego obszaru diagnozy. Nie pozwala obliczyć, jaka część słabych wyników tych uczniów wynika z lęku. Nie można też utożsamiać lęku matematycznego z opisaną wyżej skalą skuteczności w zadaniach przyrodniczych.</p></div></div>
+    <h3>Dwa pytania przed doborem pomocy</h3>
+    <p><strong>Nasza propozycja:</strong> sprawdź zarówno „Czy uczeń rozumie polecenie i zna sposób wykonania?”, jak i „Czego obawia się, gdy zaczyna?”. Uczeń może jednocześnie mieć braki i bać się oceny. Jedna rozmowa nie jest diagnozą psychologiczną.</p>
+    <p>Można powiedzieć: „Pokaż pierwszy krok. Jeśli utkniesz, ustalimy, jakiej wskazówki potrzebujesz”. Następnie obserwować samodzielną próbę i poprawę. To propozycja praktyki nauczycielskiej, a nie interwencja, której skuteczność przetestowała ta metaanaliza.</p>
+  </section>
+
+  <section class="mod-section" id="pisa-relacje" tabindex="-1">
+    <h2>7. Wsparcie, przynależność i bezpieczeństwo</h2>
+    <p>Wyniki dotyczące klimatu szkoły uzupełniają obraz umiejętności. Przynależność do szkoły jest w technikach wyższa niż w LO: wartości skali wynoszą odpowiednio −0,14 i −0,21. Pozostałe porównania typów szkół w tym obszarze nie wykazały istotnych różnic.</p>
+    <p>Bezpieczeństwo w salach lekcyjnych deklaruje 93% licealistów, 89% uczniów techników i 87% uczniów BS I. Wynik LO jest istotnie wyższy od obu pozostałych. Większość uczniów czuje się bezpiecznie, lecz doświadczenia mniejszej grupy wymagają uwagi.</p>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Doświadczenia dręczenia"><table><caption>Doświadczenia co najmniej kilka razy w miesiącu w ostatnich 12 miesiącach</caption><thead><tr><th scope="col">Forma dręczenia</th><th scope="col">LO</th><th scope="col">T</th><th scope="col">BS I</th></tr></thead><tbody><tr><th scope="row">Zastraszanie</th><td>2,4%</td><td>4,0%</td><td>5,5%</td></tr><tr><th scope="row">Popychanie lub bicie</th><td>2,7%</td><td>4,8%</td><td>5,4%</td></tr><tr><th scope="row">Przykre treści w internecie bez zgody ucznia</th><td>2,4%</td><td>3,0%</td><td>6,7%</td></tr></tbody></table></div>
+    <p>Nie każda różnica w tabeli jest istotna. W przypadku przemocy fizycznej różnica między T a BS I nie jest istotna; dla przykrych treści w internecie BS I ma istotnie wyższy wynik niż oba pozostałe typy szkół. Nie należy przypisywać różnic wyłącznie typowi szkoły — znaczenie mogą mieć również inne cechy badanych grup.</p>
+    <h3>Co uczniowie mówią o wsparciu nauczycieli?</h3>
+    <p><strong>Wynik ogólnopolski:</strong> skala deklarowanego wsparcia nauczycieli przedmiotów przyrodniczych jest najniższa wśród krajów uczestniczących w PISA 2025. Pytano m.in. o pomoc, zainteresowanie postępem i wyjaśnianie aż do zrozumienia. Nie jest to obiektywny pomiar pracy każdego nauczyciela ani wynik wyłącznie dla techników i BS I. W Polsce korelacja tej skali z wynikiem testu była nieistotna.</p>
+    <p><strong>Propozycja do praktyki:</strong> zapytać uczniów, czy wiedzą, jak uzyskać pomoc, i czy mogą bez obaw powiedzieć, że nie rozumieją zadania. Uzgodnić reakcję na ośmieszanie błędu. Rozwijanie relacji obejmuje także warunki uczestnictwa w lekcji.</p>
+    <p class="pisa-source">Źródło: <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=56" target="_blank" rel="noopener" aria-label="Raport IBE, strona 56, nowa karta">s. 56</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=58" target="_blank" rel="noopener" aria-label="Raport IBE, strona 58, nowa karta">s. 58</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=160" target="_blank" rel="noopener" aria-label="Raport IBE, strona 160, nowa karta">s. 160</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=165" target="_blank" rel="noopener" aria-label="Raport IBE, strona 165, nowa karta">s. 165</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=167" target="_blank" rel="noopener" aria-label="Raport IBE, strona 167, nowa karta">s. 167</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=168" target="_blank" rel="noopener" aria-label="Raport IBE, strona 168, nowa karta">s. 168</a>, tabela 10.2.</p>
+  </section>
+
+  <section class="mod-section" id="pisa-cyfrowe" tabindex="-1">
+    <h2>8. Technologie i AI: co rzeczywiście zmierzono?</h2>
+    <p><strong>Komputacyjne rozwiązywanie problemów</strong> oznacza tworzenie i sprawdzanie rozwiązań z użyciem narzędzi informatycznych, np. modeli, symulacji i programowania blokowego. Uczniowie pracowali nad dwoma 30-minutowymi scenariuszami: budowaniem algorytmów i modelowaniem. Mogli korzystać z pomocy oraz informacji zwrotnej.</p>
+    <p>Nie był to test sprawności korzystania ze smartfona, mediów społecznościowych ani edytora tekstu. Raport przedstawia wyniki rozwiązywania problemów; zgodnie z jego zapowiedzią wyniki dotyczące samoregulacji uczenia się mają zostać opublikowane w 2027 roku.</p>
+    <p>Technika uzyskały średnio 499 punktów, BS I — 421, a LO — 539. Luka między LO a technikami jest tu mniejsza niż w pozostałych badanych dziedzinach. To argument za rozpoznawaniem tych umiejętności i rozwijaniem ich w zadaniach problemowych, choć w obu typach szkół są też uczniowie potrzebujący podstawowego wsparcia.</p>
+    <h3>Korzystanie z AI to osobne pytanie ankietowe</h3>
+    <p>Regularne, co najmniej cotygodniowe wspomaganie nauki chatbotami deklaruje <strong>57% uczniów techników, 35% BS I i 59% LO</strong>. Ten wskaźnik mówi o częstości użycia, nie o jakości odpowiedzi, samodzielności ani umiejętności sprawdzania błędów AI.</p>
+    <p>W Polsce nie stwierdzono istotnej korelacji liniowej skali korzystania z AI z wynikami w żadnej z czterech dziedzin. Nie jest to dowód, że AI nie ma wpływu, ani dowód, że zwiększenie jej użycia poprawi naukę.</p>
+    <p><strong>Propozycja do praktyki:</strong> uczeń może porównać odpowiedź chatbota z instrukcją lub innym wskazanym źródłem, wykryć rozbieżność i uzasadnić poprawkę. Na koniec wykonuje krótkie analogiczne zadanie samodzielnie. Cel stanowi rozumienie i weryfikacja; samo wygenerowanie odpowiedzi nie pokazuje jeszcze opanowania umiejętności.</p>
+    <p class="pisa-source">Źródło: <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=93" target="_blank" rel="noopener" aria-label="Raport IBE, strona 93, nowa karta">s. 93</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=95" target="_blank" rel="noopener" aria-label="Raport IBE, strona 95, nowa karta">s. 95</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=106" target="_blank" rel="noopener" aria-label="Raport IBE, strona 106, nowa karta">s. 106</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=107" target="_blank" rel="noopener" aria-label="Raport IBE, strona 107, nowa karta">s. 107</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=127" target="_blank" rel="noopener" aria-label="Raport IBE, strona 127, nowa karta">s. 127</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=128" target="_blank" rel="noopener" aria-label="Raport IBE, strona 128, nowa karta">s. 128</a>.</p>
+  </section>
+
+  <section class="mod-section" id="pisa-kontekst" tabindex="-1">
+    <h2>9. Kontekst rodzinny i zmiany między edycjami</h2>
+    <p>Uczniowie trafiają do typów szkół z różnymi wcześniejszymi osiągnięciami, aspiracjami i zasobami rodzinnymi. Przeciętny status społeczno-ekonomiczny jest najwyższy w LO, pośredni w technikach i najniższy w BS I. <strong>PISA nie oddziela w prosty sposób wpływu szkoły od tego, z czym uczniowie do niej przyszli.</strong></p>
+    <p>W naukach przyrodniczych około 24% całkowitego zróżnicowania wyników wiąże się z różnicami między typami szkół, a kolejne 21% — z różnicami między szkołami tego samego typu. To opis rozkładu wyników, nie procentowy „wpływ szkoły”. Sama etykieta technikum lub BS I nie wystarcza do zaplanowania pomocy w konkretnej placówce.</p>
+    <h3>Czy od 2022 roku nastąpiło pogorszenie?</h3>
+    <p>W matematyce i czytaniu zmiany średnich wyników poszczególnych typów szkół nie są istotne statystycznie. Nie należy więc ogłaszać pogorszenia tylko dlatego, że w tabeli widnieje mniejsza liczba punktów.</p>
+    <p>Zmieniło się też miejsce badanego rocznika w systemie: w 2025 roku 65% uczestników uczyło się w klasie II, a 34% w I; w 2022 roku odpowiednio około 16% i 82%. Wpłynęły na to wcześniejsze zmiany wieku rozpoczynania szkoły. Badano osoby w tym samym wieku, ale często na innym etapie edukacji.</p>
+    <p>Wyższy wynik klasy II niż I nie jest pomiarem postępu tych samych uczniów. Do oceny postępu własnej klasy potrzebna jest własna diagnoza początkowa i późniejszy pomiar porównywalnych umiejętności.</p>
+    <p class="pisa-source">Źródło: <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=15" target="_blank" rel="noopener" aria-label="Raport IBE, strona 15, nowa karta">s. 15</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=31" target="_blank" rel="noopener" aria-label="Raport IBE, strona 31, nowa karta">s. 31</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=75" target="_blank" rel="noopener" aria-label="Raport IBE, strona 75, nowa karta">s. 75</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=89" target="_blank" rel="noopener" aria-label="Raport IBE, strona 89, nowa karta">s. 89</a>, <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=183" target="_blank" rel="noopener" aria-label="Raport IBE, strona 183, nowa karta">s. 183</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=186" target="_blank" rel="noopener" aria-label="Raport IBE, strona 186, nowa karta">s. 186</a>.</p>
+  </section>
+
+  <section class="mod-section" id="pisa-praktyka" tabindex="-1">
+    <h2>10. Od wyników do pracy na lekcji</h2>
+    <p>Poniższe rozwiązania są propozycjami do wypróbowania. Raport uzasadnia rozpoznanie potrzeb, ale nie jest badaniem skuteczności opisanych metod.</p>
+    <div class="practice-grid">
+      <div class="practice-card"><strong>Sprawdź rozumienie polecenia</strong><p>Poproś ucznia o wyjaśnienie celu i wskazanie pierwszego kroku. Dopiero potem dobierz pomoc.</p></div>
+      <div class="practice-card"><strong>Ćwicz podstawy w kontekście zawodu</strong><p>Wykorzystuj instrukcje, tabele, parametry i oferty. Zadbaj o odczyt, obliczenie oraz uzasadnienie decyzji.</p></div>
+      <div class="practice-card"><strong>Stopniowo zmniejszaj pomoc</strong><p>Zacznij od pokazu lub wspólnej próby. Zaplanuj samodzielne zadanie o podobnej strukturze.</p></div>
+      <div class="practice-card"><strong>Ucz wracania po błędzie</strong><p>Daj konkretną wskazówkę i czas na poprawę. Sprawdź, czy uczeń umie wyjaśnić zmianę.</p></div>
+    </div>
+    <h3>Przykład: receptura w BS I</h3>
+    <p>Uczeń przygotowujący się do zawodu kucharza czyta krótką recepturę, wybiera ilości składników i przelicza je na inną liczbę porcji. W wersji ze wsparciem dostaje tabelę i pokaz jednego obliczenia. Następnie samodzielnie rozwiązuje analogiczny przykład i sprawdza, czy wynik ma sens.</p>
+    <p><strong>Obserwujemy:</strong> czy rozumie tekst, dobiera proporcję i potrafi uzasadnić ilość. Dzięki temu wiadomo, czy pomocy wymaga czytanie, obliczanie czy kontrola wyniku.</p>
+    <h3>Przykład: oferty transportu w technikum</h3>
+    <p>Uczeń logistyk porównuje dwie oferty z opłatą podstawową i dopłatą za kilometr. Oblicza koszt dla wskazanej trasy i uzasadnia wybór. Wersja ze wsparciem zawiera uporządkowaną tabelę. Rozszerzenie wymaga wyznaczenia odległości, przy której zmienia się bardziej opłacalna oferta.</p>
+    <p><strong>Obserwujemy:</strong> odczyt warunków, poprawność modelu obliczenia i argumentację. Wariant przydzielamy według potrzeb ucznia, nie automatycznie według typu szkoły.</p>
+    <h3>Mały pilotaż w szkole: osiem tygodni</h3>
+    <ol class="pisa-steps">
+      <li><strong>Tydzień 1:</strong> krótkie zadanie diagnozujące rozumienie instrukcji, odczyt tabeli i wnioskowanie. Osobno kilka pytań o dostępność pomocy i bezpieczeństwo zadawania pytań.</li>
+      <li><strong>Tydzień 2:</strong> nauczyciele przedmiotów ogólnych i zawodowych przygotowują wspólne przykłady oraz warianty wsparcia.</li>
+      <li><strong>Tygodnie 3–7:</strong> regularnie stosują jedną uzgodnioną sekwencję: rozumienie celu, próba, informacja zwrotna, poprawa, samodzielne wykonanie.</li>
+      <li><strong>Tydzień 8:</strong> zadanie o podobnej trudności i porównanie wyników. Zespół wybiera praktyki do kontynuowania.</li>
+    </ol>
+    <p>Warto mierzyć samodzielność, liczbę podpowiedzi i podejmowanie ponownej próby. Ukończenie szkolenia przez nauczyciela nie zastępuje obserwacji uczenia się ucznia. Wyniku lokalnego zadania nie nazywamy poziomem PISA; poprawa przed–po bez grupy porównawczej nie dowodzi przyczyny zmiany.</p>
+    <div class="pisa-course-links" aria-label="Powiązane części kursu"><button class="btn btn-outline" onclick="showPage('m3')">Poczucie skuteczności →</button><button class="btn btn-outline" onclick="showPage('m4')">Mikrocele →</button><button class="btn btn-outline" onclick="showPage('m7')">Bank praktyk →</button></div>
+  </section>
+
+  <section class="mod-section" id="pisa-granice" tabindex="-1">
+    <h2>11. Czego nie należy wyciągać z tych danych</h2>
+    <ul>
+      <li><strong>„68% uczniów BS I nie umie czytać”.</strong> Raport mówi o wyniku poniżej poziomu 2, nie o całkowitym braku czytania.</li>
+      <li><strong>„To szkoła branżowa powoduje słabsze wyniki”.</strong> Różnice obejmują wcześniejsze osiągnięcia i sytuację uczniów; badanie nie izoluje efektu szkoły.</li>
+      <li><strong>„Każdy uczeń technikum ma podobne potrzeby”.</strong> Rozkład wyników pokazuje zarówno trudności, jak i wysokie umiejętności.</li>
+      <li><strong>„Brak motywacji wyjaśnia wszystko”.</strong> Skale postaw są samoopisem, a związki z wynikami nie wyczerpują przyczyn trudności.</li>
+      <li><strong>„Częstsze AI automatycznie poprawi wyniki”.</strong> Ten raport nie dowodzi takiego efektu.</li>
+      <li><strong>„Wyniki dotyczą absolwentów i kompetencji zawodowych”.</strong> Badano określony rocznik w trakcie nauki, przede wszystkim kompetencje ogólne.</li>
+    </ul>
+    <div class="takeaway"><div class="takeaway-label">Do zapamiętania</div><h3>Diagnoza potrzeb, potem dobór pomocy</h3><p>W BS I skala trudności z podstawowymi umiejętnościami jest szczególnie duża. W technikum potrzebne są zarówno wsparcie podstaw, jak i zadania rozwijające mocne strony. W obu typach szkół warto łączyć sens nauki, możliwość samodzielnego sukcesu i bezpieczne warunki pracy.</p></div>
+  </section>
+
+  <section class="mod-section" id="pisa-zrodla" tabindex="-1">
+    <h2>12. Mapa raportu i źródła</h2>
+    <p><strong>Źródło wyników PISA:</strong> Kaźmierczak, J. (red.). (2026). <em>Gotowi na przyszłość? Umiejętności piętnastolatków w zmieniającym się świecie. Wyniki badania PISA 2025.</em> IBE PIB. DOI: 10.24131/9788368747720.</p>
+    <p><a href="https://www.ibe.edu.pl/pl/biblioteka-ibe/pisa-biblioteka/3935-gotowi-na-przyszlosc-umiejetnosci-pietnastolatkow-w-zmieniajacym-sie-swiecie-wyniki-badania-pisa-2025" target="_blank" rel="noopener">Opis publikacji w bibliotece IBE ↗</a> · <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf" target="_blank" rel="noopener">Pełny raport PDF ↗</a></p>
+    <p><strong>Uzupełniające źródło psychologiczne:</strong> Barroso, C., Ganley, C. M., McGraw, A. L., Geer, E. A., Hart, S. A. i Daucourt, M. C. (2021). <em>A meta-analysis of the relation between math anxiety and math achievement.</em> Psychological Bulletin, 147(2), 134–168. <a href="https://doi.org/10.1037/bul0000307" target="_blank" rel="noopener">DOI: 10.1037/bul0000307 ↗</a>.</p>
+    <details class="pisa-details"><summary>Mapa wszystkich rozdziałów — gdzie szukać dalej?</summary><ul>
+      <li><strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=7" target="_blank" rel="noopener" aria-label="Raport IBE, strona 7, nowa karta">s. 7</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=21" target="_blank" rel="noopener" aria-label="Raport IBE, strona 21, nowa karta">s. 21</a>:</strong> wstęp i najważniejsze ustalenia, w tym opinie o użyteczności szkoły i absencja.</li>
+      <li><strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=22" target="_blank" rel="noopener" aria-label="Raport IBE, strona 22, nowa karta">s. 22</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=33" target="_blank" rel="noopener" aria-label="Raport IBE, strona 33, nowa karta">s. 33</a>:</strong> cele badania, organizacja, próba i metodologia.</li>
+      <li><strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=34" target="_blank" rel="noopener" aria-label="Raport IBE, strona 34, nowa karta">s. 34</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=59" target="_blank" rel="noopener" aria-label="Raport IBE, strona 59, nowa karta">s. 59</a>:</strong> nauki przyrodnicze, skuteczność, wsparcie, przekonania o nauce i świadomość ekologiczna.</li>
+      <li><strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=60" target="_blank" rel="noopener" aria-label="Raport IBE, strona 60, nowa karta">s. 60</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=76" target="_blank" rel="noopener" aria-label="Raport IBE, strona 76, nowa karta">s. 76</a>:</strong> matematyka; porównanie szkół na <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=74" target="_blank" rel="noopener" aria-label="Raport IBE, strona 74, nowa karta">s. 74</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=75" target="_blank" rel="noopener" aria-label="Raport IBE, strona 75, nowa karta">s. 75</a>.</li>
+      <li><strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=77" target="_blank" rel="noopener" aria-label="Raport IBE, strona 77, nowa karta">s. 77</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=91" target="_blank" rel="noopener" aria-label="Raport IBE, strona 91, nowa karta">s. 91</a>:</strong> czytanie; porównanie szkół na <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=89" target="_blank" rel="noopener" aria-label="Raport IBE, strona 89, nowa karta">s. 89</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=90" target="_blank" rel="noopener" aria-label="Raport IBE, strona 90, nowa karta">s. 90</a>.</li>
+      <li><strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=92" target="_blank" rel="noopener" aria-label="Raport IBE, strona 92, nowa karta">s. 92</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=108" target="_blank" rel="noopener" aria-label="Raport IBE, strona 108, nowa karta">s. 108</a>:</strong> problemy komputacyjne; porównanie szkół na <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=106" target="_blank" rel="noopener" aria-label="Raport IBE, strona 106, nowa karta">s. 106</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=107" target="_blank" rel="noopener" aria-label="Raport IBE, strona 107, nowa karta">s. 107</a>.</li>
+      <li><strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=109" target="_blank" rel="noopener" aria-label="Raport IBE, strona 109, nowa karta">s. 109</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=129" target="_blank" rel="noopener" aria-label="Raport IBE, strona 129, nowa karta">s. 129</a>:</strong> środowisko cyfrowe; AI na <a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=127" target="_blank" rel="noopener" aria-label="Raport IBE, strona 127, nowa karta">s. 127</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=128" target="_blank" rel="noopener" aria-label="Raport IBE, strona 128, nowa karta">s. 128</a>.</li>
+      <li><strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=130" target="_blank" rel="noopener" aria-label="Raport IBE, strona 130, nowa karta">s. 130</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=139" target="_blank" rel="noopener" aria-label="Raport IBE, strona 139, nowa karta">s. 139</a>:</strong> dobrostan i współwystępujące czynniki.</li>
+      <li><strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=140" target="_blank" rel="noopener" aria-label="Raport IBE, strona 140, nowa karta">s. 140</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=155" target="_blank" rel="noopener" aria-label="Raport IBE, strona 155, nowa karta">s. 155</a>:</strong> ciekawość i wytrwałość.</li>
+      <li><strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=156" target="_blank" rel="noopener" aria-label="Raport IBE, strona 156, nowa karta">s. 156</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=170" target="_blank" rel="noopener" aria-label="Raport IBE, strona 170, nowa karta">s. 170</a>:</strong> klimat szkoły, przynależność i dręczenie.</li>
+      <li><strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=171" target="_blank" rel="noopener" aria-label="Raport IBE, strona 171, nowa karta">s. 171</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=187" target="_blank" rel="noopener" aria-label="Raport IBE, strona 187, nowa karta">s. 187</a>:</strong> nierówności edukacyjne i zróżnicowanie szkół.</li>
+      <li><strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=188" target="_blank" rel="noopener" aria-label="Raport IBE, strona 188, nowa karta">s. 188</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=192" target="_blank" rel="noopener" aria-label="Raport IBE, strona 192, nowa karta">s. 192</a>:</strong> bibliografia; <strong><a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=193" target="_blank" rel="noopener" aria-label="Raport IBE, strona 193, nowa karta">s. 193</a>–<a href="https://www.ibe.edu.pl/files/BIBLIOTEKA/PISA/Gotowi-na-przyszlosc-PISA-2025-wyniki-badania.pdf#page=232" target="_blank" rel="noopener" aria-label="Raport IBE, strona 232, nowa karta">s. 232</a>:</strong> tabele źródłowe do wykresów.</li>
+    </ul></details>
+    <p class="pisa-source">Numery stron odnoszą się do numeracji raportu, zgodnej z numerami stron PDF. Link z numerem strony otwiera odpowiednie miejsce, jeśli przeglądarka obsługuje tę funkcję. Opracowanie: 8 września 2026 r.</p>
+  </section>
+  <div class="mod-nav"><button class="btn btn-outline" onclick="showPage('home')">← Wróć do przeglądu kursu</button><a class="btn btn-primary" href="#pisa2025">Wróć na początek aneksu ↑</a></div>
+</article>
 <div class="page" id="page-finish">
   <div class="finish">
     <div class="trophy">🎓</div>
@@ -3757,6 +4039,9 @@ function saveNote(mod, val){ localStorage.setItem('note-' + mod, val); }
 
 // ── NAVIGATION ──
 function showPage(id){
+  if(id === 'pisa2025' && !location.hash.startsWith('#pisa')) history.replaceState(null, '', '#pisa2025');
+  if(id !== 'pisa2025' && location.hash.startsWith('#pisa')) history.replaceState(null, '', location.pathname + location.search);
+
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.sb-item').forEach(a => a.classList.remove('active'));
   const page = document.getElementById('page-' + id);
@@ -3922,6 +4207,21 @@ function toggleResourceEmbed(btn) {
     setTimeout(function(){ window.removeEventListener('message', ytMsgHandler); }, 15000);
   }
 }
+// Direct links to the appendix and its sections; native anchors remain shareable.
+function restorePisaAnchor(){
+  const anchor = location.hash.slice(1);
+  const target = anchor === 'pisa2025' ? document.getElementById('pisa-title') : document.getElementById(anchor);
+  if(!target || !target.closest('#page-pisa2025')) return;
+  showPage('pisa2025');
+  requestAnimationFrame(() => {
+    if(anchor === 'pisa2025') window.scrollTo({top:0, behavior:'instant'});
+    else target.scrollIntoView({behavior:'instant', block:'start'});
+    target.focus({preventScroll:true});
+  });
+}
+window.addEventListener('hashchange', restorePisaAnchor);
+restorePisaAnchor();
+
 </script>
 </body>
 </html>
